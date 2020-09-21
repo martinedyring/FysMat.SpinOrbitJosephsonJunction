@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from solve_hamiltonian import solve_system
 from system_class import System
 from plots import plot_complex_function
-from utilities import name_map
+from utilities import label_F_matrix
 
 """
 This is the main function to run all programs
@@ -27,7 +27,7 @@ def pairing_amplitude():
         plot_complex_function(y=ys, ax=ax[i], labels=['Real part', 'Imaginary part'])
         ax[i].grid()
         ax[i].legend()
-        ax[i].set_title(name_map[i])
+        ax[i].set_title(label_F_matrix[i])
     fig.subplots_adjust(wspace=0.0)
 
     fig = plt.figure(figsize=(20, 6))
