@@ -1,7 +1,6 @@
 import numpy as np
 from scipy.linalg import eigh
 
-#from Prosjektoppgave.utilities import set_hamiltonian, calculate_F_matrix
 from utilities import set_hamiltonian, calculate_F_matrix
 
 
@@ -36,7 +35,7 @@ def solve_system(system, num_iter = 15):
             eigenvectors[:,:,ik] = vectors[:,:]
 
         # Calculate and update the new pairing amplitude functions.
-        calculate_F_matrix(eigenvectors, eigenvalues, system.beta, system.L_y, system.F_matrix, system.k_array)
+        calculate_F_matrix(eigenvectors, eigenvalues, system.beta, system.L_y, system.F_matrix, system.k_array, system.orbital_indicator)
 
         F_matrix[r + 1, :,:] = system.F_matrix[:,:]
 
