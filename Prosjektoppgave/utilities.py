@@ -5,19 +5,66 @@ from numpy import conj, real, imag, cos, sin, tanh, exp, sqrt as conj, real, ima
 This script contains all extra function solve_hamiltonian.py needs
 """
 
-#   Define index for the pairing amplitude functions:
+#   Define index for the pairing amplitude functions: d: down, u: up
+#   Expecting x_pluss to be equal to x_minus, so I am only considering x_pluss
+#   Expecting ud_x to be equal to du_x, so I am only considering ud_x. Similar for y.
 idx_F_i = 0
-idx_F_ij_x_pluss = 1
-idx_F_ji_x_pluss = 2
-idx_F_ij_x_minus = 3
-idx_F_ji_x_minus = 4
-idx_F_ij_y_pluss = 5
-idx_F_ji_y_pluss = 6
-idx_F_ij_y_minus = 7
-idx_F_ji_y_minus = 8
-idx_F_ij_s = 9
+idx_F_ud_x_pluss = 1
+label_F_matrix = [
+    r'$F_{ii}$',
+    r'$F_{ud}^{x+}$',
+    ]
+num_idx_F_i = 2
+def calculate_F_matrix(eigenvectors, eigenvalues, beta, L_y, F_matrix, k_array, orbital_indicator):
 
-num_idx_F_i = 10
+    #   Initialize the old F_matrix to 0+0j, so that we can start to add new values
+    F_matrix[:, :] = 0.0 + 0.0j
+
+    print("dim F: ", F_matrix.shape)
+    print("dim eigenvalues: ", eigenvalues.shape)
+    print("dim eigenvectors: ", eigenvectors.shape)
+
+    idx_endpoint = F_matrix.shape[0]-1
+
+    # Calculation loops
+    for k in range(eigenvalues.shape[1]):
+        s_k = 1.0
+        for n in range(eigenvalues.shape[0]):
+            if abs(eigenvalues[n, k]) >= np.inf:
+                print("debye")
+                continue
+            if (k_array[k] == 0) or (k_array[k] == np.pi):
+                #print("k")
+                s_k = 0.0
+            coeff = 1 / (2* L_y) * tanh(beta*eigenvalues[n, k])#/2)
+            for i in range(F_matrix.shape[0]-1):
+                # F_ii - same point
+                F_matrix[i, idx_F_i] += coeff * (eigenvectors[4 * i, n, k] * conj(eigenvectors[(4 * i) + 3, n, k]) - s_k * eigenvectors[(4 * i) + 1, n, k] * conj(eigenvectors[(4 * i) + 2, n, k]))
+
+                # F ij X+ S, i_x, j_x
+                F_matrix[i, idx_F_ud_x_pluss] += coeff * (eigenvectors[4*i, n, k] * conj(eigenvectors[4*(i+1) + 3, n, k])  -  s_k * eigenvectors[4*(i+1) + 1, n, k] * conj(eigenvectors[(4*i) + 2, n, k]))
+
+            #   At the endpoint we can not calculate the correlation in x-direction
+            # UP DOWN SAME POINT
+            F_matrix[idx_endpoint, idx_F_i] += coeff * (eigenvectors[4*idx_endpoint, n, k] * conj(eigenvectors[(4*idx_endpoint) + 1, n, k]))
+    return F_matrix
+
+"""
+idx_F_i = 0
+idx_F_ud_x_pluss = 1
+idx_F_dd_x_pluss = 2
+idx_F_uu_x_pluss = 3
+idx_F_up_y_pluss = 4
+idx_F_dd_y_pluss = 5
+idx_F_uu_y_pluss = 6
+idx_F_ud_y_minus = 7
+idx_F_du_y_minus = 8
+idx_F_dd_y_minus = 9
+idx_F_uu_y_minus = 10
+idx_F_ij_s = 11
+
+num_idx_F_i = 12
+
 
 #   Label name for each component in F-matrix
 label_F_matrix = [
@@ -33,18 +80,7 @@ label_F_matrix = [
     r'$F_{s_i}$'
 ]
 """
-def set_F_orbital(i, orbital_indicator, F_matrix):
-    if orbital_indicator == 's':
-        return np.complex128(1/8 * (F_matrix[i, idx_F_i_x_pluss] + conj(F_matrix[i, idx_F_i_x_pluss]) + F_matrix[i, idx_F_i_x_minus] + conj(F_matrix[i, idx_F_i_x_minus]) + F_matrix[i, idx_F_i_y_pluss] + conj(F_matrix[i, idx_F_i_y_pluss]) + F_matrix[i, idx_F_i_y_minus] + conj(F_matrix[i, idx_F_i_y_minus])))
 
-    elif orbital_indicator == 'd':
-        return np.complex128(1/8 * (F_matrix[i, idx_F_i_x_pluss] + conj(F_matrix[i, idx_F_i_x_pluss]) + F_matrix[i, idx_F_i_x_minus] + conj(F_matrix[i, idx_F_i_x_minus]) - F_matrix[i, idx_F_i_y_pluss] - conj(F_matrix[i, idx_F_i_y_pluss]) - F_matrix[i, idx_F_i_y_minus] - conj(F_matrix[i, idx_F_i_y_minus])))
-
-    elif orbital_indicator == 'px':
-        return np.complex128(1/4 *(F_matrix[i, idx_F_i_x_pluss] - conj(F_matrix[i, idx_F_i_x_pluss]) - F_matrix[i, idx_F_i_x_minus] + conj(F_matrix[i, idx_F_i_x_minus])))
-
-    elif orbital_indicator == 'py':
-        return np.complex128(1/4 * (F_matrix[i, idx_F_i_y_pluss] - conj(F_matrix[i, idx_F_i_y_pluss]) - F_matrix[i, idx_F_i_y_minus] + conj(F_matrix[i, idx_F_i_y_minus])))
 """
 
 def calculate_F_matrix(eigenvectors, eigenvalues, beta, L_y, F_matrix, k_array, orbital_indicator):
@@ -133,6 +169,7 @@ def calculate_F_matrix(eigenvectors, eigenvalues, beta, L_y, F_matrix, k_array, 
             elif orbital_indicator == 'py':
                 F_matrix[i, idx_F_ij_s] += 1 / 4 * (F_matrix[i, idx_F_ij_y_pluss] - F_matrix[i, idx_F_ji_y_pluss] - F_matrix[i, idx_F_ij_y_minus] + F_matrix[i, idx_F_ji_y_minus])
 
+"""
 
 # -------------------   Define Hamiltionian -----------------------#
 
@@ -195,7 +232,7 @@ def create_hamiltonian_from_variables(L_x, k, mu, F, U, t_array, hz_array):
 def create_hamiltonian(s, k_initial):
     L_x, k_array, mu, F_matrix, U_array, t_array, hz_array = s.L_x, k_initial, s.mu, s.F_matrix, s.U_array, s.t_array, s.hz_array
     assert F_matrix.shape == (L_x, num_idx_F_i), "F has not the shape of (%i, %i). Got %s" % (L_x, num_idx_F_i, str(F_matrix.shape))
-    assert t_array.shape == (L_x - 1, 2), "t_ijs_x has not the shape of (%i, %i). Got %s" % (L_x - 1, num_idx_F_i, str(t_array.shape))
+    assert t_array.shape == (L_x - 1, 2), "t_array has not the shape of (%i, %i). Got %s" % (L_x - 1, num_idx_F_i, str(t_array.shape))
     assert t_array.shape == (L_x, 2), "t_is_y has not the shape of (%i, %i). Got %s" % (L_x, 2, str(t_array.shape))
     assert hz_array.shape == (L_x, 3), "h_i has not the shape of (%i, %i). Got %s" % (L_x, 3, str(hz_array.shape))
     assert U_array.shape == (L_x,), "U_i has not the shape of (%i,). Got %s" % (L_x, str(U_array.shape))

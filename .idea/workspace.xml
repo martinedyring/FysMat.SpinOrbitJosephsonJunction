@@ -4,10 +4,9 @@
     <list default="true" id="619037fa-4b25-4024-aeda-7804730b2fd8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Test_pa.ipynb" afterPath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Test_pa.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/pa.ipynb" afterPath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/pa.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/untitled.ipynb" afterPath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/untitled.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/main.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/system_class.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/system_class.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/utilities.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/utilities.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,15 +25,17 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.13948497">
+    <splitter split-orientation="horizontal" split-proportion="0.47782546">
       <split-first>
         <leaf>
-          <file leaf-file-name="solve_hamiltonian.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="solve_hamiltonian.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-                  <folding />
+                <state relative-caret-position="296">
+                  <caret line="41" column="26" lean-forward="false" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+                  <folding>
+                    <element signature="e#0#18#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -42,9 +43,11 @@
           <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-665">
-                  <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-                  <folding />
+                <state relative-caret-position="383">
+                  <caret line="80" column="22" lean-forward="true" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
+                  <folding>
+                    <element signature="e#0#18#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -61,11 +64,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="system_class.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="system_class.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="760">
-                  <caret line="130" column="21" lean-forward="false" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
+                <state relative-caret-position="1125">
+                  <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
                   </folding>
@@ -80,8 +83,8 @@
           <file leaf-file-name="utilities.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="835">
-                  <caret line="62" column="17" lean-forward="true" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
+                <state relative-caret-position="-2572">
+                  <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
                   </folding>
@@ -124,10 +127,10 @@
         <option value="$PROJECT_DIR$/Prosjektoppgave/bdg_solver_notebook.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/notebook_bdg_solver.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/plots.py" />
-        <option value="$PROJECT_DIR$/Prosjektoppgave/main.py" />
-        <option value="$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/system_class.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/main.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/utilities.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py" />
       </list>
     </option>
   </component>
@@ -140,7 +143,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="811" />
+    <option name="height" value="828" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -467,7 +470,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="811" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="828" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11444921" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -476,7 +479,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962447" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11821975" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11548913" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -607,36 +610,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-665">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="130" column="21" lean-forward="false" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
+        <state relative-caret-position="-2572">
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="835">
-          <caret line="62" column="17" lean-forward="true" selection-start-line="62" selection-start-column="17" selection-end-line="62" selection-end-column="17" />
+        <state relative-caret-position="1125">
+          <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="80" column="22" lean-forward="true" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="41" column="26" lean-forward="false" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
