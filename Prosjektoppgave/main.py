@@ -50,41 +50,14 @@ def pairing_amplitude_all_orbitals():
     fig.subplots_adjust(wspace=0.0)
     system_s.plot_components_of_hamiltonian(fig)
 
+def solve_and_return_system_and_F_matrix(mu_orbital, orbital_indicator,F_sc_initial_orbital, tol=1e-4):
 
-def pairing_amplitude_one_orbital(orbital_indicator='s', mu_orbital=-3.5,
-                                  F_sc_initial_orbital=[1.0, 1.0, 1.0, 1.0, 1.0, 1.0], num_iter=3):
-    """
-    F_sc_initial_s = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], #s-orbital
-    F_sc_initial_d = [0.0, 0.0, 1.0, 1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0],
-    F_sc_initial_px = [0.0, 0.0, 1.0, 1.0, -1.0, -1.0, 0.0, 0.0, 0.0, 0.0],
-    F_sc_initial_py = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0],
-    F_sc_initial_pxpy = [0.0, 0.0, 1.0, 1.0, -1.0, -1.0, 1.0j, 1.0j, -1.0j, -1.0j],
-    F_sc_initial_spy = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0+1.0j, 1.0+1.0j, 1.0-1.0j, 1.0-1.0j],
+    system = System(mu_orbital=mu_orbital, orbital_indicator=orbital_indicator,F_sc_initial_orbital=F_sc_initial_orbital)
 
-    mu_s = -3.5,
-    mu_d = -0.5,
-    mu_pxpy = -1.5,
-    """
-    s = System(mu_orbital=mu_orbital, orbital_indicator=orbital_indicator,
-               F_sc_initial_orbital=F_sc_initial_orbital)
-    tol = 1e-4
-    F_matrix = np.asarray(solve_system(s, num_iter, tol))
+    F_matrix = np.asarray(solve_system(system, 3, tol))
+    return system, F_matrix
 
 
-    fig = plt.figure(figsize=(20, 7))
-    ax = fig.subplots(ncols=3, nrows=(F_matrix.shape[-1] + 2) // 3, sharex=True, sharey=False).flatten()
-    for i in range(F_matrix.shape[-1]):
-        ys = F_matrix[:, i]
-        # ys[np.abs(ys)< tol] = 0.0 + 0.0j
-        plot_complex_function(y=ys, ax=ax[i], labels=['Real part', 'Imaginary part'])
-        ax[i].grid()
-        ax[i].legend()
-        ax[i].set_title(label_F_matrix[i])
-    fig.subplots_adjust(wspace=0.0)
-
-    fig = plt.figure(figsize=(20, 6))
-    fig.subplots_adjust(wspace=0.0)
-    s.plot_components_of_hamiltonian(fig)
 
 
 #if __name__ == "__main__":

@@ -8,13 +8,50 @@ This script contains all extra function solve_hamiltonian.py needs
 #   Define index for the pairing amplitude functions: d: down, u: up
 #   Expecting x_pluss to be equal to x_minus, so I am only considering x_pluss
 #   Expecting ud_x to be equal to du_x, so I am only considering ud_x. Similar for y.
+"""
 idx_F_i = 0
 idx_F_ud_x_pluss = 1
+idx_F_dd_x_pluss = 2
+idx_F_uu_x_pluss = 3
+idx_F_up_y_pluss = 4
+idx_F_dd_y_pluss = 5
+idx_F_uu_y_pluss = 6
+idx_F_ud_y_minus = 7
+idx_F_du_y_minus = 8
+idx_F_dd_y_minus = 9
+idx_F_uu_y_minus = 10
+idx_F_ij_s = 11
+
+num_idx_F_i = 12
+"""
+idx_F_i = 0
+idx_F_ij_x_pluss = 1
+idx_F_ji_x_pluss = 2
+idx_F_ij_x_minus = 3
+idx_F_ji_x_minus = 4
+idx_F_ij_y_pluss = 5
+idx_F_ji_y_pluss = 6
+idx_F_ij_y_minus = 7
+idx_F_ji_y_minus = 8
+idx_F_ij_s = 9
+
+num_idx_F_i = 10
+
+#   Label name for each component in F-matrix
 label_F_matrix = [
     r'$F_{ii}$',
-    r'$F_{ud}^{x+}$',
-    ]
-num_idx_F_i = 2
+    r'$F_{ij}^{x+}$',
+    r'$F_{ji}^{x+}$',
+    r'$F_{ij}^{x-}$',
+    r'$F_{ji}^{x-}$',
+    r'$F_{ij}^{y+}$',
+    r'$F_{ji}^{y+}$',
+    r'$F_{ij}^{y-}$',
+    r'$F_{ji}^{y-}$',
+    r'$F_{s_i}$'
+]
+
+"""
 def calculate_F_matrix(eigenvectors, eigenvalues, beta, L_y, F_matrix, k_array, orbital_indicator):
 
     #   Initialize the old F_matrix to 0+0j, so that we can start to add new values
@@ -48,7 +85,7 @@ def calculate_F_matrix(eigenvectors, eigenvalues, beta, L_y, F_matrix, k_array, 
             # UP DOWN SAME POINT
             F_matrix[idx_endpoint, idx_F_i] += coeff * (eigenvectors[4*idx_endpoint, n, k] * conj(eigenvectors[(4*idx_endpoint) + 1, n, k]))
     return F_matrix
-
+"""
 """
 idx_F_i = 0
 idx_F_ud_x_pluss = 1
@@ -171,6 +208,7 @@ def calculate_F_matrix(eigenvectors, eigenvalues, beta, L_y, F_matrix, k_array, 
 
 """
 
+"""
 # -------------------   Define Hamiltionian -----------------------#
 
 def epsilon_ijk(i, j, k, spin, mu, t_array, hz_array):  #spin can take two values: 1 = up, 2 = down
@@ -239,3 +277,4 @@ def create_hamiltonian(s, k_initial):
 
     return np.asarray(create_hamiltonian_from_variables(L_x, k_array, mu, F_matrix, U_array, t_array, hz_array))
 
+"""
