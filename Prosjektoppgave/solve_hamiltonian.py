@@ -11,7 +11,7 @@ def solve_system(system, num_iter = 15, tol=1e-4):
 
     #   Start by checking that input system is valid.
     system.test_valid()
-    print("Hermitioan : ", np.allclose(np.zeros_like(system.hamiltonian), system.hamiltonian - system.hamiltonian.T.conjugate(), rtol=0.000, atol=1e-4))
+    print("Hermition: ", np.allclose(np.zeros_like(system.hamiltonian), system.hamiltonian - system.hamiltonian.T.conjugate(), rtol=0.000, atol=1e-4))
 
     tmp = 0
     delta_diff = 1

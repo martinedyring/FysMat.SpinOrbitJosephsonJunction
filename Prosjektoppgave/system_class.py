@@ -15,8 +15,8 @@ class System:
                  L_y = 100,
                  L_sc = 50,
                  L_nc = 50,
-                 #L_start_soc = 50,
                  L_soc = 2,
+
                  t_sc = 1.0,
                  t_0 = 1.0,
                  t_nc = 1.0,
@@ -25,9 +25,9 @@ class System:
                  u_nc = 0.0,
                  u_soc = 0.0,
 
-                 mu_orbital = -3.5, #s
-                 #mu_d = -0.5,
-                 #mu_pxpy = -1.5,
+                 mu_s = -3.5, #s
+                 mu_d = -0.5,
+                 mu_pxpy = -1.5,
 
                  h_sc = 0.0,
                  h_nc = 0.0,
@@ -38,16 +38,16 @@ class System:
 
                  beta=np.inf,
 
-                 F_sc_initial_orbital = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], #s-orbital
-                 #F_sc_initial_d = [0.0, 0.0, 1.0, 1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0],
-                 #F_sc_initial_px = [0.0, 0.0, 1.0, 1.0, -1.0, -1.0, 0.0, 0.0, 0.0, 0.0],
-                 #F_sc_initial_py = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0],
-                 #F_sc_initial_pxpy = [0.0, 0.0, 1.0, 1.0, -1.0, -1.0, 1.0j, 1.0j, -1.0j, -1.0j],
-                 #F_sc_initial_spy = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0+1.0j, 1.0+1.0j, 1.0-1.0j, 1.0-1.0j],
+                 F_sc_initial_s = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], #s-orbital
+                 F_sc_initial_d = [0.0, 0.0, 1.0, 1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0],
+                 F_sc_initial_px = [0.0, 0.0, 1.0, 1.0, -1.0, -1.0, 0.0, 0.0, 0.0, 0.0],
+                 F_sc_initial_py = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0],
+                 F_sc_initial_pxpy = [0.0, 0.0, 1.0, 1.0, -1.0, -1.0, 1.0j, 1.0j, -1.0j, -1.0j],
+                 F_sc_initial_spy = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0+1.0j, 1.0+1.0j, 1.0-1.0j, 1.0-1.0j],
 
                  F_nc_initial = 0.0,
 
-                 orbital_indicator = "s"
+                 orbital_indicator = "px"
                  ):
 
         self.L_y = L_y
@@ -55,8 +55,6 @@ class System:
         self.L_soc = L_soc
         self.L_nc = L_nc
         self.L_x = self.L_nc + self.L_soc + self.L_sc
-        #self.L_start_soc = L_start_soc
-        self.L_soc = L_soc
 
         self.t_sc = t_sc
         self.t_0 = t_0
@@ -66,7 +64,7 @@ class System:
         self.u_soc = u_soc
         self.u_nc = u_nc
 
-        self.mu = mu_orbital
+        self.mu = mu_pxpy
 
         self.h_sc = h_sc
         self.h_nc = h_nc
@@ -77,7 +75,7 @@ class System:
 
         self.beta = beta
 
-        self.F_sc_initial_orbital = F_sc_initial_orbital
+        self.F_sc_initial_orbital = F_sc_initial_px
         self.F_nc_initial = F_nc_initial
 
         self.orbital_indicator = str(orbital_indicator)
@@ -132,7 +130,7 @@ class System:
                 #self.t_array[i] = t_sc
 
                 self.hz_array[i] = h_sc
-                self.F_matrix[i, :] = F_sc_initial_orbital           # Set all F values to inital condition for SC material (+1 s-orbital)
+                self.F_matrix[i, :] = F_sc_initial_s          # Set all F values to inital condition for SC material (+1 s-orbital)
                 self.U_array[i] = u_sc
         """
         stp = L_start_soc + L_soc
@@ -156,7 +154,7 @@ class System:
         t_0 = 0.0
         t_1 = 0.0
 
-
+        #print(i, j)
         if i == j:
             h = self.hz_array[i]
             #t_1 = self.t_array[i]
@@ -257,21 +255,25 @@ class System:
                 self.hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4] = self.set_epsilon(self.hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4], i, j, k)
                 self.hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4] = self.set_delta(self.hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4], i, j)
                 self.hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4] = self.set_rashba(self.hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4], i, j, k)
+
     def update_hamiltonian(self):
+        #self.calc_new_mu()
         for i in range(self.L_x):
             for j in range(self.L_x):
                 self.hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4] = self.set_delta(self.hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4], i, j)
 
     def calculate_F_matrix(self):
-
         #   Initialize the old F_matrix to 0+0j, so that we can start to add new values
-        self.F_matrix[:, :] = 0.0 + 0.0j
+        for a in range(num_idx_F_i):
+            for b in range(self.F_matrix.shape[0]):
+                self.F_matrix[b, a] = 0.0 + 0.0j
+        #self.F_matrix[:, :] = 0.0 + 0.0j
 
         #print("dim F: ", self.F_matrix.shape)
         #print("dim eigenvalues: ", self.eigenvalues.shape)
         #print("dim eigenvectors: ", self.eigenvectors.shape)
 
-        idx_endpoint = self.F_matrix.shape[0]-1
+
 
         # Calculation loops
         #for k in range(self.eigenvalues.shape[1]):
@@ -288,48 +290,48 @@ class System:
         # Not done, fix so that all k values are summarized under each i value
         for i in range(self.F_matrix.shape[0]-1):
             # F_ii - same point
-            self.F_matrix[i, idx_F_i] += np.sum(1 / (2* self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4 * i, :, 0] * conj(self.eigenvectors[(4 * i) + 3, :, 0]) - s_k * self.eigenvectors[(4 * i) + 1, :, 0] * conj(self.eigenvectors[(4 * i) + 2, :, 0])))
-            self.F_matrix[i, idx_F_i] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[(4 * i) + 3, :, -1]) - s_k * self.eigenvectors[(4 * i) + 1, :,-1] * conj(self.eigenvectors[(4 * i) + 2, :, -1])))
+            self.F_matrix[i, idx_F_i] += np.sum(1 / (2* self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4 * i, :, 0] * conj(self.eigenvectors[(4 * i) + 3, :, 0])))# - s_k * self.eigenvectors[(4 * i) + 1, :, 0] * conj(self.eigenvectors[(4 * i) + 2, :, 0])))
+            self.F_matrix[i, idx_F_i] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[(4 * i) + 3, :, -1])))# - s_k * self.eigenvectors[(4 * i) + 1, :,-1] * conj(self.eigenvectors[(4 * i) + 2, :, -1])))
             self.F_matrix[i, idx_F_i] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]) * (self.eigenvectors[4 * i, :, 0:-2] * conj(self.eigenvectors[(4 * i) + 3, :, 0:-2]) - s_k * self.eigenvectors[(4 * i) + 1, :,0:-2] * conj(self.eigenvectors[(4 * i) + 2, :, 0:-2])))
 
             # F ij X+ S, i_x, j_x
-            self.F_matrix[i, idx_F_ij_x_pluss] += np.sum(1 / (2* self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4*i, :, 0] * conj(self.eigenvectors[(4*(i+1)) + 3, :, 0])  -  s_k * self.eigenvectors[(4*(i+1)) + 1, :, 0] * conj(self.eigenvectors[(4*i) + 2, :, 0])))
-            self.F_matrix[i, idx_F_ij_x_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[(4*(i+1)) + 3, :, -1]) - s_k * self.eigenvectors[(4*(i+1)) + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1])))
+            self.F_matrix[i, idx_F_ij_x_pluss] += np.sum(1 / (2* self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4*i, :, 0] * conj(self.eigenvectors[(4*(i+1)) + 3, :, 0])))#  -  s_k * self.eigenvectors[(4*(i+1)) + 1, :, 0] * conj(self.eigenvectors[(4*i) + 2, :, 0])))
+            self.F_matrix[i, idx_F_ij_x_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[(4*(i+1)) + 3, :, -1])))# - s_k * self.eigenvectors[(4*(i+1)) + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1])))
             self.F_matrix[i, idx_F_ij_x_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]) * (self.eigenvectors[4 * i, :, 0:-2] * conj(self.eigenvectors[(4*(i+1)) + 3, :, 0:-2]) - s_k * self.eigenvectors[(4*(i+1)) + 1, :, 0:-2] * conj(self.eigenvectors[(4 * i) + 2, :, 0:-2])))
 
             # F ji X+ S, i_x, j_x
-            self.F_matrix[i, idx_F_ji_x_pluss] += np.sum(1 / (2* self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4*(i+1), :, 0] * conj(self.eigenvectors[4 *i + 3, :, 0]) - s_k * self.eigenvectors[4*i + 1, :, 0] * conj(self.eigenvectors[4*(i+1) + 2, :, 0])))
-            self.F_matrix[i, idx_F_ji_x_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * (i + 1), :, -1] * conj(self.eigenvectors[4 * i + 3, :, -1]) - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[4 * (i + 1) + 2, :, -1])))
+            self.F_matrix[i, idx_F_ji_x_pluss] += np.sum(1 / (2* self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4*(i+1), :, 0] * conj(self.eigenvectors[4 *i + 3, :, 0])))# - s_k * self.eigenvectors[4*i + 1, :, 0] * conj(self.eigenvectors[4*(i+1) + 2, :, 0])))
+            self.F_matrix[i, idx_F_ji_x_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * (i + 1), :, -1] * conj(self.eigenvectors[4 * i + 3, :, -1])))# - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[4 * (i + 1) + 2, :, -1])))
             self.F_matrix[i, idx_F_ji_x_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]) * (self.eigenvectors[4 * (i + 1), :, 0:-2] * conj(self.eigenvectors[4 * i + 3, :, 0:-2]) - s_k * self.eigenvectors[4 * i + 1, :, 0:-2] * conj(self.eigenvectors[4 * (i + 1) + 2, :, 0:-2])))
 
             # F ij X- S, i_x, j_x
-            self.F_matrix[i, idx_F_ij_x_minus] += np.sum(1 / (2* self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4*i, :, 0] * conj(self.eigenvectors[4*(i+1) + 3, :, 0])  -  s_k * self.eigenvectors[4*(i+1) + 1, :, 0] * conj(self.eigenvectors[(4*i) + 2, :, 0])))
-            self.F_matrix[i, idx_F_ij_x_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[4 * (i + 1) + 3, :, -1]) - s_k * self.eigenvectors[4 * (i + 1) + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1])))
+            self.F_matrix[i, idx_F_ij_x_minus] += np.sum(1 / (2* self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4*i, :, 0] * conj(self.eigenvectors[4*(i+1) + 3, :, 0])))#  -  s_k * self.eigenvectors[4*(i+1) + 1, :, 0] * conj(self.eigenvectors[(4*i) + 2, :, 0])))
+            self.F_matrix[i, idx_F_ij_x_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[4 * (i + 1) + 3, :, -1])))# - s_k * self.eigenvectors[4 * (i + 1) + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1])))
             self.F_matrix[i, idx_F_ij_x_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]) * (self.eigenvectors[4 * i, :, 0:-2] * conj(self.eigenvectors[4 * (i + 1) + 3, :, 0:-2]) - s_k * self.eigenvectors[4 * (i + 1) + 1, :, 0:-2] * conj(self.eigenvectors[(4 * i) + 2, :, 0:-2])))
 
             # F ji X- S, i_x, j_x
-            self.F_matrix[i, idx_F_ji_x_minus] += np.sum(1 / (2* self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4 * (i + 1), :, 0] * conj(self.eigenvectors[4 * i + 3, :, 0]) - s_k * self.eigenvectors[4 * i + 1, :, 0] * conj(self.eigenvectors[(4 * (i + 1)) + 2, :, 0])))
-            self.F_matrix[i, idx_F_ji_x_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * (i + 1), :, -1] * conj(self.eigenvectors[4 * i + 3, :, -1]) - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[(4 * (i + 1)) + 2, :, -1])))
+            self.F_matrix[i, idx_F_ji_x_minus] += np.sum(1 / (2* self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4 * (i + 1), :, 0] * conj(self.eigenvectors[4 * i + 3, :, 0])))# - s_k * self.eigenvectors[4 * i + 1, :, 0] * conj(self.eigenvectors[(4 * (i + 1)) + 2, :, 0])))
+            self.F_matrix[i, idx_F_ji_x_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * (i + 1), :, -1] * conj(self.eigenvectors[4 * i + 3, :, -1])))# - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[(4 * (i + 1)) + 2, :, -1])))
             self.F_matrix[i, idx_F_ji_x_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]) * (self.eigenvectors[4 * (i + 1), :, 0:-2] * conj(self.eigenvectors[4 * i + 3, :, 0:-2]) - s_k * self.eigenvectors[4 * i + 1, :, 0:-2] * conj(self.eigenvectors[(4 * (i + 1)) + 2, :, 0:-2])))
 
             # F ij Y+ S, i_y, j_y = i_y,i_y
-            self.F_matrix[i, idx_F_ij_y_pluss] += np.sum(1 / (2* self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4*i, :, 0] * conj(self.eigenvectors[4*i + 3, :, 0]) * np.exp(-1.0j*self.k_array[0])  -  s_k * self.eigenvectors[4*i + 1, :, 0] * conj(self.eigenvectors[(4*i) + 2, :, 0]) * np.exp(1.0j*self.k_array[0])))
-            self.F_matrix[i, idx_F_ij_y_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[4 * i + 3, :, -1]) * np.exp(-1.0j * self.k_array[-1]) - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1]) * np.exp(1.0j * self.k_array[-1])))
+            self.F_matrix[i, idx_F_ij_y_pluss] += np.sum(1 / (2* self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4*i, :, 0] * conj(self.eigenvectors[4*i + 3, :, 0]) * np.exp(-1.0j*self.k_array[0])))#  -  s_k * self.eigenvectors[4*i + 1, :, 0] * conj(self.eigenvectors[(4*i) + 2, :, 0]) * np.exp(1.0j*self.k_array[0])))
+            self.F_matrix[i, idx_F_ij_y_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[4 * i + 3, :, -1]) * np.exp(-1.0j * self.k_array[-1])))# - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1]) * np.exp(1.0j * self.k_array[-1])))
             self.F_matrix[i, idx_F_ij_y_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]) * (self.eigenvectors[4 * i, :, 0:-2] * conj(self.eigenvectors[4 * i + 3, :, 0:-2]) * np.exp(-1.0j * self.k_array[0:-2]) - s_k * self.eigenvectors[4 * i + 1, :, 0:-2] * conj(self.eigenvectors[(4 * i) + 2, :, 0:-2]) * np.exp(1.0j * self.k_array[0:-2])))
 
             # F ji Y+ S, i_y, j_y = i_y,i_y
-            self.F_matrix[i, idx_F_ji_y_pluss] += np.sum(1 / (2* self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4 * i, :, 0] * conj(self.eigenvectors[4 * i + 3, :, 0]) * np.exp(-1.0j * self.k_array[0]) - s_k *self.eigenvectors[4 * i + 1, :, 0] * conj(self.eigenvectors[(4 * i) + 2, :, 0]) * np.exp(1.0j * self.k_array[0])))
-            self.F_matrix[i, idx_F_ji_y_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[4 * i + 3, :, -1]) * np.exp(-1.0j * self.k_array[-1]) - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1]) * np.exp(1.0j * self.k_array[-1])))
+            self.F_matrix[i, idx_F_ji_y_pluss] += np.sum(1 / (2* self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4 * i, :, 0] * conj(self.eigenvectors[4 * i + 3, :, 0]) * np.exp(-1.0j * self.k_array[0])))# - s_k *self.eigenvectors[4 * i + 1, :, 0] * conj(self.eigenvectors[(4 * i) + 2, :, 0]) * np.exp(1.0j * self.k_array[0])))
+            self.F_matrix[i, idx_F_ji_y_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[4 * i + 3, :, -1]) * np.exp(-1.0j * self.k_array[-1])))# - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1]) * np.exp(1.0j * self.k_array[-1])))
             self.F_matrix[i, idx_F_ji_y_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]) * (self.eigenvectors[4 * i, :, 0:-2] * conj(self.eigenvectors[4 * i + 3, :, 0:-2]) * np.exp(-1.0j * self.k_array[0:-2]) - s_k * self.eigenvectors[4 * i + 1, :, 0:-2] * conj(self.eigenvectors[(4 * i) + 2, :, 0:-2]) * np.exp(1.0j * self.k_array[0:-2])))
 
             # F ij Y- S, i_y, j_y = i_y,i_y
-            self.F_matrix[i, idx_F_ij_y_minus] += np.sum(1 / (2* self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4*i, :, 0] * conj(self.eigenvectors[4*i + 3, :, 0]) * np.exp(+1.0j*self.k_array[0])  -  s_k * self.eigenvectors[4*i + 1, :, 0] * conj(self.eigenvectors[(4*i) + 2, :, 0]) * np.exp(-1.0j*self.k_array[0])))
-            self.F_matrix[i, idx_F_ij_y_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[4 * i + 3, :, -1]) * np.exp(+1.0j * self.k_array[-1]) - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1]) * np.exp(-1.0j * self.k_array[-1])))
+            self.F_matrix[i, idx_F_ij_y_minus] += np.sum(1 / (2* self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4*i, :, 0] * conj(self.eigenvectors[4*i + 3, :, 0]) * np.exp(+1.0j*self.k_array[0])))#  -  s_k * self.eigenvectors[4*i + 1, :, 0] * conj(self.eigenvectors[(4*i) + 2, :, 0]) * np.exp(-1.0j*self.k_array[0])))
+            self.F_matrix[i, idx_F_ij_y_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[4 * i + 3, :, -1]) * np.exp(+1.0j * self.k_array[-1])))# - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1]) * np.exp(-1.0j * self.k_array[-1])))
             self.F_matrix[i, idx_F_ij_y_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]) * (self.eigenvectors[4 * i, :, 0:-2] * conj(self.eigenvectors[4 * i + 3, :, 0:-2]) * np.exp(+1.0j * self.k_array[0:-2]) - s_k * self.eigenvectors[4 * i + 1, :, 0:-2] * conj(self.eigenvectors[(4 * i) + 2, :, 0:-2]) * np.exp(-1.0j * self.k_array[0:-2])))
 
             # F ji Y- S, i_y, j_y = i_y,i_y
-            self.F_matrix[i, idx_F_ji_y_minus] += np.sum(1 / (2* self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4 * i, :, 0] * conj(self.eigenvectors[4 * i + 3, :, 0]) * np.exp(+1.0j * self.k_array[0]) - s_k *self.eigenvectors[4 * i + 1, :, 0] * conj(self.eigenvectors[(4 * i) + 2, :, 0]) * np.exp(-1.0j * self.k_array[0])))
-            self.F_matrix[i, idx_F_ji_y_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[4 * i + 3, :, -1]) * np.exp(+1.0j * self.k_array[-1]) - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1]) * np.exp(-1.0j * self.k_array[-1])))
+            self.F_matrix[i, idx_F_ji_y_minus] += np.sum(1 / (2* self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4 * i, :, 0] * conj(self.eigenvectors[4 * i + 3, :, 0]) * np.exp(+1.0j * self.k_array[0])))# - s_k *self.eigenvectors[4 * i + 1, :, 0] * conj(self.eigenvectors[(4 * i) + 2, :, 0]) * np.exp(-1.0j * self.k_array[0])))
+            self.F_matrix[i, idx_F_ji_y_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[4 * i + 3, :, -1]) * np.exp(+1.0j * self.k_array[-1])))# - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1]) * np.exp(-1.0j * self.k_array[-1])))
             self.F_matrix[i, idx_F_ji_y_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]) * (self.eigenvectors[4 * i, :, 0:-2] * conj(self.eigenvectors[4 * i + 3, :, 0:-2]) * np.exp(+1.0j * self.k_array[0:-2]) - s_k * self.eigenvectors[4 * i + 1, :, 0:-2] * conj(self.eigenvectors[(4 * i) + 2, :, 0:-2]) * np.exp(-1.0j * self.k_array[0:-2])))
 
             #print("obital_indicator = ", self.orbital_indicator)
@@ -349,44 +351,45 @@ class System:
 
         #Fix this part
         #   At the endpoint we can not calculate the correlation in x-direction - k = 0
-        i = -1
+        idx_endpoint = self.F_matrix.shape[0] - 1
+        #idx_endpoint =
         # F_ii - same point
-        self.F_matrix[i, idx_F_i] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0]) * (self.eigenvectors[4 * i, :, 0] * conj(self.eigenvectors[(4 * i) + 3, :, 0]) - s_k * self.eigenvectors[(4 * i) + 1, :, 0] * conj(self.eigenvectors[(4 * i) + 2, :, 0])))
-        self.F_matrix[i, idx_F_i] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[(4 * i) + 3, :, -1]) - s_k * self.eigenvectors[(4 * i) + 1, :,-1] * conj(self.eigenvectors[(4 * i) + 2, :, -1])))
-        self.F_matrix[i, idx_F_i] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]) * (self.eigenvectors[4 * i, :, 0:-2] * conj(self.eigenvectors[(4 * i) + 3, :, 0:-2]) - s_k * self.eigenvectors[(4 * i) + 1, :, 0:-2] * conj(self.eigenvectors[(4 * i) + 2, :, 0:-2])))
+        self.F_matrix[idx_endpoint, idx_F_i] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0]) * (self.eigenvectors[4 * idx_endpoint, :, 0] * conj(self.eigenvectors[(4 * idx_endpoint) + 3, :, 0])))# - s_k * self.eigenvectors[(4 * i) + 1, :, 0] * conj(self.eigenvectors[(4 * i) + 2, :, 0])))
+        self.F_matrix[idx_endpoint, idx_F_i] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * idx_endpoint, :, -1] * conj(self.eigenvectors[(4 * idx_endpoint) + 3, :, -1])))# - s_k * self.eigenvectors[(4 * i) + 1, :,-1] * conj(self.eigenvectors[(4 * i) + 2, :, -1])))
+        self.F_matrix[idx_endpoint, idx_F_i] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]) * (self.eigenvectors[4 * idx_endpoint, :, 0:-2] * conj(self.eigenvectors[(4 * idx_endpoint) + 3, :, 0:-2]) - s_k * self.eigenvectors[(4 * i) + 1, :, 0:-2] * conj(self.eigenvectors[(4 * idx_endpoint) + 2, :, 0:-2])))
 
         # F ij Y+ S, i_y, j_y = i_y,i_y
-        self.F_matrix[i, idx_F_ij_y_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0]) * (self.eigenvectors[4 * i, :, 0] * conj(self.eigenvectors[4 * i + 3, :, 0]) * np.exp(-1.0j * self.k_array[0]) - s_k * self.eigenvectors[4 * i + 1, :, 0] * conj(self.eigenvectors[(4 * i) + 2, :, 0]) * np.exp(1.0j * self.k_array[0])))
-        self.F_matrix[i, idx_F_ij_y_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[4 * i + 3, :, -1]) * np.exp(-1.0j * self.k_array[-1]) - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1]) * np.exp(1.0j * self.k_array[-1])))
-        self.F_matrix[i, idx_F_ij_y_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]) * (self.eigenvectors[4 * i, :, 0:-2] * conj(self.eigenvectors[4 * i + 3, :, 0:-2]) * np.exp(-1.0j * self.k_array[0:-2]) - s_k * self.eigenvectors[4 * i + 1, :, 0:-2] * conj(self.eigenvectors[(4 * i) + 2, :, 0:-2]) * np.exp(1.0j * self.k_array[0:-2])))
+        self.F_matrix[idx_endpoint, idx_F_ij_y_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0]) * (self.eigenvectors[4 * idx_endpoint, :, 0] * conj(self.eigenvectors[4 * idx_endpoint + 3, :, 0]) * np.exp(-1.0j * self.k_array[0])))# - s_k * self.eigenvectors[4 * i + 1, :, 0] * conj(self.eigenvectors[(4 * i) + 2, :, 0]) * np.exp(1.0j * self.k_array[0])))
+        self.F_matrix[idx_endpoint, idx_F_ij_y_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * idx_endpoint, :, -1] * conj(self.eigenvectors[4 * idx_endpoint + 3, :, -1]) * np.exp(-1.0j * self.k_array[-1])))# - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1]) * np.exp(1.0j * self.k_array[-1])))
+        self.F_matrix[idx_endpoint, idx_F_ij_y_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]) * (self.eigenvectors[4 * idx_endpoint, :, 0:-2] * conj(self.eigenvectors[4 * idx_endpoint + 3, :, 0:-2]) * np.exp(-1.0j * self.k_array[0:-2]) - s_k * self.eigenvectors[4 * idx_endpoint + 1, :, 0:-2] * conj(self.eigenvectors[(4 * idx_endpoint) + 2, :, 0:-2]) * np.exp(1.0j * self.k_array[0:-2])))
 
         # F ji Y+ S, i_y, j_y = i_y,i_y
-        self.F_matrix[i, idx_F_ji_y_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0]) * (self.eigenvectors[4 * i, :, 0] * conj(self.eigenvectors[4 * i + 3, :, 0]) * np.exp(-1.0j * self.k_array[0]) - s_k * self.eigenvectors[4 * i + 1, :, 0] * conj(self.eigenvectors[(4 * i) + 2, :, 0]) * np.exp(1.0j * self.k_array[0])))
-        self.F_matrix[i, idx_F_ji_y_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[4 * i + 3, :, -1]) * np.exp(-1.0j * self.k_array[-1]) - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1]) * np.exp(1.0j * self.k_array[-1])))
-        self.F_matrix[i, idx_F_ji_y_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]) * (self.eigenvectors[4 * i, :, 0:-2] * conj(self.eigenvectors[4 * i + 3, :, 0:-2]) * np.exp(-1.0j * self.k_array[0:-2]) - s_k * self.eigenvectors[4 * i + 1, :, 0:-2] * conj(self.eigenvectors[(4 * i) + 2, :, 0:-2]) * np.exp(1.0j * self.k_array[0:-2])))
+        self.F_matrix[idx_endpoint, idx_F_ji_y_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0]) * (self.eigenvectors[4 * idx_endpoint, :, 0] * conj(self.eigenvectors[4 * idx_endpoint + 3, :, 0]) * np.exp(-1.0j * self.k_array[0])))# - s_k * self.eigenvectors[4 * i + 1, :, 0] * conj(self.eigenvectors[(4 * i) + 2, :, 0]) * np.exp(1.0j * self.k_array[0])))
+        self.F_matrix[idx_endpoint, idx_F_ji_y_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * idx_endpoint, :, -1] * conj(self.eigenvectors[4 * idx_endpoint + 3, :, -1]) * np.exp(-1.0j * self.k_array[-1])))# - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1]) * np.exp(1.0j * self.k_array[-1])))
+        self.F_matrix[idx_endpoint, idx_F_ji_y_pluss] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]) * (self.eigenvectors[4 * idx_endpoint, :, 0:-2] * conj(self.eigenvectors[4 * idx_endpoint + 3, :, 0:-2]) * np.exp(-1.0j * self.k_array[0:-2]) - s_k * self.eigenvectors[4 * idx_endpoint + 1, :, 0:-2] * conj(self.eigenvectors[(4 * idx_endpoint) + 2, :, 0:-2]) * np.exp(1.0j * self.k_array[0:-2])))
 
         # F ij Y- S, i_y, j_y = i_y,i_y
-        self.F_matrix[i, idx_F_ij_y_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0]) * (self.eigenvectors[4 * i, :, 0] * conj(self.eigenvectors[4 * i + 3, :, 0]) * np.exp(+1.0j * self.k_array[0]) - s_k * self.eigenvectors[4 * i + 1, :, 0] * conj(self.eigenvectors[(4 * i) + 2, :, 0]) * np.exp(-1.0j * self.k_array[0])))
-        self.F_matrix[i, idx_F_ij_y_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[4 * i + 3, :, -1]) * np.exp(+1.0j * self.k_array[-1]) - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1]) * np.exp(-1.0j * self.k_array[-1])))
-        self.F_matrix[i, idx_F_ij_y_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]) * (self.eigenvectors[4 * i, :, 0:-2] * conj(self.eigenvectors[4 * i + 3, :, 0:-2]) * np.exp(+1.0j * self.k_array[0:-2]) - s_k * self.eigenvectors[4 * i + 1, :, 0:-2] * conj(self.eigenvectors[(4 * i) + 2, :, 0:-2]) * np.exp(-1.0j * self.k_array[0:-2])))
+        self.F_matrix[idx_endpoint, idx_F_ij_y_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0]) * (self.eigenvectors[4 * idx_endpoint, :, 0] * conj(self.eigenvectors[4 * idx_endpoint + 3, :, 0]) * np.exp(+1.0j * self.k_array[0])))# - s_k * self.eigenvectors[4 * i + 1, :, 0] * conj(self.eigenvectors[(4 * i) + 2, :, 0]) * np.exp(-1.0j * self.k_array[0])))
+        self.F_matrix[idx_endpoint, idx_F_ij_y_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * idx_endpoint, :, -1] * conj(self.eigenvectors[4 * idx_endpoint + 3, :, -1]) * np.exp(+1.0j * self.k_array[-1])))# - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1]) * np.exp(-1.0j * self.k_array[-1])))
+        self.F_matrix[idx_endpoint, idx_F_ij_y_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]) * (self.eigenvectors[4 * idx_endpoint, :, 0:-2] * conj(self.eigenvectors[4 * idx_endpoint + 3, :, 0:-2]) * np.exp(+1.0j * self.k_array[0:-2]) - s_k * self.eigenvectors[4 * idx_endpoint + 1, :, 0:-2] * conj(self.eigenvectors[(4 * idx_endpoint) + 2, :, 0:-2]) * np.exp(-1.0j * self.k_array[0:-2])))
 
         # F ji Y- S, i_y, j_y = i_y,i_y
-        self.F_matrix[i, idx_F_ji_y_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0]) * (self.eigenvectors[4 * i, :, 0] * conj(self.eigenvectors[4 * i + 3, :, 0]) * np.exp(+1.0j * self.k_array[0]) - s_k * self.eigenvectors[4 * i + 1, :, 0] * conj(self.eigenvectors[(4 * i) + 2, :, 0]) * np.exp(-1.0j * self.k_array[0])))
-        self.F_matrix[i, idx_F_ji_y_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[4 * i + 3, :, -1]) * np.exp(+1.0j * self.k_array[-1]) - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1]) * np.exp(-1.0j * self.k_array[-1])))
-        self.F_matrix[i, idx_F_ji_y_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]) * (self.eigenvectors[4 * i, :, 0:-2] * conj(self.eigenvectors[4 * i + 3, :, 0:-2]) * np.exp(+1.0j * self.k_array[0:-2]) - s_k * self.eigenvectors[4 * i + 1, :, 0:-2] * conj(self.eigenvectors[(4 * i) + 2, :, 0:-2]) * np.exp(-1.0j * self.k_array[0:-2])))
+        self.F_matrix[idx_endpoint, idx_F_ji_y_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0]) * (self.eigenvectors[4 * idx_endpoint, :, 0] * conj(self.eigenvectors[4 * idx_endpoint + 3, :, 0]) * np.exp(+1.0j * self.k_array[0])))# - s_k * self.eigenvectors[4 * i + 1, :, 0] * conj(self.eigenvectors[(4 * i) + 2, :, 0]) * np.exp(-1.0j * self.k_array[0])))
+        self.F_matrix[idx_endpoint, idx_F_ji_y_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * idx_endpoint, :, -1] * conj(self.eigenvectors[4 * idx_endpoint + 3, :, -1]) * np.exp(+1.0j * self.k_array[-1])))# - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1]) * np.exp(-1.0j * self.k_array[-1])))
+        self.F_matrix[idx_endpoint, idx_F_ji_y_minus] += np.sum(1 / (2 * self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]) * (self.eigenvectors[4 * idx_endpoint, :, 0:-2] * conj(self.eigenvectors[4 * idx_endpoint + 3, :, 0:-2]) * np.exp(+1.0j * self.k_array[0:-2]) - s_k * self.eigenvectors[4 * idx_endpoint + 1, :, 0:-2] * conj(self.eigenvectors[(4 * idx_endpoint) + 2, :, 0:-2]) * np.exp(-1.0j * self.k_array[0:-2])))
 
         # orbital_i
         if (self.orbital_indicator == 's'):
-            self.F_matrix[i, idx_F_ij_s] += (1 / 8 * (self.F_matrix[i, idx_F_ij_x_pluss] + self.F_matrix[i, idx_F_ji_x_pluss] + self.F_matrix[i, idx_F_ij_x_minus] + self.F_matrix[i, idx_F_ji_x_minus] + self.F_matrix[i, idx_F_ij_y_pluss] + self.F_matrix[i, idx_F_ji_y_pluss] + self.F_matrix[i, idx_F_ij_y_minus] + self.F_matrix[i, idx_F_ji_y_minus]))
+            self.F_matrix[idx_endpoint, idx_F_ij_s] += (1 / 8 * (self.F_matrix[idx_endpoint, idx_F_ij_x_pluss] + self.F_matrix[idx_endpoint, idx_F_ji_x_pluss] + self.F_matrix[idx_endpoint, idx_F_ij_x_minus] + self.F_matrix[idx_endpoint, idx_F_ji_x_minus] + self.F_matrix[idx_endpoint, idx_F_ij_y_pluss] + self.F_matrix[idx_endpoint, idx_F_ji_y_pluss] + self.F_matrix[idx_endpoint, idx_F_ij_y_minus] + self.F_matrix[idx_endpoint, idx_F_ji_y_minus]))
 
         elif (self.orbital_indicator == 'd'):
-            self.F_matrix[i, idx_F_ij_s] += (1 / 8 * (self.F_matrix[i, idx_F_ij_x_pluss] + self.F_matrix[i, idx_F_ji_x_pluss] + self.F_matrix[i, idx_F_ij_x_minus] + self.F_matrix[i, idx_F_ji_x_minus] - self.F_matrix[i, idx_F_ij_y_pluss] -self.F_matrix[i, idx_F_ji_y_pluss] - self.F_matrix[i, idx_F_ij_y_minus] - self.F_matrix[i, idx_F_ji_y_minus]))
+            self.F_matrix[idx_endpoint, idx_F_ij_s] += (1 / 8 * (self.F_matrix[idx_endpoint, idx_F_ij_x_pluss] + self.F_matrix[idx_endpoint, idx_F_ji_x_pluss] + self.F_matrix[idx_endpoint, idx_F_ij_x_minus] + self.F_matrix[idx_endpoint, idx_F_ji_x_minus] - self.F_matrix[idx_endpoint, idx_F_ij_y_pluss] -self.F_matrix[idx_endpoint, idx_F_ji_y_pluss] - self.F_matrix[idx_endpoint, idx_F_ij_y_minus] - self.F_matrix[idx_endpoint, idx_F_ji_y_minus]))
 
         elif (self.orbital_indicator == 'px'):
-            self.F_matrix[i, idx_F_ij_s] += (1 / 4 * (self.F_matrix[i, idx_F_ij_x_pluss] - self.F_matrix[i, idx_F_ji_x_pluss] - self.F_matrix[i, idx_F_ij_x_minus] + self.F_matrix[i, idx_F_ji_x_minus]))
+            self.F_matrix[idx_endpoint, idx_F_ij_s] += (1 / 4 * (self.F_matrix[idx_endpoint, idx_F_ij_x_pluss] - self.F_matrix[idx_endpoint, idx_F_ji_x_pluss] - self.F_matrix[idx_endpoint, idx_F_ij_x_minus] + self.F_matrix[idx_endpoint, idx_F_ji_x_minus]))
 
         elif (self.orbital_indicator == 'py'):
-            self.F_matrix[i, idx_F_ij_s] += 1 / 4 * (self.F_matrix[i, idx_F_ij_y_pluss] - self.F_matrix[i, idx_F_ji_y_pluss] - self.F_matrix[i, idx_F_ij_y_minus] + self.F_matrix[i, idx_F_ji_y_minus])
+            self.F_matrix[idx_endpoint, idx_F_ij_s] += 1 / 4 * (self.F_matrix[idx_endpoint, idx_F_ij_y_pluss] - self.F_matrix[idx_endpoint, idx_F_ji_y_pluss] - self.F_matrix[idx_endpoint, idx_F_ij_y_minus] + self.F_matrix[idx_endpoint, idx_F_ji_y_minus])
 
     def short_calculate_F_matrix(self):
 
@@ -459,7 +462,7 @@ class System:
                     f = 1 / (1 + np.exp(self.beta * self.eigenvalues[n, k]))
                     num += (pow(abs(self.eigenvectors[4 * i, n, k]), 2) + pow(abs(self.eigenvectors[4 * i + 1, n, k]), 2)) * f
                     num += sk * (pow(abs(self.eigenvectors[4 * i + 2, n, k]), 2) + pow(abs(self.eigenvectors[4 * i + 3, n, k]), 2)) * (1 - f)
-        return num
+        self.mu = num
 
     #   Plot delta, U-term and F for the resulting hamiltonian
     def plot_components_of_hamiltonian(self, fig=None):

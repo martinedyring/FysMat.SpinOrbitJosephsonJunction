@@ -53,6 +53,8 @@ def plot_complex_function(x=None, y=None, ax=None, labels=None, **kwargs):
     ax.plot(np.imag(y), ls=':', c=lr[0].get_color(), label=labels[1], **kwargs)
 
 def plot_density_of_states(es, ldos):
+    print(es.shape)
+    print(ldos.shape)
     #fig = plt.figure(figsize=(18,6))
     plt.plot(es, np.sum(ldos[0:50], axis=0), label='LDOS in NC')
     plt.legend()

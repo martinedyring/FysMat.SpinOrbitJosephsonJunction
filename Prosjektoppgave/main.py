@@ -50,9 +50,9 @@ def pairing_amplitude_all_orbitals():
     fig.subplots_adjust(wspace=0.0)
     system_s.plot_components_of_hamiltonian(fig)
 
-def solve_and_return_system_and_F_matrix(mu_orbital, orbital_indicator,F_sc_initial_orbital, tol=1e-4):
+def solve_and_return_system_and_F_matrix(tol=1e-4):
 
-    system = System(mu_orbital=mu_orbital, orbital_indicator=orbital_indicator,F_sc_initial_orbital=F_sc_initial_orbital)
+    system = System()
 
     F_matrix = np.asarray(solve_system(system, 3, tol))
     return system, F_matrix
