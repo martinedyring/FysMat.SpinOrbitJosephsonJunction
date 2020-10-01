@@ -12,7 +12,7 @@ def solve_system(system, num_iter = 15, tol=1e-3):
     #   Start by checking that input system is valid.
     system.test_valid()
     print("Hermition: ", np.allclose(np.zeros_like(system.hamiltonian), system.hamiltonian - system.hamiltonian.T.conjugate(), rtol=0.000, atol=1e-4))
-    print(system.F_matrix)
+    #print(system.F_matrix)
     tmp = 0
     delta_diff = 1
     delta_store = np.ones((system.L_x, 2), dtype=np.complex128) # 1.column NEW, 2.column OLD

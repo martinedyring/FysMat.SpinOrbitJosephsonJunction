@@ -12,28 +12,28 @@ This script define the class System which contains all necessary information to 
 
 class System:
     def __init__(self,
-                 L_y = 102,
+                 L_y = 100,#102,
                  L_sc = 50,
                  L_nc = 50,
-                 L_soc = 2,
+                 L_soc = 0,#2,
 
-                 t_x = 1.0,
-                 t_y = 1.0,
+                 t_x = 0.5,
+                 t_y = 0.5,
 
-                 t_sc = 1.0,
-                 t_0 = 1.0,
-                 t_nc = 1.0,
+                 t_sc = 0.5,
+                 t_0 = 0.5,
+                 t_nc = 0.5,
 
-                 u_sc = 1.0,#-4.2, # V_ij in superconductor
-                 u_nc = 1.0,#-4.2,
-                 u_soc = 1.0,#-4.2,
+                 u_sc = -4.2, # V_ij in superconductor
+                 u_nc = 0.0,#-4.2,
+                 u_soc = -4.2,
 
                  mu_s = -3.5, #s
                  mu_d = -0.5,
                  mu_pxpy = -1.5,
-                 mu_nc = -3.5,
-                 mu_sc = -3.5,
-                 mu_soc = -3.5,
+                 mu_nc = 0.9,
+                 mu_sc = 0.9,
+                 mu_soc = 0.9,
                  alpha_r = np.array([0.1, 0.0, 0.0], dtype=np.float64),
                  t = 0.5,
                  U = -4.2,
@@ -41,14 +41,14 @@ class System:
                  wd = 0.6,
                  F = 0.3,
 
-                 alpha_R_x = 0.0,
+                 alpha_R_x = 0.0, #0.1
                  alpha_R_y = 0.0,
                  alpha_R_z = 0.0, # 1
 
                  beta = np.inf,
 
                  #F_sc_initial = [0.3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                 F_sc_initial = np.pad(np.array([1.0], dtype=np.complex128),  (0,num_idx_F_i-1), mode='constant', constant_values=0.0),
+                 F_sc_initial = np.pad(np.array([0.3], dtype=np.complex128),  (0,num_idx_F_i-1), mode='constant', constant_values=0.0),
 
                  F_sc_initial_s = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], #s-orbital
                  F_sc_initial_d = [0.0, 0.0, 1.0, 1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0],
@@ -57,8 +57,8 @@ class System:
                  F_sc_initial_pxpy = [0.0, 0.0, 1.0, 1.0, -1.0, -1.0, 1.0j, 1.0j, -1.0j, -1.0j],
                  F_sc_initial_spy = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0+1.0j, 1.0+1.0j, 1.0-1.0j, 1.0-1.0j],
 
-                 F_nc_initial = np.pad(np.array([1.0], dtype=np.complex128),  (0,num_idx_F_i-1), mode='constant', constant_values=0.0),#0.3,
-                 F_soc_initial = np.pad(np.array([1.0], dtype=np.complex128),  (0,num_idx_F_i-1), mode='constant', constant_values=0.0),#0.3,
+                 F_nc_initial = np.pad(np.array([0.0], dtype=np.complex128),  (0,num_idx_F_i-1), mode='constant', constant_values=0.0),#0.3,
+                 F_soc_initial = np.pad(np.array([0.3], dtype=np.complex128),  (0,num_idx_F_i-1), mode='constant', constant_values=0.0),#0.3,
 
                  orbital_indicator = "s"
                  ):
@@ -189,17 +189,17 @@ class System:
         return arr
 
     def delta_gap(self, i):
-        return -self.U_array[i] * self.F_matrix[i, idx_F_i]
+        return self.U_array[i] * self.F_matrix[i, idx_F_i]
 
 
     def set_delta(self, arr, i, j):
         # Comment out +=, and remove the other comp from update_hamil to increase runtime and check if there is any diff. Shouldnt be diff in output.
         if i==j:
-            #print("arr", arr)
-            arr[0][3] += self.delta_gap(i)/2
-            arr[1][2] += -self.delta_gap(i)/2
-            arr[2][1] += -conj(self.delta_gap(i))/2
-            arr[3][0] += conj(self.delta_gap(i))/2
+            #   Skjekk om du må bytte om index
+            arr[0][3] += -self.delta_gap(i)/2
+            arr[1][2] += self.delta_gap(i)/2
+            arr[2][1] += conj(self.delta_gap(i))/2
+            arr[3][0] += -conj(self.delta_gap(i))/2
 
         """"
         def set_delta(self, i, j):
