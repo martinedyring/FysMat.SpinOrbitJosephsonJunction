@@ -10,6 +10,7 @@ from utilities import label_F_matrix
 This is the main function to run all programs
 """
 
+# debye freq ???
 
 def pairing_amplitude_all_orbitals():
     F_sc_initial_s = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],  # s-orbital

@@ -5,34 +5,48 @@ from scipy.linalg import eigh
 from utilities import idx_F_i
 
 #   Main function to solve a system
-def solve_system(system, num_iter = 15, tol=1e-4):
-    for ik in range((system.L_y + 2) // 2):
-        system.set_hamiltonian(ik)
+def solve_system(system, num_iter = 15, tol=1e-3):
+    #for ik in range((system.L_y + 2) // 2):
+    #    system.set_hamiltonian(system.k_array[ik])
 
     #   Start by checking that input system is valid.
     system.test_valid()
     print("Hermition: ", np.allclose(np.zeros_like(system.hamiltonian), system.hamiltonian - system.hamiltonian.T.conjugate(), rtol=0.000, atol=1e-4))
-
+    print(system.F_matrix)
     tmp = 0
     delta_diff = 1
     delta_store = np.ones((system.L_x, 2), dtype=np.complex128) # 1.column NEW, 2.column OLD
     while delta_diff > tol:
         print("Iteration nr. %i" % (tmp + 1))
-        if tmp > 0:
-            system.update_hamiltonian()
-
+        #if tmp > 0:
+        #    system.update_hamiltonian()
+        system.set_hamiltonian()
         # We need to solve the system for all k-s
-        for ik in range((system.L_y + 2) //2):
+        for ik in range((system.L_y + 2)//2): # form k=0 to k=pi/2 (not k=pi)
+            #if tmp > 0:
+            #    system.update_hamiltonian()
+            # mulig å ta bort set_hamiltionian, og heller ha en if test i update_hamiltonian for å opdater u og initialisere hamiltionian til 0
+            system.update_hamiltonian(system.k_array[ik])
+
             # Calculates the eigenvalues from hamiltonian.
-            #system.eigenvalues[:, ik], system.eigenvectors[:,:,ik] = eigh(system.hamiltonian)
-            values, vectors = eigh(system.hamiltonian)
-            system.eigenvalues[:, ik] = values[:]
-            system.eigenvectors[:,:,ik] = vectors[:,:]
+            system.eigenvalues[:, ik], system.eigenvectors[:,:,ik] = eigh(system.hamiltonian)
+            #print("Hermition: ",np.allclose(np.zeros_like(system.hamiltonian), system.hamiltonian - system.hamiltonian.T.conjugate(),rtol=0.000, atol=1e-4))
+            #print(system.eigenvalues[:,ik])
+            #values, vectors = eigh(system.hamiltonian)
+            #print("dimentions:")
+            #print("Ham: ", system.hamiltonian.shape)
+            #print("val: ", values.shape)
+            #print("vec: ", vectors.shape)
+            #system.eigenvalues[:, ik] = values[:]
+            #system.eigenvectors[:,:,ik] = vectors[:,:]
 
+        #print(system.hamiltonian)
         # Calculate and update the new pairing amplitude functions.
+        #print("before calc: ", system.F_matrix[:,idx_F_i])
         system.calculate_F_matrix()
-
+        #print("after calc: ", system.F_matrix[:, idx_F_i])
         delta_store[:,0] = system.F_matrix[:,idx_F_i] # F_ii
+        #print(system.F_matrix[:,idx_F_i])
         #print("del 0 før: \n", delta_store[:,0])
         #print("del 1 før: \n", delta_store[:,1])
         delta_diff = abs(sum((delta_store[:,0]-delta_store[:,1]) / delta_store[:,1]))
