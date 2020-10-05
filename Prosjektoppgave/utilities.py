@@ -26,28 +26,20 @@ num_idx_F_i = 12
 """
 idx_F_i = 0
 idx_F_ij_x_pluss = 1
-idx_F_ji_x_pluss = 2
-idx_F_ij_x_minus = 3
-idx_F_ji_x_minus = 4
-idx_F_ij_y_pluss = 5
-idx_F_ji_y_pluss = 6
-idx_F_ij_y_minus = 7
-idx_F_ji_y_minus = 8
-idx_F_ij_s = 9
+idx_F_ij_x_minus = 2
+idx_F_ij_y_pluss = 3
+idx_F_ij_y_minus = 4
+idx_F_ij_s = 5
 
-num_idx_F_i = 10
+num_idx_F_i = 6
 
 #   Label name for each component in F-matrix
 label_F_matrix = [
     r'$F_{ii}$',
-    r'$F_{ij}^{x+}$',
-    r'$F_{ji}^{x+}$',
-    r'$F_{ij}^{x-}$',
-    r'$F_{ji}^{x-}$',
-    r'$F_{ij}^{y+}$',
-    r'$F_{ji}^{y+}$',
-    r'$F_{ij}^{y-}$',
-    r'$F_{ji}^{y-}$',
+    r'$F_{i}^{x+}$',
+    r'$F_{i}^{x-}$',
+    r'$F_{i}^{y+}$',
+    r'$F_{i}^{y-}$',
     r'$F_{s_i}$'
 ]
 

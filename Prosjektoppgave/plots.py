@@ -21,7 +21,7 @@ def plot_pairing_amplitude(system, F_matrix):
     mu_pxpy = -1.5,
     """
 
-    fig = plt.figure(figsize=(20, 30))
+    fig = plt.figure(figsize=(20, 20))
     ax = fig.subplots(ncols=3, nrows=(F_matrix.shape[-1] + 2) // 3, sharex=True, sharey=False).flatten()
     for i in range(F_matrix.shape[-1]):
         ys = F_matrix[:, i]
@@ -55,21 +55,27 @@ def plot_complex_function(x=None, y=None, ax=None, labels=None, **kwargs):
 def plot_density_of_states(es, ldos):
     print(es.shape)
     print(ldos.shape)
+    #plt.figure(figsize=(20, 10))
     #fig, ax = plt.figure(figsize=(20,15))
     plt.plot(es, np.sum(ldos[0:50], axis=0), label='LDOS in NC')
     plt.xlabel("Energy E")
-    #plt.legend()
-    #plt.show()
+    plt.legend()
+    plt.show()
+
     plt.plot(es, np.sum(ldos[50:52], axis=0), label='LDOS in S0C')
-    #plt.xlabel("Energy E")
-    #plt.legend()
-    #plt.show()
+    plt.xlabel("Energy E")
+    plt.legend()
+    plt.show()
+
     plt.plot(es, np.sum(ldos[52:], axis=0), label='LDOS in SC')
-    #plt.xlabel("Energy E")
-    #plt.legend()
-    #plt.show()
+    plt.xlabel("Energy E")
+    plt.legend()
+    plt.show()
+
     plt.plot(es, np.sum(ldos, axis=0), label='Total DOS')
     #plt.grid()
+    plt.xlabel("Energy E")
     plt.legend()
+    plt.show()
     #ax.set_xlabel("Energy E")
     #ax.set_title("Density of states : NC - SOC - SC")

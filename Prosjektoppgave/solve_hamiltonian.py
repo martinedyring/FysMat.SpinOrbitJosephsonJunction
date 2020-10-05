@@ -20,13 +20,13 @@ def solve_system(system, num_iter = 15, tol=1e-3):
         print("Iteration nr. %i" % (tmp + 1))
         #if tmp > 0:
         #    system.update_hamiltonian()
-        system.set_hamiltonian()
+        #system.set_hamiltonian()
         # We need to solve the system for all k-s
         for ik in range((system.L_y + 2)//2): # form k=0 to k=pi/2 (not k=pi)
             #if tmp > 0:
             #    system.update_hamiltonian()
             # mulig å ta bort set_hamiltionian, og heller ha en if test i update_hamiltonian for å opdater u og initialisere hamiltionian til 0
-            system.update_hamiltonian(system.k_array[ik])
+            system.set_hamiltonian(system.k_array[ik])
 
             # Calculates the eigenvalues from hamiltonian.
             system.eigenvalues[:, ik], system.eigenvectors[:,:,ik] = eigh(system.hamiltonian)
