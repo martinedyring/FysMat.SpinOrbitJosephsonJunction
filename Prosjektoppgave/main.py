@@ -51,12 +51,21 @@ def pairing_amplitude_all_orbitals():
     fig.subplots_adjust(wspace=0.0)
     system_s.plot_components_of_hamiltonian(fig)
 
-def solve_and_return_system_and_F_matrix(tol=1e-4):
+def solve_and_return_system_and_F_matrix(max_num_iter=100, tol=1e-4):
 
-    system = System()
+    system = System(L_y = 102, mu_sc = 0.9, mu_nc = 0.9, mu_soc = 0.85, u_sc = -4.2)
 
-    F_matrix = np.asarray(solve_system(system, 3, tol))
+    #F_matrix = np.asarray(solve_system(system, 3, tol))
+
+    solve_system(system, max_num_iter, tol)
+    F_matrix = system.F_matrix
     return system, F_matrix
+
+
+
+def define_system(beta=np.inf, alpha_R_initial=[0,0,2], L_nc=50, L_soc=2, L_sc=50):
+    system = System(beta=beta, alpha_R_initial=alpha_R_initial, L_nc=L_nc, L_soc=L_soc, L_sc=L_sc)
+    return system
 
 
 

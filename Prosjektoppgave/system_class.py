@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from utilities import idx_F_i, idx_F_ij_x_pluss, idx_F_ij_x_minus, idx_F_ij_y_pluss, idx_F_ij_y_minus, idx_F_ij_s, num_idx_F_i
-from numpy import conj, tanh, exp, sqrt, cos, sin#, sqrt #as conj, tanh, exp, cos, sin, sqrt
+from numpy import conj, tanh, exp, sqrt, cos, sin, log#, sqrt #as conj, tanh, exp, cos, sin, sqrt
 
 """
 This script define the class System which contains all necessary information to construct one system.
@@ -12,36 +12,34 @@ This script define the class System which contains all necessary information to 
 
 class System:
     def __init__(self,
-                 L_y = 102,
+                 L_y = 100,
                  L_sc = 50,
                  L_nc = 50,
                  L_soc = 2,
 
                  t_x = 0.5,
                  t_y = 0.5,
-
+                 t = 0.5, # t used in compute energy
                  t_sc = 0.5,
                  t_0 = 0.5,
                  t_nc = 0.5,
 
-                 u_sc = -4.2, # V_ij in superconductor
+                 u_sc = -2.1,#-4.2, # V_ij in superconductor
                  u_nc = 0.0,#-4.2,
                  u_soc = 0.0,#-4.2,
 
                  mu_s = -3.5, #s
                  mu_d = -0.5,
                  mu_pxpy = -1.5,
-                 mu_nc = 0.9,
-                 mu_sc = 0.9,
-                 mu_soc = 0.85,
+                 mu_nc = 1.9,#0.9,
+                 mu_sc = 1.9,#0.9,
+                 mu_soc = 1.7,#0.85,
                  alpha_r = np.array([0.1, 0.0, 0.0], dtype=np.float64),
-                 t = 0.5,
                  U = -4.2,
-                 #beta = 200,
                  wd = 0.6,
                  F = 0.3,
 
-                 alpha_R_initial = [0.0, 0.0, 2.0],  #0.1
+                 alpha_R_initial = [0.0, 0.0, 0.2],  #0.1
 
                  beta = 200,#np.inf,
 
@@ -61,17 +59,19 @@ class System:
                  orbital_indicator = "s"
                  ):
 
-        self.L_y = L_y
+
         self.L_sc = L_sc
         self.L_soc = L_soc
         self.L_nc = L_nc
         self.L_x = self.L_nc + self.L_soc + self.L_sc
+        self.L_y = L_y
 
         self.t_x = t_x
         self.t_y = t_y
         self.t_sc = t_sc
         self.t_0 = t_0
         self.t_nc = t_nc
+        self.t = t
 
         self.u_sc = u_sc
         self.u_soc = u_soc
@@ -112,7 +112,7 @@ class System:
         self.eigenvectors = np.zeros(shape=(4 * self.L_x, 4 * self.L_x, (self.L_y + 2) // 2), dtype=np.complex128)
 
         #   Eigenvalues
-        self.eigenvalues = np.zeros(shape=(4 * self.L_x, (self.L_y + 2) // 2), dtype=np.float64)
+        self.eigenvalues = np.zeros(shape=(4 * self.L_x, (self.L_y + 2) // 2), dtype=np.float128)
 
         #   Hamiltonian
         self.hamiltonian = np.zeros(shape=(self.L_x * 4, self.L_x * 4), dtype=np.complex128)
@@ -128,7 +128,7 @@ class System:
                 self.U_array[i] = u_nc
                 self.mu_array[i] = mu_nc
 
-            elif i < L_nc + L_soc :  # SOC
+            elif i < (L_nc + L_soc):  # SOC
                 self.F_matrix[i, :] = F_soc_initial
                 self.U_array[i] = u_soc
                 self.mu_array[i] = mu_soc
@@ -148,7 +148,7 @@ class System:
                     self.alpha_R_x_array[i, 0] = alpha_R_initial[0]
                     self.alpha_R_x_array[i, 1] = alpha_R_initial[1]
                     self.alpha_R_x_array[i, 2] = alpha_R_initial[2]
-                """
+               """
 
             else:           #   SC
                 self.F_matrix[i, :] = F_sc_initial         # Set all F values to inital condition for SC material (+1 s-orbital)
@@ -180,15 +180,14 @@ class System:
             e = np.complex128(- 2 * self.t_y[i] * cos(k) - self.mu_array[i]) # spini in (1, 2) => (0, 1) index => (spinup, spindown)
         elif i == j + 1:
             #t_0 = self.t_array[j]
-            e = np.complex128(self.t_x[j])
+            e = np.complex128(-self.t_x[j])
         elif i == j - 1:
             #t_0 = self.t_array[i]
-            e = np.complex128(self.t_x[i])
+            e = np.complex128(-self.t_x[i])
 
         #e = np.complex128(-(t_0 + 2 * t_1 * np.cos(k)) - h - self.mu)
         #e = np.complex128(-2 * t_1 * np.cos(k) - t_0)
         return e
-
 
     def set_epsilon(self, arr, i, j, k):
         arr[0][0] += self.epsilon_ijk(i, j, k, 1)
@@ -200,15 +199,14 @@ class System:
     def delta_gap(self, i):
         return self.U_array[i] * self.F_matrix[i, idx_F_i]
 
-
     def set_delta(self, arr, i, j):
         # Comment out +=, and remove the other comp from update_hamil to increase runtime and check if there is any diff. Shouldnt be diff in output.
         if i==j:
             #   Skjekk om du må bytte om index
-            arr[0][3] += -self.delta_gap(i)/2
-            arr[1][2] += self.delta_gap(i)/2
-            arr[2][1] += conj(self.delta_gap(i))/2
-            arr[3][0] += -conj(self.delta_gap(i))/2
+            arr[0][3] += -self.delta_gap(i)#/2
+            arr[1][2] += self.delta_gap(i)#/2
+            arr[2][1] += conj(self.delta_gap(i))#/2
+            arr[3][0] += -conj(self.delta_gap(i))#/2
 
         """"
         def set_delta(self, i, j):
@@ -253,11 +251,11 @@ class System:
                 l = i
                 coeff = -1.0/4.0
             else:  # Forward jump X+
-                l = j
+                l = j #j
                 coeff = 1.0/4.0
 
-            if (i < self.L_nc + self.L_soc) and (j < self.L_nc + self.L_soc): #check if both i and j are inside soc material
-                coeff += 1
+            if (self.L_nc <= i < (self.L_nc + self.L_soc)) and (self.L_nc <= j < (self.L_nc + self.L_soc)): #check if both i and j are inside soc material
+                coeff = coeff * 2
 
             s00 = self.alpha_R_x_array[l, 1]
             s11 = -self.alpha_R_x_array[l, 1]
@@ -273,6 +271,11 @@ class System:
             arr[2][3] += conj(coeff * s01)
             arr[3][2] += conj(coeff * s10)
             arr[3][3] += conj(coeff * I * s11)
+
+            #arr[2][2] -= coeff * I * s00
+            #arr[2][3] -= coeff * s01
+            #arr[3][2] -= coeff * s10
+            #arr[3][3] -= coeff * I * s11
 
         return arr
 
@@ -329,9 +332,9 @@ class System:
 
         for i in range(self.F_matrix.shape[0]-1):
             # F_ii - same point
-            self.F_matrix[i, idx_F_i] += np.sum(step_func[:, 0] * 1 / (self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4 * i, :, 0] * conj(self.eigenvectors[(4 * i) + 3, :, 0])))# - s_k * self.eigenvectors[(4 * i) + 1, :, 0] * conj(self.eigenvectors[(4 * i) + 2, :, 0])))
-            self.F_matrix[i, idx_F_i] += np.sum(step_func[:, -1] * 1 / (self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[(4 * i) + 3, :, -1])))# - s_k * self.eigenvectors[(4 * i) + 1, :,-1] * conj(self.eigenvectors[(4 * i) + 2, :, -1])))
-            self.F_matrix[i, idx_F_i] += np.sum(step_func[:, 0:-2] * 1 / (self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]) * (self.eigenvectors[4 * i, :, 0:-2] * conj(self.eigenvectors[(4 * i) + 3, :, 0:-2]) - s_k * self.eigenvectors[(4 * i) + 1, :,0:-2] * conj(self.eigenvectors[(4 * i) + 2, :, 0:-2])))
+            self.F_matrix[i, idx_F_i] += np.sum(step_func[:, 0] * 1 / (self.L_y) * tanh(self.beta*self.eigenvalues[:, 0]/2)*(self.eigenvectors[4 * i, :, 0] * conj(self.eigenvectors[(4 * i) + 3, :, 0])))# - s_k * self.eigenvectors[(4 * i) + 1, :, 0] * conj(self.eigenvectors[(4 * i) + 2, :, 0])))
+            self.F_matrix[i, idx_F_i] += np.sum(step_func[:, -1] * 1 / (self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]/2) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[(4 * i) + 3, :, -1])))# - s_k * self.eigenvectors[(4 * i) + 1, :,-1] * conj(self.eigenvectors[(4 * i) + 2, :, -1])))
+            self.F_matrix[i, idx_F_i] += np.sum(step_func[:, 0:-2] * 1 / (self.L_y) * tanh(self.beta * self.eigenvalues[:, 0:-2]/2) * (self.eigenvectors[4 * i, :, 0:-2] * conj(self.eigenvectors[(4 * i) + 3, :, 0:-2]) - s_k * self.eigenvectors[(4 * i) + 1, :,0:-2] * conj(self.eigenvectors[(4 * i) + 2, :, 0:-2])))
 
             # F ij X+ S, i_x, j_x
             self.F_matrix[i, idx_F_ij_x_pluss] += np.sum(step_func[:, 0] * 1 / (self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4*i, :, 0] * conj(self.eigenvectors[(4*(i+1)) + 3, :, 0])))#  -  s_k * self.eigenvectors[(4*(i+1)) + 1, :, 0] * conj(self.eigenvectors[(4*i) + 2, :, 0])))
@@ -535,6 +538,7 @@ class System:
         ax[1].legend()
         ax[1].set_title('Rashba SOC coupling')
 
+        fig.savefig('Hamilton components, mu_s=0.9, mu_soc=0.85, u=-4.2.png', bbox_inches='tight')
     #   Created a small test of dimensjon for each matrix/variable
     #   This test is done before we start solving the system to avoid trivial error due to runtime
     def test_valid(self):
@@ -572,7 +576,7 @@ class System:
         # sigma is the size of gaussian function
         num_energies = int((max_e - min_e) / resolution) #number energu
         num_latticesites = self.eigenvectors.shape[0] // 4 #number latticesties
-        coeff = 1.0 / (sigma * sqrt(np.pi))
+        coeff = 1.0 / (sigma * sqrt(2*np.pi)) / self.L_y
 
         Es = self.energy_vec(min_e, max_e, resolution)
         ldos = np.zeros((num_latticesites, num_energies), dtype=np.float64)
@@ -605,6 +609,7 @@ class System:
                 ldos[ii, ei] += np.sum(vs * neg_ldos)
 
         return ldos
+
 
     def long_local_density_of_states(self, res, kernel_size, min_e, max_e):
         Ne = int((max_e - min_e) / res)
@@ -641,3 +646,69 @@ class System:
         energies = self.energy_vec(min_E, max_E, resolution)
 
         return np.asarray(ldos), np.asarray(energies)
+
+    def compute_energy(self, N=False):
+        # Compute the Free energy as in Linas Master Thisis
+
+        delta_array = np.multiply(self.U_array, np.real(self.F_matrix[:,idx_F_i]))
+
+        if N==True:
+            # u-term. Cant do if U = 0 in the region
+            U_index = np.where(self.U_array[:self.L_nc] != 0)
+            U_energy_nc = 0.0
+            for u in U_index[0]:
+                U_energy_nc += np.abs(delta_array[u]) ** 2 / self.U_array[u]
+            #hopping_energy_nc = np.sum(np.sum(2 * self.t_0 * cos(self.k_array[:])) + self.mu_array[:self.L_nc])
+            hopping_energy_nc = np.sum(np.sum(2 * self.t_0 * cos(self.k_array[:])) + self.mu_array[:self.L_nc])
+            H_0_nc = self.L_nc * U_energy_nc - hopping_energy_nc
+            # H_0 = - hopping_energy
+
+            #print("U_energy_nc: ", U_energy_nc)
+            #print("hopping_energy_nc: ", hopping_energy_nc)
+            #print("H_0_nc: ", H_0_nc)
+            eigenvalues_nc = self.eigenvalues[:self.L_nc]
+            # F = H_0 - (1/self.beta) * np.sum(log(1 + exp(-self.beta * self.eigenvalues[:,:] / 2)))
+            F_nc = H_0_nc + 1 / 2 * np.sum(eigenvalues_nc[eigenvalues_nc < 0])  # t->0, sum over only negative eigenvalues
+            #print("Free energy: ", F_nc)
+            return F_nc
+
+
+        # u-term. Cant do if U = 0 in the region
+        U_index = np.where(self.U_array != 0)
+        U_energy = 0.0
+        for u in U_index[0]:
+            U_energy += np.abs(delta_array[u])**2 / self.U_array[u]
+
+
+        #hopping_energy = np.sum(np.sum(2 * self.t_0* cos(self.k_array[:])) + self.mu_array[:])
+        hopping_energy = np.sum(2 * self.t_0 * cos(self.k_array[:]))
+        epsilon_energy = np.sum(hopping_energy + self.mu_array[:])
+        #hopping_energy = self.L_x*np.sum(2 * self.t_0 * cos(self.k_array[:]) + np.sum(self.mu_array[:]))
+
+        H_0 = self.L_x * U_energy - epsilon_energy
+        #H_0 = - hopping_energy
+
+        #print("U_energy: ", U_energy)
+        #print("hopping_energy: ", hopping_energy)
+        #print("H_0: ",H_0)
+        F = H_0 - (1/self.beta) * np.sum(log(1 + exp(-self.beta * self.eigenvalues[:,:] / 2)))
+        #F = H_0 + 1/2 * np.sum(self.eigenvalues[self.eigenvalues < 0]) #t->0, sum over only negative eigenvalues
+        #print("Free energy: ", F)
+        """
+        #compute_energy() with dos
+        # Calculates energy per unit cell
+        energy = 0.0;
+        e_step = ldos_energies[1] - ldos_energies[0];
+        n_energies = int(dos.size());
+        T e_priv = 0.0
+
+        for i in range(n_energies):
+            E = exp(beta*(ldos_energies[i] - mu))
+            e_priv += e_step*dos[i] * ldos_energies[i] / (E + 1)
+
+        energy += e_priv
+        energy -= U * (spin_exp[0] * spin_exp[1] + spin_exp[2] * spin_exp[3])
+        return energy;
+	    """
+
+        return F

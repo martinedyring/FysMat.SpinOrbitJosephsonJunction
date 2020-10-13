@@ -21,7 +21,7 @@ def plot_pairing_amplitude(system, F_matrix):
     mu_pxpy = -1.5,
     """
 
-    fig = plt.figure(figsize=(20, 20))
+    fig = plt.figure(figsize=(20, 15))
     ax = fig.subplots(ncols=3, nrows=(F_matrix.shape[-1] + 2) // 3, sharex=True, sharey=False).flatten()
     for i in range(F_matrix.shape[-1]):
         ys = F_matrix[:, i]
@@ -33,6 +33,9 @@ def plot_pairing_amplitude(system, F_matrix):
         ax[i].set_xlabel("Lattice i")
     fig.suptitle("Correlation function: NC - SOC -  SC")
     fig.subplots_adjust(wspace=0.0)
+
+    fig.savefig('correlation function, mu_s=0.9, mu_soc=0.85, u=-4.2.png', bbox_inches='tight')
+
     fig = plt.figure(figsize=(20, 6))
     fig.subplots_adjust(wspace=0.0)
     system.plot_components_of_hamiltonian(fig)
@@ -57,25 +60,29 @@ def plot_density_of_states(es, ldos):
     print(ldos.shape)
     #plt.figure(figsize=(20, 10))
     #fig, ax = plt.figure(figsize=(20,15))
-    plt.plot(es, np.sum(ldos[0:50], axis=0), label='LDOS in NC')
+    plt.plot(es, np.sum(ldos[:50], axis=0)/50, label='LDOS in NC')
     plt.xlabel("Energy E")
     plt.legend()
+    #plt.savefig('DOS nc, mu_s=0.9, mu_soc=0.85, u=-4.2.png', dpi=300, bbox_inches='tight')
     plt.show()
 
-    plt.plot(es, np.sum(ldos[50:52], axis=0), label='LDOS in S0C')
+    plt.plot(es, np.sum(ldos[50:52], axis=0)/2, label='LDOS in S0C')
     plt.xlabel("Energy E")
     plt.legend()
+    #plt.savefig('DOS soc, mu_s=0.9, mu_soc=0.85, u=-4.2.png', dpi=300, bbox_inches='tight')
     plt.show()
 
-    plt.plot(es, np.sum(ldos[52:], axis=0), label='LDOS in SC')
+    plt.plot(es, np.sum(ldos[52:], axis=0)/50, label='LDOS in SC')
     plt.xlabel("Energy E")
     plt.legend()
+    #plt.savefig('DOS sc, mu_s=0.9, mu_soc=0.85, u=-4.2.png', dpi=300, bbox_inches='tight')
     plt.show()
 
-    plt.plot(es, np.sum(ldos, axis=0), label='Total DOS')
+    plt.plot(es, np.sum(ldos, axis=0)/102, label='Total DOS')
     #plt.grid()
     plt.xlabel("Energy E")
     plt.legend()
+    #plt.savefig('DOS all, mu_s=0.9, mu_soc=0.85, u=-4.2.png', dpi=300, bbox_inches='tight')
     plt.show()
     #ax.set_xlabel("Energy E")
     #ax.set_title("Density of states : NC - SOC - SC")

@@ -5,7 +5,7 @@ from scipy.linalg import eigh
 from utilities import idx_F_i
 
 #   Main function to solve a system
-def solve_system(system, num_iter = 15, tol=1e-3):
+def solve_system(system, max_num_iter = 100, tol=1e-3):
     #for ik in range((system.L_y + 2) // 2):
     #    system.set_hamiltonian(system.k_array[ik])
 
@@ -13,11 +13,11 @@ def solve_system(system, num_iter = 15, tol=1e-3):
     system.test_valid()
     print("Hermition: ", np.allclose(np.zeros_like(system.hamiltonian), system.hamiltonian - system.hamiltonian.T.conjugate(), rtol=0.000, atol=1e-4))
     #print(system.F_matrix)
-    tmp = 0
+    tmp_num_iter = 0
     delta_diff = 1
     delta_store = np.ones((system.L_x, 2), dtype=np.complex128) # 1.column NEW, 2.column OLD
-    while delta_diff > tol:
-        print("Iteration nr. %i" % (tmp + 1))
+    while delta_diff > tol or tmp_num_iter >= max_num_iter:
+        print("Iteration nr. %i" % (tmp_num_iter + 1))
         #if tmp > 0:
         #    system.update_hamiltonian()
         #system.set_hamiltonian()
@@ -51,12 +51,12 @@ def solve_system(system, num_iter = 15, tol=1e-3):
         #print("del 1 før: \n", delta_store[:,1])
         delta_diff = abs(sum((delta_store[:,0]-delta_store[:,1]) / delta_store[:,1]))
         delta_store[:,1] = system.F_matrix[:,idx_F_i] # F_ii
-        tmp += 1
+        tmp_num_iter += 1
         print("delta_diff = ", delta_diff)
         #print("del 0 etter: \n", delta_store[:,0])
         #print("del 1 etter: \n", delta_store[:,1])
 
-    F_matrix = system.F_matrix[:, :]
+    #F_matrix = system.F_matrix[:, :]
     """
     for r in range(num_iter):
         print("Iteration nr. %i" % (r + 1))
@@ -75,5 +75,5 @@ def solve_system(system, num_iter = 15, tol=1e-3):
 
         F_matrix[r + 1, :,:] = system.F_matrix[:,:]
     """
-    return F_matrix
+    return #F_matrix
 
