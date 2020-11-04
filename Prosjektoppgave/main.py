@@ -62,26 +62,26 @@ def solve_and_return_system_and_F_matrix(max_num_iter=100, tol=1e-4):
     return system, F_matrix
 
 
-def solve_and_test_small_system(max_num_iter=1000, tol=1e-6):
+def solve_and_test_small_system(max_num_iter=100, tol=1e-4):
 
-    system = System(phase=np.pi/3, L_y = 60,L_z=60, L_sc_0 = 5, L_nc=0, L_sc=5, L_soc=0, mu_sc = 0.9, mu_nc = 0.9, mu_soc = 0.85, u_sc = -2.2, beta=100)
+    system = System(phase=0, L_y = 50,L_z=50, L_sc_0 = 0, L_nc=25, L_sc=25, L_soc=0, mu_sc = 0.9, mu_nc = 0.9, mu_soc = 0.85, u_sc = -4.2, beta=100)
     #system = System(phase=np.pi / 4, L_y=20, L_z=20, L_sc_0=7, L_h=5, L_sc=7, L_soc=0, mu_sc=0.9, mu_nc=0.9,mu_soc=0.85, u_sc=-4.2)
 
 
     #F_matrix = np.asarray(solve_system(system, 3, tol))
 
-    solve_system(system, max_num_iter, tol)
+    solve_system(system, max_num_iter, tol, juction=False)
     F_matrix = system.F_matrix
     return system, F_matrix
 
 
-def solve_for_sns_system(max_num_iter=200, tol=1e-5):
-    phase_array = np.linspace(0, 2*np.pi, 30)
+def solve_for_sns_system(max_num_iter=2000, tol=1e-4):
+    phase_array = np.linspace(0, 2*np.pi, 20)
     current_midle = np.zeros(len(phase_array))
 
     # define first utside, so that we can change phase and solve the same system (do not need to start from scratch to solve)
     print("#_________ Phase = ", phase_array[0], "_________#")
-    system = System(phase=phase_array[0], L_y=50, L_z=50, L_sc_0=4, L_nc=4, L_sc=4, L_soc=0, mu_sc=0.9, mu_nc=0.9,mu_soc=0.85, u_sc=-2.2, beta=100)
+    system = System(phase=phase_array[0], L_y=15, L_z=15, L_sc_0=5, L_nc=5, L_sc=5, L_soc=0, mu_sc=0.9, mu_nc=0.9,mu_soc=0.85, u_sc=-4.2, beta=100)
     solve_system(system, max_num_iter, tol)
     current_arr = system.current_along_lattice()
     current_midle[0] = np.imag(current_arr)[system.L_sc_0 + system.L_nc // 2]
@@ -89,7 +89,7 @@ def solve_for_sns_system(max_num_iter=200, tol=1e-5):
     site_x = np.linspace(0, system.L_x - 1, system.L_x - 1)
     plt.plot(site_x[1:], np.imag(current_arr)[1:], label="imag")
     plt.legend()
-    plt.xlabel("lattice site [SC-NC-SC]/[4-4-4]")
+    plt.xlabel("lattice site [SC-NC-SC]/[5-5-5]")
     plt.ylabel("current I_x")
     plt.grid()
     plt.show()
@@ -100,7 +100,8 @@ def solve_for_sns_system(max_num_iter=200, tol=1e-5):
     for i in range(1, len(phase_array)):
         print("#_________ Phase = ",phase_array[i],"_________#")
         #system.phase = phase_array[i]
-        system = System(phase_initial = True, old_phase=system.F_matrix/abs(system.F_matrix), phase=phase_array[i], L_y=50, L_z=50, L_sc_0=4, L_nc=4, L_sc=4, L_soc=0, mu_sc=0.9, mu_nc=0.9,mu_soc=0.85, u_sc=-2.2, beta=100)
+        system = System(old_solution = True, old_F_matrix_guess=abs(system.F_matrix), phase=phase_array[i], L_y=15, L_z=15, L_sc_0=5, L_nc=5, L_sc=5, L_soc=0, mu_sc=0.9, mu_nc=0.9,mu_soc=0.85, u_sc=-4.2, beta=100)
+
 
         solve_system(system, max_num_iter, tol)
         current_arr = system.current_along_lattice()
@@ -108,7 +109,7 @@ def solve_for_sns_system(max_num_iter=200, tol=1e-5):
         site_x = np.linspace(0, system.L_x - 1, system.L_x - 1)
         plt.plot(site_x[1:], np.imag(current_arr)[1:], label="imag")
         plt.legend()
-        plt.xlabel("lattice site [SC-NC-SC]/[4-4-4]")
+        plt.xlabel("lattice site [SC-NC-SC]/[5-5-5]")
         plt.ylabel("current I_x")
         plt.grid()
         plt.show()

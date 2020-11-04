@@ -5,13 +5,14 @@ from scipy.linalg import eigh
 from utilities import idx_F_i
 
 #   Main function to solve a system
-def solve_system(system, max_num_iter = 100, tol=1e-5):
+def solve_system(system, max_num_iter = 100, tol=1e-5, juction=True):
     #for ik in range((system.L_y + 2) // 2):
     #    system.set_hamiltonian(system.k_array[ik])
 
     #   Start by checking that input system is valid.
     system.test_valid()
-    print("Hermition: ", np.allclose(np.zeros_like(system.hamiltonian), system.hamiltonian - system.hamiltonian.T.conjugate(), rtol=0.000, atol=1e-4))
+    ##print("Hermition: ", np.allclose(np.zeros_like(system.hamiltonian), system.hamiltonian - system.hamiltonian.T.conjugate(), rtol=0.000, atol=1e-4))
+
     #print(system.F_matrix)
     tmp_num_iter = 0
     delta_diff = 1
@@ -19,7 +20,8 @@ def solve_system(system, max_num_iter = 100, tol=1e-5):
     delta_store = np.ones((system.L_x, 2), dtype=np.complex128) # 1.column NEW, 2.column OLD
     #while (delta_diff / system.L_x) > tol and tmp_num_iter <= max_num_iter:
     while num_delta_over_tol > 0 and tmp_num_iter <= max_num_iter:
-        print("Iteration nr. %i" % (tmp_num_iter + 1))
+        ##print("Iteration nr. %i" % (tmp_num_iter + 1))
+
         #if tmp > 0:
         #    system.update_hamiltonian()
         #system.set_hamiltonian()
@@ -29,7 +31,7 @@ def solve_system(system, max_num_iter = 100, tol=1e-5):
             #    system.update_hamiltonian()
             # mulig å ta bort set_hamiltionian, og heller ha en if test i update_hamiltonian for å opdater u og initialisere hamiltionian til 0
             for kz_idx in range(1, len(system.kz_array)):
-                system.set_hamiltonian(system.ky_array[ky_idx], system.kz_array[kz_idx])
+                system.set_hamiltonian(ky=system.ky_array[ky_idx], kz=system.kz_array[kz_idx])
 
                 # Calculates the eigenvalues from hamiltonian.
                 evalues, evectors = eigh(system.hamiltonian)
@@ -50,7 +52,8 @@ def solve_system(system, max_num_iter = 100, tol=1e-5):
         system.calculate_F_matrix()
 
         ###--------
-        system.forcePhaseDifference() #ONLY for supercurrent i sxs systems
+        if juction==True:
+            system.forcePhaseDifference() #ONLY for supercurrent i sxs systems
         ###--------
 
         """
@@ -83,7 +86,9 @@ def solve_system(system, max_num_iter = 100, tol=1e-5):
         tmp_num_iter += 1
 
         num_delta_over_tol = len(np.where(delta_diff > tol)[0])
-        print("num_delta_over_tol = ", num_delta_over_tol, " -- where total num lattice sites is ",system.L_x)
+        ##print("num_delta_over_tol = ", num_delta_over_tol, " -- where total num lattice sites is ",system.L_x)
+
+
         # print("delta_diff_lattice_site = ", delta_diff_latticesite)
         # print("del 0 etter: \n", delta_store[:,0])
         # print("del 1 etter: \n", delta_store[:,1])

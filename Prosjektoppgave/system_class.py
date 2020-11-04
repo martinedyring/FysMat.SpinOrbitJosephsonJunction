@@ -50,11 +50,12 @@ class System:
                  beta = 200,  #np.inf,
 
                  phase=np.pi/4,
-                 phase_initial = False, #True if there is sendt in an initial phase from last system
-                 old_phase = [0.0],
+                 old_solution = False, #True if there is sendt in an initial phase from last system
+                 old_F_matrix_guess = np.array([0.0],dtype=np.complex128),
+                 old_phase_array=np.array([0.0], dtype=np.complex128),
 
                  #F_sc_initial = [0.3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                 F_sc_initial = np.pad(np.array([0.3], dtype=np.complex128),  (0,num_idx_F_i-1), mode='constant', constant_values=0.0),
+                 #F_sc_initial = np.pad(np.array([0.3], dtype=np.complex128),  (0,num_idx_F_i-1), mode='constant', constant_values=0.0),
 
                  F_sc_initial_s = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],  #s-orbital
                  F_sc_initial_d = [0.0, 0.0, 1.0, 1.0, 1.0, 1.0, -1.0, -1.0, -1.0, -1.0],
@@ -63,10 +64,9 @@ class System:
                  F_sc_initial_pxpy = [0.0, 0.0, 1.0, 1.0, -1.0, -1.0, 1.0j, 1.0j, -1.0j, -1.0j],
                  F_sc_initial_spy = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0+1.0j, 1.0+1.0j, 1.0-1.0j, 1.0-1.0j],
 
-                 F_nc_initial = np.pad(np.array([0.3], dtype=np.complex128),  (0,num_idx_F_i-1), mode='constant', constant_values=0.0),  #0.3,
-                 F_soc_initial = np.pad(np.array([0.0], dtype=np.complex128),  (0,num_idx_F_i-1), mode='constant', constant_values=0.0),  #0.3,
-                 F_f_initial=np.pad(np.array([0.0], dtype=np.complex128), (0, num_idx_F_i - 1), mode='constant',constant_values=0.0),  # 0.3,
-
+                 #F_nc_initial = np.pad(np.array([0.3], dtype=np.complex128),  (0,num_idx_F_i-1), mode='constant', constant_values=0.0),  #0.3,
+                 #F_soc_initial = np.pad(np.array([0.0], dtype=np.complex128),  (0,num_idx_F_i-1), mode='constant', constant_values=0.0),  #0.3,
+                 #F_f_initial=np.pad(np.array([0.0], dtype=np.complex128), (0, num_idx_F_i - 1), mode='constant',constant_values=0.0),  # 0.3,
 
                  orbital_indicator = "s"
                  ):
@@ -106,16 +106,45 @@ class System:
         self.debye_freq = wd
 
         self.phase = phase
-        if phase_initial == True:
-            self.phase_array = old_phase
+        if old_solution == True:
+            #self.phase_array = np.hstack((np.ones(self.L_sc_0) * self.phase, np.zeros(L_nc + L_sc))).ravel()
+            self.F_sc_0_initial = old_F_matrix_guess[:self.L_sc_0, :]
+            self.F_soc_initial = old_F_matrix_guess[self.L_sc_0:(self.L_sc_0+self.L_soc), :]
+            self.F_nc_initial = old_F_matrix_guess[self.L_sc_0:(self.L_sc_0+self.L_nc), :]
+            self.F_f_initial = old_F_matrix_guess[self.L_sc_0:(self.L_sc_0+self.L_f), :]
+            self.F_sc_initial = old_F_matrix_guess[-self.L_sc:]
+
+            self.phase_array = np.hstack((np.ones(self.L_sc_0)*self.phase, np.linspace(self.phase, 0, self.L_x-self.L_sc_0-self.L_sc),np.zeros(L_sc))).ravel()
+            #lattice = np.linspace(0, self.L_x, self.L_x)
+            #plt.plot(lattice, self.phase_array)
+            #plt.show()
         else:
-            self.phase_array = np.hstack((np.linspace(self.phase,self.phase * 4 / 4, self.L_sc_0) , np.linspace(self.phase * 4 / 5, self.phase * 1/ 5, (self.L_x-self.L_sc_0-self.L_sc)) , np.linspace(self.phase * 1/ 5, 0, self.L_sc))).ravel()
+            self.phase_array = np.hstack((np.ones(self.L_sc_0)*self.phase, np.linspace(self.phase, 0, self.L_x-self.L_sc_0-self.L_sc),np.zeros(L_sc))).ravel()
+            #lattice = np.linspace(0, self.L_x, self.L_x)
+            #plt.plot(lattice, self.phase_array)
+            #plt.show()
 
-        self.F_sc_initial = F_sc_initial
-        self.F_soc_initial = F_soc_initial
-        self.F_nc_initial = F_nc_initial
-        self.F_f_initial = F_f_initial
+            #self.phase_array = np.hstack((np.linspace(self.phase,self.phase * 4 / 4, self.L_sc_0) , np.linspace(self.phase * 4 / 5, self.phase * 1/ 5, (self.L_x-self.L_sc_0-self.L_sc)) , np.linspace(self.phase * 1/ 5, 0, self.L_sc))).ravel()
 
+            self.F_sc_0_initial = np.zeros((self.L_sc_0, num_idx_F_i), dtype=np.complex128)
+            self.F_sc_0_initial[:, 0] = 0.3
+
+            self.F_soc_initial = np.zeros((self.L_soc, num_idx_F_i), dtype=np.complex128)
+            self.F_soc_initial[:, 0] = 0.3
+
+            self.F_nc_initial = np.zeros((self.L_nc, num_idx_F_i), dtype=np.complex128)
+            self.F_nc_initial[:, 0] = 0.3
+
+            self.F_f_initial = np.zeros((self.L_f, num_idx_F_i), dtype=np.complex128)
+            self.F_f_initial[:, 0] = 0.3
+
+            self.F_sc_initial = np.zeros((self.L_sc, num_idx_F_i), dtype=np.complex128)
+            self.F_sc_initial[:, 0] = 0.3
+
+        #print("phase_array, ", self.phase_array.shape)
+        #print("sc_0, ",self.F_sc_0_initial.shape)
+        #print("nc, ", self.F_nc_initial.shape)
+        #print("sc, ", self.F_sc_initial.shape)
 
         #self.F_sc_0_initial = np.pad(np.array([0.3 * np.exp(1.0j * self.phase)], dtype=np.complex128), (0, num_idx_F_i - 1), mode='constant',constant_values=0.0)
 
@@ -168,25 +197,25 @@ class System:
         for i in range(self.L_x):
             self.t_y_array[i] = t_y
             if i < self.L_sc_0:           #   SC
-                self.F_matrix[i, :] = self.F_sc_initial *  np.exp(1.0j * self.phase_array[i])     # Set all F values to inital condition for SC material (+1 s-orbital)
+                self.F_matrix[i, :] = self.F_sc_0_initial[i, :] *  np.exp(1.0j * self.phase_array[i])     # Set all F values to inital condition for SC material (+1 s-orbital)
                 self.U_array[i] = self.u_sc #* np.exp(1.0j * np.pi/2)
                 self.mu_array[i] = self.mu_sc
 
             elif i < (self.L_sc_0 + self.L_nc):    #   NC
-                self.F_matrix[i, :] = self.F_nc_initial *  np.exp(1.0j * self.phase_array[i])                 #   Set all F values to inital condition for NC material
+                self.F_matrix[i, :] = self.F_nc_initial[i-self.L_sc_0, :] *  np.exp(1.0j * self.phase_array[i])                 #   Set all F values to inital condition for NC material
 
                 self.U_array[i] = self.u_nc
                 self.mu_array[i] = self.mu_nc
 
             elif i < (self.L_sc_0 + self.L_nc + self.L_f):
-                self.F_matrix[i, :] = F_f_initial *  np.exp(1.0j * self.phase_array[i])
+                self.F_matrix[i, :] = self.F_f_initial[i-(self.L_sc_0 + self.L_nc), :] *  np.exp(1.0j * self.phase_array[i])
                 self.h_array[i, 0] = self.h[0]
                 self.h_array[i, 1] = self.h[1]
                 self.h_array[i, 2] = self.h[2]
                 self.U_array[i] = self.u_f
 
             elif i < (self.L_sc_0 + self.L_nc + self.L_f + self.L_soc):  # SOC
-                self.F_matrix[i, :] = F_soc_initial *  np.exp(1.0j * self.phase_array[i])
+                self.F_matrix[i, :] = self.F_soc_initial[i-(self.L_sc_0 + self.L_nc + self.L_f), :] *  np.exp(1.0j * self.phase_array[i])
                 self.U_array[i] = self.u_soc
                 self.mu_array[i] = self.mu_soc
 
@@ -208,7 +237,7 @@ class System:
 
 
             else:           #   SC
-                self.F_matrix[i, :] = self.F_sc_initial *  np.exp(1.0j * self.phase_array[i])     # Set all F values to inital condition for SC material (+1 s-orbital)
+                self.F_matrix[i, :] = self.F_sc_initial[i-(self.L_sc_0 + self.L_nc + self.L_f + self.L_soc), :] *  np.exp(1.0j * self.phase_array[i])     # Set all F values to inital condition for SC material (+1 s-orbital)
                 self.U_array[i] = self.u_sc
                 self.mu_array[i] = self.mu_sc
         """
@@ -237,10 +266,10 @@ class System:
             e = np.complex128(- 2 * self.t_y_array[i] * (cos(ky) + cos(kz)) - self.mu_array[i]) # spini in (1, 2) => (0, 1) index => (spinup, spindown)
         elif i == j + 1:
             #t_0 = self.t_array[j]
-            e = np.complex128(-self.t_y_array[j]) #x
+            e = np.complex128(-self.t_y_array[j]) #x #-
         elif i == j - 1:
             #t_0 = self.t_array[i]
-            e = np.complex128(-self.t_y_array[i]) #x
+            e = np.complex128(-self.t_y_array[i]) #x #-
 
         #e = np.complex128(-(t_0 + 2 * t_1 * np.cos(k)) - h - self.mu)
         #e = np.complex128(-2 * t_1 * np.cos(k) - t_0)
@@ -408,8 +437,8 @@ class System:
         step_func = np.ones(shape=(4 * self.L_x, (self.L_y), (self.L_z)), dtype=int)
 
         #if len(idx1) == (len(self.eigenvalues[0]) * len(self.eigenvalues[1]) * len(self.eigenvalues[2])-1):
-        #for i in range(len(idx1)):
-        #    step_func[idx1[i]][idx2[i]][idx3[i]] = 0
+        #    for i in range(len(idx1)):
+         #       step_func[idx1[i]][idx2[i]][idx3[i]] = 0
 
         for i in range(self.F_matrix.shape[0]-1):
             # F_ii - same point
@@ -734,21 +763,23 @@ class System:
                 ldos[ii, ei] += np.sum(sk * (pow(abs(self.eigenvectors[4 * ii + 2, :, 0:-2]), 2) + pow(abs(self.eigenvectors[4 * ii + 3, :, 0:-2]), 2)) * neg_ldos[:,0:-2]) #k != 0 or k!= pi
         """
         #pos_e_diff = self.eigenvalues[:, :, :]
-        pos_e_diff = self.eigenvalues[:, 1:, 1:]
-        neg_e_diff = self.eigenvalues[:, 1:, 1:]
+        pos_e_diff = self.eigenvalues[:, 1:, 1:] /2
+        #print(np.any(np.iscomplex(pos_e_diff)))
+        #print(conj(self.eigenvectors[4 * 4, :, 1:, 1:])*self.eigenvectors[4 * 4, :, 1:, 1:])
+        #neg_e_diff = self.eigenvalues[:, 1:, 1:]/2
         for ii in range(num_latticesites):
-            #us = pow(abs(self.eigenvectors[4 * ii, :, :, :]), 2) + pow(abs(self.eigenvectors[4 * ii + 1, :, :, :]), 2)
-            us = pow(abs(self.eigenvectors[4 * ii, :, 1:, 1:]), 2) + pow(abs(self.eigenvectors[4 * ii + 1, :, 1:, 1:]), 2) #spin opp - spin ned
+            us = pow(abs(self.eigenvectors[4 * ii, :, 1:, 1:]), 2) + pow(abs(self.eigenvectors[4 * ii + 1, :, 1:, 1:]), 2)
+            #us = conj(self.eigenvectors[4 * ii, :, 1:, 1:])*self.eigenvectors[4 * ii, :, 1:, 1:] + conj(self.eigenvectors[4 * ii + 1, :, 1:, 1:])*self.eigenvectors[4 * ii + 1, :, 1:, 1:] #spin opp - spin ned
 
-            vs = (pow(abs(self.eigenvectors[4 * ii + 2, :, 1:, 1:]), 2) + pow(abs(self.eigenvectors[4 * ii + 3, :, 1:, 1:]), 2)) #sk
+            #vs = (pow(abs(self.eigenvectors[4 * ii + 2, :, 1:, 1:]), 2) + pow(abs(self.eigenvectors[4 * ii + 3, :, 1:, 1:]), 2)) #sk
 
             for ei in range(num_energies):
                 eng = Es[ei]
                 pos_ldos = coeff * exp(-pow((pos_e_diff - eng) / sigma, 2))
-                neg_ldos = coeff * exp(-pow((neg_e_diff - eng) / sigma, 2))
+                #neg_ldos = coeff * exp(-pow((neg_e_diff + eng) / sigma, 2))
 
-                ldos[ii, ei] += np.sum(us * pos_ldos)
-                ldos[ii, ei] += np.sum(vs * neg_ldos)
+                ldos[ii, ei] += np.sum(np.multiply(us, pos_ldos))
+                #ldos[ii, ei] += np.sum(vs * neg_ldos)
 
         return ldos
 
@@ -855,7 +886,7 @@ class System:
         I = 1.0j
         phaseDiff = np.exp(I * self.phase, dtype=np.complex128)
         phase_plus = np.exp(I * self.phase, dtype=np.complex128)         #   SC_0
-        #self.F_matrix[0, :] = self.F_matrix[0,:] / (self.F_matrix[0,:]/self.F_matrix[-1, :]) * phaseDiff
+        ##self.F_matrix[0, :] = self.F_matrix[0,:] / (self.F_matrix[0,:]/self.F_matrix[-1, :]) * phaseDiff
         #self.F_matrix[1, :] = self.F_matrix[1,:] / (self.F_matrix[1,:]/self.F_matrix[-2, :]) * phaseDiff
         #self.F_matrix[2, :] = self.F_matrix[self.L_x - 3, :] * phaseDiff
 
