@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="619037fa-4b25-4024-aeda-7804730b2fd8" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Prosjektoppgave/system_helper.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Prosjektoppgave/utilities_t.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/current_phase_calculations.py" afterPath="$PROJECT_DIR$/Masteroppgave/current_phase_calculations.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/main.py" afterPath="$PROJECT_DIR$/Masteroppgave/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.py" afterPath="$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/system_class.py" afterPath="$PROJECT_DIR$/Masteroppgave/system_class.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/Current-checkpoint.ipynb" afterPath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/Current-checkpoint.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current.ipynb" afterPath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/main.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/system_class.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/system_class.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/utilities.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/utilities.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,6 +26,9 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/FysMat$Test.coverage" NAME="Test Coverage Results" MODIFIED="1600255280868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prosjektoppgave" />
     <SUITE FILE_PATH="coverage/FysMat$main.coverage" NAME="main Coverage Results" MODIFIED="1600512380287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prosjektoppgave" />
+    <SUITE FILE_PATH="coverage/FysMat$var.coverage" NAME="var Coverage Results" MODIFIED="1611827925455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prosjektoppgave" />
+    <SUITE FILE_PATH="coverage/FysMat$system_helper.coverage" NAME="system_helper Coverage Results" MODIFIED="1611833939788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prosjektoppgave" />
+    <SUITE FILE_PATH="coverage/FysMat$solve_hamiltonian.coverage" NAME="solve_hamiltonian Coverage Results" MODIFIED="1611828169888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prosjektoppgave" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -21,58 +36,169 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="system_class.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="422">
+              <caret line="239" column="0" lean-forward="true" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#6501#6574#0" expanded="false" />
+                <element signature="e#10708#10750#0" expanded="false" />
+                <element signature="e#11942#12388#1" expanded="false" />
+                <element signature="e#12663#13311#0" expanded="false" />
+                <element signature="e#12663#12673#0" expanded="false" />
+                <element signature="e#13177#13239#0" expanded="false" />
+                <element signature="e#13367#13599#0" expanded="false" />
+                <element signature="e#13637#13687#0" expanded="false" />
+                <element signature="e#13733#14557#0" expanded="false" />
+                <element signature="e#14146#14538#1" expanded="false" />
+                <element signature="e#14615#16996#0" expanded="false" />
+                <element signature="e#15804#16976#0" expanded="false" />
+                <element signature="e#17034#17604#0" expanded="false" />
+                <element signature="e#17651#17837#0" expanded="false" />
+                <element signature="e#17651#17684#0" expanded="false" />
+                <element signature="e#17886#18592#0" expanded="false" />
+                <element signature="e#18636#44446#0" expanded="false" />
+                <element signature="e#18636#18715#0" expanded="false" />
+                <element signature="e#18907#18945#0" expanded="false" />
+                <element signature="e#20271#20290#0" expanded="false" />
+                <element signature="e#24386#34585#1" expanded="false" />
+                <element signature="e#34594#34608#0" expanded="false" />
+                <element signature="e#34755#34770#0" expanded="false" />
+                <element signature="e#37554#44426#1" expanded="false" />
+                <element signature="e#44497#48313#0" expanded="false" />
+                <element signature="e#44626#44647#0" expanded="false" />
+                <element signature="e#44925#44967#0" expanded="false" />
+                <element signature="e#46458#47486#1" expanded="false" />
+                <element signature="e#47499#47518#0" expanded="false" />
+                <element signature="e#48458#49321#0" expanded="false" />
+                <element signature="e#49450#50341#0" expanded="false" />
+                <element signature="e#50346#50408#0" expanded="false" />
+                <element signature="e#50543#51221#0" expanded="false" />
+                <element signature="e#51285#51309#0" expanded="false" />
+                <element signature="e#51350#51373#0" expanded="false" />
+                <element signature="e#51435#51552#0" expanded="false" />
+                <element signature="e#51634#54023#0" expanded="false" />
+                <element signature="e#52036#52045#0" expanded="false" />
+                <element signature="e#52163#52849#1" expanded="false" />
+                <element signature="e#54109#55427#0" expanded="false" />
+                <element signature="e#55509#55699#0" expanded="false" />
+                <element signature="e#55748#58260#0" expanded="false" />
+                <element signature="e#55892#57007#1" expanded="false" />
+                <element signature="e#57234#57321#0" expanded="false" />
+                <element signature="e#57750#57773#0" expanded="false" />
+                <element signature="e#58102#58207#0" expanded="false" />
+                <element signature="e#58306#59537#0" expanded="false" />
+                <element signature="e#59584#66883#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="system_helper.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_helper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="350" column="53" lean-forward="false" selection-start-line="350" selection-start-column="53" selection-end-line="350" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
+                <element signature="e#934#1248#0" expanded="false" />
+                <element signature="e#1330#1590#0" expanded="false" />
+                <element signature="e#1654#1694#0" expanded="false" />
+                <element signature="e#1766#2223#0" expanded="false" />
+                <element signature="e#2335#4404#0" expanded="false" />
+                <element signature="e#4458#4928#0" expanded="false" />
+                <element signature="e#5010#5160#0" expanded="false" />
+                <element signature="e#5343#6073#0" expanded="false" />
+                <element signature="e#6220#7016#0" expanded="false" />
+                <element signature="e#7086#7195#0" expanded="false" />
+                <element signature="e#7337#8109#0" expanded="false" />
+                <element signature="e#8241#8941#0" expanded="false" />
+                <element signature="e#9093#13651#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="solve_hamiltonian.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="158" column="4" lean-forward="false" selection-start-line="158" selection-start-column="4" selection-end-line="158" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#426#7536#0" expanded="false" />
+                <element signature="e#426#466#0" expanded="false" />
+                <element signature="e#1384#1396#0" expanded="false" />
+                <element signature="e#3135#3280#0" expanded="false" />
+                <element signature="e#3671#3697#0" expanded="false" />
+                <element signature="e#6723#7515#1" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="phasediagrams.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prosjektoppgave/phasediagrams.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2353">
+              <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="utilities.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+            <state relative-caret-position="4065">
+              <caret line="271" column="3" lean-forward="false" selection-start-line="271" selection-start-column="3" selection-end-line="271" selection-end-column="3" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="current_phase_calculations.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Masteroppgave/current_phase_calculations.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Masteroppgave/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Masteroppgave/main.py">
+        <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="75" column="5" lean-forward="false" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#35#53#0" expanded="true" />
+                <element signature="e#397#2240#0" expanded="false" />
+                <element signature="e#2317#2559#0" expanded="false" />
+                <element signature="e#3209#5035#0" expanded="false" />
+                <element signature="e#5095#6755#0" expanded="false" />
+                <element signature="e#6863#7037#0" expanded="false" />
+                <element signature="e#7160#9585#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="system_class.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Masteroppgave/system_class.py">
+      <file leaf-file-name="plots.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prosjektoppgave/plots.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="42">
+              <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+              <folding>
+                <element signature="e#1626#2054#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utilities_t.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities_t.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="3" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="271" selection-end-column="3" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,6 +221,8 @@
       <find>values</find>
       <find>ky</find>
       <find>self.L_y</find>
+      <find>self.</find>
+      <find>sel</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -111,12 +239,17 @@
         <option value="$PROJECT_DIR$/Prosjektoppgave/test_bdg_solver.ipynb" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/bdg_solver_notebook.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/notebook_bdg_solver.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/utilities_f.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/var.py" />
+        <option value="$PROJECT_DIR$/Masteroppgave/main.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/utilities.py" />
-        <option value="$PROJECT_DIR$/Prosjektoppgave/plots.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/phasediagrams.py" />
-        <option value="$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/plots.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/hamiltonian_helper.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/system_class.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/main.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/system_helper.py" />
       </list>
     </option>
   </component>
@@ -129,7 +262,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="829" />
+    <option name="height" value="828" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -200,7 +333,7 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.system_helper">
     <configuration default="false" name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -232,7 +365,61 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="FysMat" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Prosjektoppgave/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Prosjektoppgave/main_t.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="var" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Prosjektoppgave" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FysMat" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Prosjektoppgave/var.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="solve_hamiltonian" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Prosjektoppgave" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FysMat" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="system_helper" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Prosjektoppgave" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FysMat" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Prosjektoppgave/system_helper.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -451,14 +638,20 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.Test" />
       <item index="1" class="java.lang.String" itemvalue="Python.main" />
+      <item index="2" class="java.lang.String" itemvalue="Python.var" />
+      <item index="3" class="java.lang.String" itemvalue="Python.solve_hamiltonian" />
+      <item index="4" class="java.lang.String" itemvalue="Python.system_helper" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.main" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Test" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.system_helper" />
+        <item index="1" class="java.lang.String" itemvalue="Python.solve_hamiltonian" />
+        <item index="2" class="java.lang.String" itemvalue="Python.var" />
+        <item index="3" class="java.lang.String" itemvalue="Python.main" />
+        <item index="4" class="java.lang.String" itemvalue="Python.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -476,27 +669,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="829" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="23" width="1440" height="828" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17525035" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17739628" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16440217" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962447" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30706522" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11548913" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -527,110 +720,31 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="13" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="52" column="8" lean-forward="false" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#250#290#0" expanded="false" />
-            <element signature="e#1208#1220#0" expanded="false" />
-            <element signature="e#1817#1962#0" expanded="false" />
-            <element signature="e#2353#2379#0" expanded="false" />
-            <element signature="e#4638#5430#1" expanded="false" />
-            <marker date="1604475469074" expanded="false" signature="2832:2966" ph="..." />
-            <marker date="1604475469074" expanded="false" signature="3061:3559" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="83" column="47" lean-forward="false" selection-start-line="83" selection-start-column="47" selection-end-line="83" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#344#2187#0" expanded="false" />
-            <element signature="e#2264#2506#0" expanded="false" />
-            <element signature="e#6746#6920#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Prosjektoppgave/plots.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="false" />
             <element signature="e#1626#2054#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class_t.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12705">
-          <caret line="847" column="9" lean-forward="false" selection-start-line="847" selection-start-column="9" selection-end-line="847" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#6476#6549#0" expanded="false" />
-            <element signature="e#10684#10726#0" expanded="false" />
-            <element signature="e#11918#12364#1" expanded="false" />
-            <element signature="e#12639#12649#0" expanded="false" />
-            <element signature="e#13153#13215#0" expanded="false" />
-            <element signature="e#13613#13663#0" expanded="false" />
-            <element signature="e#13709#14533#0" expanded="false" />
-            <element signature="e#14122#14514#1" expanded="false" />
-            <element signature="e#14591#16972#0" expanded="false" />
-            <element signature="e#15780#16952#0" expanded="false" />
-            <element signature="e#17010#17580#0" expanded="false" />
-            <element signature="e#17627#17813#0" expanded="false" />
-            <element signature="e#17627#17660#0" expanded="false" />
-            <element signature="e#18612#18691#0" expanded="false" />
-            <element signature="e#18883#18921#0" expanded="false" />
-            <element signature="e#20247#20266#0" expanded="false" />
-            <element signature="e#24362#34561#1" expanded="false" />
-            <element signature="e#34570#34584#0" expanded="false" />
-            <element signature="e#34731#34746#0" expanded="false" />
-            <element signature="e#37530#44402#1" expanded="false" />
-            <element signature="e#44473#48289#0" expanded="false" />
-            <element signature="e#44602#44623#0" expanded="false" />
-            <element signature="e#44901#44943#0" expanded="false" />
-            <element signature="e#46434#47462#1" expanded="false" />
-            <element signature="e#47475#47494#0" expanded="false" />
-            <element signature="e#48434#49297#0" expanded="false" />
-            <element signature="e#50322#50384#0" expanded="false" />
-            <element signature="e#50518#51196#0" expanded="false" />
-            <element signature="e#51260#51284#0" expanded="false" />
-            <element signature="e#51325#51348#0" expanded="false" />
-            <element signature="e#51410#51527#0" expanded="false" />
-            <element signature="e#52012#52021#0" expanded="false" />
-            <element signature="e#52139#52825#1" expanded="false" />
-            <element signature="e#54086#55404#0" expanded="false" />
-            <element signature="e#55486#55676#0" expanded="false" />
-            <element signature="e#55869#56984#1" expanded="false" />
-            <element signature="e#57211#57298#0" expanded="false" />
-            <element signature="e#57727#57750#0" expanded="false" />
-            <element signature="e#58079#58184#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/phasediagrams.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
-          <caret line="124" column="36" lean-forward="false" selection-start-line="124" selection-start-column="36" selection-end-line="124" selection-end-column="36" />
+        <state relative-caret-position="12915">
+          <caret line="861" column="0" lean-forward="false" selection-start-line="861" selection-start-column="0" selection-end-line="861" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities_t.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -640,133 +754,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian_t.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="52" column="9" lean-forward="false" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#250#290#0" expanded="false" />
-            <element signature="e#1208#1220#0" expanded="false" />
-            <element signature="e#1817#1962#0" expanded="false" />
-            <element signature="e#2353#2379#0" expanded="false" />
-            <element signature="e#4638#5430#1" expanded="false" />
-            <marker date="1604475469074" expanded="false" signature="2832:2966" ph="..." />
-            <marker date="1604475469074" expanded="false" signature="3061:3559" ph="..." />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main_t.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="64" column="48" lean-forward="false" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#344#2187#0" expanded="false" />
-            <element signature="e#2264#2506#0" expanded="false" />
-            <element signature="e#6746#6920#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/plots.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#1626#2054#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12915">
-          <caret line="861" column="0" lean-forward="false" selection-start-line="861" selection-start-column="0" selection-end-line="861" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#6476#6549#0" expanded="false" />
-            <element signature="e#10684#10726#0" expanded="false" />
-            <element signature="e#11918#12364#1" expanded="false" />
-            <element signature="e#12639#12649#0" expanded="false" />
-            <element signature="e#13153#13215#0" expanded="false" />
-            <element signature="e#13613#13663#0" expanded="false" />
-            <element signature="e#13709#14533#0" expanded="false" />
-            <element signature="e#14122#14514#1" expanded="false" />
-            <element signature="e#14591#16972#0" expanded="false" />
-            <element signature="e#15780#16952#0" expanded="false" />
-            <element signature="e#17010#17580#0" expanded="false" />
-            <element signature="e#17627#17813#0" expanded="false" />
-            <element signature="e#17627#17660#0" expanded="false" />
-            <element signature="e#18612#18691#0" expanded="false" />
-            <element signature="e#18883#18921#0" expanded="false" />
-            <element signature="e#20247#20266#0" expanded="false" />
-            <element signature="e#24362#34561#1" expanded="false" />
-            <element signature="e#34570#34584#0" expanded="false" />
-            <element signature="e#34731#34746#0" expanded="false" />
-            <element signature="e#37530#44402#1" expanded="false" />
-            <element signature="e#44473#48289#0" expanded="false" />
-            <element signature="e#44602#44623#0" expanded="false" />
-            <element signature="e#44901#44943#0" expanded="false" />
-            <element signature="e#46434#47462#1" expanded="false" />
-            <element signature="e#47475#47494#0" expanded="false" />
-            <element signature="e#48434#49297#0" expanded="false" />
-            <element signature="e#50322#50384#0" expanded="false" />
-            <element signature="e#50518#51196#0" expanded="false" />
-            <element signature="e#51260#51284#0" expanded="false" />
-            <element signature="e#51325#51348#0" expanded="false" />
-            <element signature="e#51410#51527#0" expanded="false" />
-            <element signature="e#52012#52021#0" expanded="false" />
-            <element signature="e#52139#52825#1" expanded="false" />
-            <element signature="e#54086#55404#0" expanded="false" />
-            <element signature="e#55486#55676#0" expanded="false" />
-            <element signature="e#55869#56984#1" expanded="false" />
-            <element signature="e#57211#57298#0" expanded="false" />
-            <element signature="e#57727#57750#0" expanded="false" />
-            <element signature="e#58079#58184#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#250#290#0" expanded="false" />
-            <element signature="e#1208#1220#0" expanded="false" />
-            <element signature="e#1817#1962#0" expanded="false" />
-            <element signature="e#2353#2379#0" expanded="false" />
-            <element signature="e#4638#5430#1" expanded="false" />
-            <marker date="1604475469074" expanded="false" signature="2832:2966" ph="..." />
-            <marker date="1604475469074" expanded="false" signature="3061:3559" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="64" column="48" lean-forward="false" selection-start-line="64" selection-start-column="48" selection-end-line="64" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#344#2187#0" expanded="false" />
-            <element signature="e#2264#2506#0" expanded="false" />
-            <element signature="e#6746#6920#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -775,56 +775,33 @@
         <state relative-caret-position="555">
           <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="false" />
             <element signature="e#1626#2054#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian_t.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#250#290#0" expanded="false" />
-            <element signature="e#1208#1220#0" expanded="false" />
-            <element signature="e#1817#1962#0" expanded="false" />
-            <element signature="e#2353#2379#0" expanded="false" />
-            <element signature="e#4638#5430#1" expanded="false" />
-            <marker date="1604475469074" expanded="false" signature="2832:2966" ph="..." />
-            <marker date="1604475469074" expanded="false" signature="3061:3559" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian_t.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#250#290#0" expanded="false" />
-            <element signature="e#1208#1220#0" expanded="false" />
-            <element signature="e#1817#1962#0" expanded="false" />
-            <element signature="e#2353#2379#0" expanded="false" />
-            <element signature="e#4638#5430#1" expanded="false" />
-            <marker date="1604475469074" expanded="false" signature="2832:2966" ph="..." />
-            <marker date="1604475469074" expanded="false" signature="3061:3559" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main_t.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="73" column="24" lean-forward="false" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#344#2187#0" expanded="false" />
-            <element signature="e#2264#2506#0" expanded="false" />
-            <element signature="e#6746#6920#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -833,62 +810,21 @@
         <state relative-caret-position="600">
           <caret line="52" column="79" lean-forward="false" selection-start-line="52" selection-start-column="79" selection-end-line="52" selection-end-column="79" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="false" />
             <element signature="e#1626#2054#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class_t.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="38" column="26" lean-forward="true" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#6476#6549#0" expanded="false" />
-            <element signature="e#10684#10726#0" expanded="false" />
-            <element signature="e#11918#12364#1" expanded="false" />
-            <element signature="e#12639#12649#0" expanded="false" />
-            <element signature="e#13153#13215#0" expanded="false" />
-            <element signature="e#13613#13663#0" expanded="false" />
-            <element signature="e#13709#14533#0" expanded="false" />
-            <element signature="e#14122#14514#1" expanded="false" />
-            <element signature="e#14591#16972#0" expanded="false" />
-            <element signature="e#15780#16952#0" expanded="false" />
-            <element signature="e#17010#17580#0" expanded="false" />
-            <element signature="e#17627#17813#0" expanded="false" />
-            <element signature="e#17627#17660#0" expanded="false" />
-            <element signature="e#18612#18691#0" expanded="false" />
-            <element signature="e#18883#18921#0" expanded="false" />
-            <element signature="e#20247#20266#0" expanded="false" />
-            <element signature="e#24362#34561#1" expanded="false" />
-            <element signature="e#34570#34584#0" expanded="false" />
-            <element signature="e#34731#34746#0" expanded="false" />
-            <element signature="e#37530#44402#1" expanded="false" />
-            <element signature="e#44473#48289#0" expanded="false" />
-            <element signature="e#44602#44623#0" expanded="false" />
-            <element signature="e#44901#44943#0" expanded="false" />
-            <element signature="e#46434#47462#1" expanded="false" />
-            <element signature="e#47475#47494#0" expanded="false" />
-            <element signature="e#48434#49297#0" expanded="false" />
-            <element signature="e#50322#50384#0" expanded="false" />
-            <element signature="e#50518#51196#0" expanded="false" />
-            <element signature="e#51260#51284#0" expanded="false" />
-            <element signature="e#51325#51348#0" expanded="false" />
-            <element signature="e#51410#51527#0" expanded="false" />
-            <element signature="e#52012#52021#0" expanded="false" />
-            <element signature="e#52139#52825#1" expanded="false" />
-            <element signature="e#54086#55404#0" expanded="false" />
-            <element signature="e#55486#55676#0" expanded="false" />
-            <element signature="e#55869#56984#1" expanded="false" />
-            <element signature="e#57211#57298#0" expanded="false" />
-            <element signature="e#57727#57750#0" expanded="false" />
-            <element signature="e#58079#58184#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities_t.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -898,33 +834,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian_t.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#250#290#0" expanded="false" />
-            <element signature="e#1208#1220#0" expanded="false" />
-            <element signature="e#1817#1962#0" expanded="false" />
-            <element signature="e#2353#2379#0" expanded="false" />
-            <element signature="e#4638#5430#1" expanded="false" />
-            <marker date="1604475469074" expanded="false" signature="2832:2966" ph="..." />
-            <marker date="1604475469074" expanded="false" signature="3061:3559" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main_t.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="73" column="24" lean-forward="true" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#344#2187#0" expanded="false" />
-            <element signature="e#2264#2506#0" expanded="false" />
-            <element signature="e#6746#6920#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -933,62 +855,21 @@
         <state relative-caret-position="600">
           <caret line="52" column="79" lean-forward="true" selection-start-line="52" selection-start-column="79" selection-end-line="52" selection-end-column="79" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="false" />
             <element signature="e#1626#2054#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class_t.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#6476#6549#0" expanded="false" />
-            <element signature="e#10684#10726#0" expanded="false" />
-            <element signature="e#11918#12364#1" expanded="false" />
-            <element signature="e#12639#12649#0" expanded="false" />
-            <element signature="e#13153#13215#0" expanded="false" />
-            <element signature="e#13613#13663#0" expanded="false" />
-            <element signature="e#13709#14533#0" expanded="false" />
-            <element signature="e#14122#14514#1" expanded="false" />
-            <element signature="e#14591#16972#0" expanded="false" />
-            <element signature="e#15780#16952#0" expanded="false" />
-            <element signature="e#17010#17580#0" expanded="false" />
-            <element signature="e#17627#17813#0" expanded="false" />
-            <element signature="e#17627#17660#0" expanded="false" />
-            <element signature="e#18612#18691#0" expanded="false" />
-            <element signature="e#18883#18921#0" expanded="false" />
-            <element signature="e#20247#20266#0" expanded="false" />
-            <element signature="e#24362#34561#1" expanded="false" />
-            <element signature="e#34570#34584#0" expanded="false" />
-            <element signature="e#34731#34746#0" expanded="false" />
-            <element signature="e#37530#44402#1" expanded="false" />
-            <element signature="e#44473#48289#0" expanded="false" />
-            <element signature="e#44602#44623#0" expanded="false" />
-            <element signature="e#44901#44943#0" expanded="false" />
-            <element signature="e#46434#47462#1" expanded="false" />
-            <element signature="e#47475#47494#0" expanded="false" />
-            <element signature="e#48434#49297#0" expanded="false" />
-            <element signature="e#50322#50384#0" expanded="false" />
-            <element signature="e#50518#51196#0" expanded="false" />
-            <element signature="e#51260#51284#0" expanded="false" />
-            <element signature="e#51325#51348#0" expanded="false" />
-            <element signature="e#51410#51527#0" expanded="false" />
-            <element signature="e#52012#52021#0" expanded="false" />
-            <element signature="e#52139#52825#1" expanded="false" />
-            <element signature="e#54086#55404#0" expanded="false" />
-            <element signature="e#55486#55676#0" expanded="false" />
-            <element signature="e#55869#56984#1" expanded="false" />
-            <element signature="e#57211#57298#0" expanded="false" />
-            <element signature="e#57727#57750#0" expanded="false" />
-            <element signature="e#58079#58184#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities_t.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -998,63 +879,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian_t.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#250#290#0" expanded="false" />
-            <element signature="e#1208#1220#0" expanded="false" />
-            <element signature="e#1817#1962#0" expanded="false" />
-            <element signature="e#2353#2379#0" expanded="false" />
-            <element signature="e#4638#5430#1" expanded="false" />
-            <marker date="1604475469074" expanded="false" signature="2832:2966" ph="..." />
-            <marker date="1604475469074" expanded="false" signature="3061:3559" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main_t.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="59" column="0" lean-forward="true" selection-start-line="53" selection-start-column="3" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#344#2187#0" expanded="false" />
-            <element signature="e#2264#2506#0" expanded="false" />
-            <element signature="e#6746#6920#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian_t.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="41" column="26" lean-forward="false" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#250#290#0" expanded="false" />
-            <element signature="e#1208#1220#0" expanded="false" />
-            <element signature="e#1817#1962#0" expanded="false" />
-            <element signature="e#2353#2379#0" expanded="false" />
-            <element signature="e#4638#5430#1" expanded="false" />
-            <marker date="1604475469074" expanded="false" signature="2832:2966" ph="..." />
-            <marker date="1604475469074" expanded="false" signature="3061:3559" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main_t.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1110">
           <caret line="80" column="22" lean-forward="true" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#344#2187#0" expanded="false" />
-            <element signature="e#2264#2506#0" expanded="false" />
-            <element signature="e#6746#6920#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1063,62 +916,21 @@
         <state relative-caret-position="150">
           <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="false" />
             <element signature="e#1626#2054#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class_t.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1590">
           <caret line="109" column="42" lean-forward="false" selection-start-line="109" selection-start-column="42" selection-end-line="109" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#6476#6549#0" expanded="false" />
-            <element signature="e#10684#10726#0" expanded="false" />
-            <element signature="e#11918#12364#1" expanded="false" />
-            <element signature="e#12639#12649#0" expanded="false" />
-            <element signature="e#13153#13215#0" expanded="false" />
-            <element signature="e#13613#13663#0" expanded="false" />
-            <element signature="e#13709#14533#0" expanded="false" />
-            <element signature="e#14122#14514#1" expanded="false" />
-            <element signature="e#14591#16972#0" expanded="false" />
-            <element signature="e#15780#16952#0" expanded="false" />
-            <element signature="e#17010#17580#0" expanded="false" />
-            <element signature="e#17627#17813#0" expanded="false" />
-            <element signature="e#17627#17660#0" expanded="false" />
-            <element signature="e#18612#18691#0" expanded="false" />
-            <element signature="e#18883#18921#0" expanded="false" />
-            <element signature="e#20247#20266#0" expanded="false" />
-            <element signature="e#24362#34561#1" expanded="false" />
-            <element signature="e#34570#34584#0" expanded="false" />
-            <element signature="e#34731#34746#0" expanded="false" />
-            <element signature="e#37530#44402#1" expanded="false" />
-            <element signature="e#44473#48289#0" expanded="false" />
-            <element signature="e#44602#44623#0" expanded="false" />
-            <element signature="e#44901#44943#0" expanded="false" />
-            <element signature="e#46434#47462#1" expanded="false" />
-            <element signature="e#47475#47494#0" expanded="false" />
-            <element signature="e#48434#49297#0" expanded="false" />
-            <element signature="e#50322#50384#0" expanded="false" />
-            <element signature="e#50518#51196#0" expanded="false" />
-            <element signature="e#51260#51284#0" expanded="false" />
-            <element signature="e#51325#51348#0" expanded="false" />
-            <element signature="e#51410#51527#0" expanded="false" />
-            <element signature="e#52012#52021#0" expanded="false" />
-            <element signature="e#52139#52825#1" expanded="false" />
-            <element signature="e#54086#55404#0" expanded="false" />
-            <element signature="e#55486#55676#0" expanded="false" />
-            <element signature="e#55869#56984#1" expanded="false" />
-            <element signature="e#57211#57298#0" expanded="false" />
-            <element signature="e#57727#57750#0" expanded="false" />
-            <element signature="e#58079#58184#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities_t.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1149,108 +961,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Prosjektoppgave/Test.py" />
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities_t.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#250#290#0" expanded="false" />
-            <element signature="e#1208#1220#0" expanded="false" />
-            <element signature="e#1817#1962#0" expanded="false" />
-            <element signature="e#2353#2379#0" expanded="false" />
-            <element signature="e#4638#5430#1" expanded="false" />
-            <marker date="1604475469074" expanded="false" signature="2832:2966" ph="..." />
-            <marker date="1604475469074" expanded="false" signature="3061:3559" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#344#2187#0" expanded="false" />
-            <element signature="e#2264#2506#0" expanded="false" />
-            <element signature="e#6746#6920#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/plots.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="66" column="20" lean-forward="false" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#1626#2054#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="166" column="99" lean-forward="false" selection-start-line="166" selection-start-column="99" selection-end-line="166" selection-end-column="99" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#6476#6549#0" expanded="false" />
-            <element signature="e#10684#10726#0" expanded="false" />
-            <element signature="e#11918#12364#1" expanded="false" />
-            <element signature="e#12639#12649#0" expanded="false" />
-            <element signature="e#13153#13215#0" expanded="false" />
-            <element signature="e#13613#13663#0" expanded="false" />
-            <element signature="e#13709#14533#0" expanded="false" />
-            <element signature="e#14122#14514#1" expanded="false" />
-            <element signature="e#14591#16972#0" expanded="false" />
-            <element signature="e#15780#16952#0" expanded="false" />
-            <element signature="e#17010#17580#0" expanded="false" />
-            <element signature="e#17627#17813#0" expanded="false" />
-            <element signature="e#17627#17660#0" expanded="false" />
-            <element signature="e#18612#18691#0" expanded="false" />
-            <element signature="e#18883#18921#0" expanded="false" />
-            <element signature="e#20247#20266#0" expanded="false" />
-            <element signature="e#24362#34561#1" expanded="false" />
-            <element signature="e#34570#34584#0" expanded="false" />
-            <element signature="e#34731#34746#0" expanded="false" />
-            <element signature="e#37530#44402#1" expanded="false" />
-            <element signature="e#44473#48289#0" expanded="false" />
-            <element signature="e#44602#44623#0" expanded="false" />
-            <element signature="e#44901#44943#0" expanded="false" />
-            <element signature="e#46434#47462#1" expanded="false" />
-            <element signature="e#47475#47494#0" expanded="false" />
-            <element signature="e#48434#49297#0" expanded="false" />
-            <element signature="e#50322#50384#0" expanded="false" />
-            <element signature="e#50518#51196#0" expanded="false" />
-            <element signature="e#51260#51284#0" expanded="false" />
-            <element signature="e#51325#51348#0" expanded="false" />
-            <element signature="e#51410#51527#0" expanded="false" />
-            <element signature="e#52012#52021#0" expanded="false" />
-            <element signature="e#52139#52825#1" expanded="false" />
-            <element signature="e#54086#55404#0" expanded="false" />
-            <element signature="e#55486#55676#0" expanded="false" />
-            <element signature="e#55869#56984#1" expanded="false" />
-            <element signature="e#57211#57298#0" expanded="false" />
-            <element signature="e#57727#57750#0" expanded="false" />
-            <element signature="e#58079#58184#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/phasediagrams.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="63" column="19" lean-forward="false" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+        <state relative-caret-position="4065">
+          <caret line="271" column="3" lean-forward="false" selection-start-line="271" selection-start-column="3" selection-end-line="271" selection-end-column="3" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -1262,7 +976,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1275,10 +989,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/var.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Masteroppgave/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main_t.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="63" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="218" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian_t.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class_t.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="941" column="49" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="974" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities_t.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="3" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="271" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/phasediagrams.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2353">
+          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4065">
+          <caret line="271" column="3" lean-forward="false" selection-start-line="271" selection-start-column="3" selection-end-line="271" selection-end-column="3" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -1287,9 +1069,132 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Masteroppgave/system_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="257">
+          <caret line="306" column="8" lean-forward="false" selection-start-line="305" selection-start-column="12" selection-end-line="306" selection-end-column="8" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="239" column="0" lean-forward="true" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#6501#6574#0" expanded="false" />
+            <element signature="e#10708#10750#0" expanded="false" />
+            <element signature="e#11942#12388#1" expanded="false" />
+            <element signature="e#12663#13311#0" expanded="false" />
+            <element signature="e#12663#12673#0" expanded="false" />
+            <element signature="e#13177#13239#0" expanded="false" />
+            <element signature="e#13367#13599#0" expanded="false" />
+            <element signature="e#13637#13687#0" expanded="false" />
+            <element signature="e#13733#14557#0" expanded="false" />
+            <element signature="e#14146#14538#1" expanded="false" />
+            <element signature="e#14615#16996#0" expanded="false" />
+            <element signature="e#15804#16976#0" expanded="false" />
+            <element signature="e#17034#17604#0" expanded="false" />
+            <element signature="e#17651#17837#0" expanded="false" />
+            <element signature="e#17651#17684#0" expanded="false" />
+            <element signature="e#17886#18592#0" expanded="false" />
+            <element signature="e#18636#44446#0" expanded="false" />
+            <element signature="e#18636#18715#0" expanded="false" />
+            <element signature="e#18907#18945#0" expanded="false" />
+            <element signature="e#20271#20290#0" expanded="false" />
+            <element signature="e#24386#34585#1" expanded="false" />
+            <element signature="e#34594#34608#0" expanded="false" />
+            <element signature="e#34755#34770#0" expanded="false" />
+            <element signature="e#37554#44426#1" expanded="false" />
+            <element signature="e#44497#48313#0" expanded="false" />
+            <element signature="e#44626#44647#0" expanded="false" />
+            <element signature="e#44925#44967#0" expanded="false" />
+            <element signature="e#46458#47486#1" expanded="false" />
+            <element signature="e#47499#47518#0" expanded="false" />
+            <element signature="e#48458#49321#0" expanded="false" />
+            <element signature="e#49450#50341#0" expanded="false" />
+            <element signature="e#50346#50408#0" expanded="false" />
+            <element signature="e#50543#51221#0" expanded="false" />
+            <element signature="e#51285#51309#0" expanded="false" />
+            <element signature="e#51350#51373#0" expanded="false" />
+            <element signature="e#51435#51552#0" expanded="false" />
+            <element signature="e#51634#54023#0" expanded="false" />
+            <element signature="e#52036#52045#0" expanded="false" />
+            <element signature="e#52163#52849#1" expanded="false" />
+            <element signature="e#54109#55427#0" expanded="false" />
+            <element signature="e#55509#55699#0" expanded="false" />
+            <element signature="e#55748#58260#0" expanded="false" />
+            <element signature="e#55892#57007#1" expanded="false" />
+            <element signature="e#57234#57321#0" expanded="false" />
+            <element signature="e#57750#57773#0" expanded="false" />
+            <element signature="e#58102#58207#0" expanded="false" />
+            <element signature="e#58306#59537#0" expanded="false" />
+            <element signature="e#59584#66883#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/plots.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <folding>
+            <element signature="e#1626#2054#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="158" column="4" lean-forward="false" selection-start-line="158" selection-start-column="4" selection-end-line="158" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#426#7536#0" expanded="false" />
+            <element signature="e#426#466#0" expanded="false" />
+            <element signature="e#1384#1396#0" expanded="false" />
+            <element signature="e#3135#3280#0" expanded="false" />
+            <element signature="e#3671#3697#0" expanded="false" />
+            <element signature="e#6723#7515#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="75" column="5" lean-forward="false" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+          <folding>
+            <element signature="e#35#53#0" expanded="true" />
+            <element signature="e#397#2240#0" expanded="false" />
+            <element signature="e#2317#2559#0" expanded="false" />
+            <element signature="e#3209#5035#0" expanded="false" />
+            <element signature="e#5095#6755#0" expanded="false" />
+            <element signature="e#6863#7037#0" expanded="false" />
+            <element signature="e#7160#9585#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="350" column="53" lean-forward="false" selection-start-line="350" selection-start-column="53" selection-end-line="350" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#934#1248#0" expanded="false" />
+            <element signature="e#1330#1590#0" expanded="false" />
+            <element signature="e#1654#1694#0" expanded="false" />
+            <element signature="e#1766#2223#0" expanded="false" />
+            <element signature="e#2335#4404#0" expanded="false" />
+            <element signature="e#4458#4928#0" expanded="false" />
+            <element signature="e#5010#5160#0" expanded="false" />
+            <element signature="e#5343#6073#0" expanded="false" />
+            <element signature="e#6220#7016#0" expanded="false" />
+            <element signature="e#7086#7195#0" expanded="false" />
+            <element signature="e#7337#8109#0" expanded="false" />
+            <element signature="e#8241#8941#0" expanded="false" />
+            <element signature="e#9093#13651#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

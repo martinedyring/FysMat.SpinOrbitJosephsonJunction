@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from solve_hamiltonian import solve_system
-from system_class import System
+from solve_hamiltonian_t import solve_system
+from system_class_t import System
 
 """
 This is the main function to run all programs

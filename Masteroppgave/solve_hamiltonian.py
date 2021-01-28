@@ -1,6 +1,6 @@
 import numpy as np
 from scipy.linalg import eigh
-from utilities import idx_F_i
+from utilities_t import idx_F_i
 
 #   Main function to solve a system
 def solve_system(system, max_num_iter = 100, tol=1e-5, juction=True):

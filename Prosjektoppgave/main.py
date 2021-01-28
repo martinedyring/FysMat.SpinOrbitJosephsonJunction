@@ -1,7 +1,10 @@
+# !/usr/bin/python
+# coding=utf-8
+
 import numpy as np
 import matplotlib.pyplot as plt
 
-from solve_hamiltonian import solve_system
+from solve_hamiltonian import solve_system, solve_system_new
 from system_class import System
 from plots import plot_complex_function, plot_pairing_amplitude
 from utilities import label_F_matrix
@@ -70,7 +73,8 @@ def solve_and_test_small_system(max_num_iter=100, tol=1e-4):
 
     #F_matrix = np.asarray(solve_system(system, 3, tol))
 
-    solve_system(system, max_num_iter, tol, juction=False)
+    #solve_system(system, max_num_iter, tol, juction=False)
+    solve_system_new(system, max_num_iter, tol, juction=False)
     F_matrix = system.F_matrix
     return system, F_matrix
 

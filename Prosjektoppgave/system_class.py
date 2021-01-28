@@ -1,7 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from numba import jit
 
-from utilities import idx_F_i, idx_F_ij_x_pluss, idx_F_ij_x_minus, idx_F_ij_y_pluss, idx_F_ij_y_minus, idx_F_ij_s, num_idx_F_i
+
+from utilities_t import idx_F_i, idx_F_ij_x_pluss, idx_F_ij_x_minus, idx_F_ij_y_pluss, idx_F_ij_y_minus, idx_F_ij_s, num_idx_F_i
 from numpy import conj, tanh, exp, sqrt, cos, sin, log#, sqrt #as conj, tanh, exp, cos, sin, sqrt
 
 """
@@ -186,7 +188,7 @@ class System:
 
         #   Eigenvalues
         #self.eigenvalues = np.zeros(shape=(4 * self.L_x, (self.L_y + 2) // 2, (self.L_z + 2) // 2), dtype=np.float128)
-        self.eigenvalues = np.zeros(shape=(4 * self.L_x, (self.L_y), (self.L_z)), dtype=np.float128)
+        self.eigenvalues = np.zeros(shape=(4 * self.L_x, (self.L_y), (self.L_z)), dtype=np.float64)
 
         #   Hamiltonian
         self.hamiltonian = np.zeros(shape=(self.L_x * 4, self.L_x * 4), dtype=np.complex128)
@@ -704,6 +706,7 @@ class System:
         #fig.savefig('Hamilton components, mu_s=0.9, mu_soc=0.85, u=-4.2.png', bbox_inches='tight')
     #   Created a small test of dimensjon for each matrix/variable
     #   This test is done before we start solving the system to avoid trivial error due to runtime
+
     def test_valid(self):
         # dimensions
         assert self.L_x > 0, "L_x must be larger than 0."
@@ -737,7 +740,6 @@ class System:
         Ne = int((max_E - min_E) / resolution)
         Es = np.linspace(min_E, max_E, Ne, dtype=np.float64)
         return Es
-
 
     def local_density_of_states(self, resolution, sigma, min_e, max_e):
         # sigma is the size of gaussian function
@@ -782,7 +784,6 @@ class System:
                 #ldos[ii, ei] += np.sum(vs * neg_ldos)
 
         return ldos
-
 
     def long_local_density_of_states(self, res, kernel_size, min_e, max_e):
         Ne = int((max_e - min_e) / res)
@@ -896,7 +897,6 @@ class System:
         self.F_matrix[-1, 0] = np.abs(self.F_matrix[-1, 0])
         #self.F_matrix[-2, 0] = np.abs(self.F_matrix[-2, 0])
         return self
-
 
     def current_along_lattice(self):
         I = 1.0j

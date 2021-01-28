@@ -1,0 +1,19 @@
+Testing runtime with numba (njit(fastmath everywhere, and parallel for some for-loops)):
+
+________________________________________________
+solve_and_test_small_system(L_y=L_z=50, L_nc=L_sc=25, max_num_iter = 100, tol=1e-5):
+------------------------------------------------
+without - RUNTIME: 1631.0432402699953 s (27.28 min)
+with Numba but no jit-wrap around solve_system() using scipy.linalg.eigh RUNTIME: 288.08748890399875 s (4.8 min)
+with Numba AND njit-wrap around solve_system_numba() using scipy.linalg.eigh RUNTIME: not possible to run
+with Numba AND njit-wrap around solve_system_numba() using numpy.linalg.eigh RUNTIME: 164.69343915100035 s (2.7 min)
+
+
+preformace tips:
+@njit(fastmath=True, parallel=True)
+
+
+
+
+
+
