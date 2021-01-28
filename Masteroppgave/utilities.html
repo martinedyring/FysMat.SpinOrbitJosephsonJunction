@@ -303,25 +303,37 @@ body.cython { font-family: courier; font-size: 12; }
 <pre class="cython line score-0">&#xA0;<span class="">06</span>: #   Expecting x_pluss to be equal to x_minus, so I am only considering x_pluss</pre>
 <pre class="cython line score-0">&#xA0;<span class="">07</span>: #   Expecting ud_x to be equal to du_x, so I am only considering ud_x. Similar for y.</pre>
 <pre class="cython line score-0">&#xA0;<span class="">08</span>: </pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">09</span>: cdef int idx_F_i = 0</pre>
-<pre class='cython code score-0 '>  __pyx_v_13Masteroppgave_9utilities_idx_F_i = 0;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">10</span>: cdef int idx_F_ij_x_pluss = 1</pre>
-<pre class='cython code score-0 '>  __pyx_v_13Masteroppgave_9utilities_idx_F_ij_x_pluss = 1;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">11</span>: cdef int idx_F_ij_x_minus = 2</pre>
-<pre class='cython code score-0 '>  __pyx_v_13Masteroppgave_9utilities_idx_F_ij_x_minus = 2;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">12</span>: cdef int idx_F_ij_y_pluss = 3</pre>
-<pre class='cython code score-0 '>  __pyx_v_13Masteroppgave_9utilities_idx_F_ij_y_pluss = 3;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">13</span>: cdef int idx_F_ij_y_minus = 4</pre>
-<pre class='cython code score-0 '>  __pyx_v_13Masteroppgave_9utilities_idx_F_ij_y_minus = 4;
-</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">14</span>: cdef int idx_F_ij_s = 5</pre>
-<pre class='cython code score-0 '>  __pyx_v_13Masteroppgave_9utilities_idx_F_ij_s = 5;
-</pre><pre class="cython line score-0">&#xA0;<span class="">15</span>: </pre>
-<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">16</span>: cdef int num_idx_F_i = 6</pre>
-<pre class='cython code score-0 '>  __pyx_v_13Masteroppgave_9utilities_num_idx_F_i = 6;
-</pre><pre class="cython line score-0">&#xA0;<span class="">17</span>: </pre>
-<pre class="cython line score-0">&#xA0;<span class="">18</span>: #   Label name for each component in F-matrix</pre>
-<pre class="cython line score-23" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">19</span>: label_F_matrix = [</pre>
-<pre class='cython code score-23 '>  __pyx_t_1 = <span class='py_c_api'>PyList_New</span>(6);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 19, __pyx_L1_error)</span>
+<pre class="cython line score-0">&#xA0;<span class="">09</span>: cdef extern from "&lt;complex.h&gt;" namespace "std":</pre>
+<pre class="cython line score-0">&#xA0;<span class="">10</span>:     double complex conj(double complex z) nogil</pre>
+<pre class="cython line score-0">&#xA0;<span class="">11</span>:     double complex exp(double complex z ) nogil</pre>
+<pre class="cython line score-0">&#xA0;<span class="">12</span>:     double abs(double complex z) nogil</pre>
+<pre class="cython line score-0">&#xA0;<span class="">13</span>: cdef extern from "&lt;math.h&gt;" nogil:</pre>
+<pre class="cython line score-0">&#xA0;<span class="">14</span>:     double pow(double r, double e)</pre>
+<pre class="cython line score-0">&#xA0;<span class="">15</span>:     double exp(double r)</pre>
+<pre class="cython line score-0">&#xA0;<span class="">16</span>:     double tanh(double r)</pre>
+<pre class="cython line score-0">&#xA0;<span class="">17</span>:     double abs(double r)</pre>
+<pre class="cython line score-0">&#xA0;<span class="">18</span>:     double sin(double)</pre>
+<pre class="cython line score-0">&#xA0;<span class="">19</span>:     double cos(double)</pre>
+<pre class="cython line score-0">&#xA0;<span class="">20</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">21</span>: cdef int idx_F_i = 0</pre>
+<pre class='cython code score-0 '>  __pyx_v_9utilities_idx_F_i = 0;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">22</span>: cdef int idx_F_ij_x_pluss = 1</pre>
+<pre class='cython code score-0 '>  __pyx_v_9utilities_idx_F_ij_x_pluss = 1;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">23</span>: cdef int idx_F_ij_x_minus = 2</pre>
+<pre class='cython code score-0 '>  __pyx_v_9utilities_idx_F_ij_x_minus = 2;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">24</span>: cdef int idx_F_ij_y_pluss = 3</pre>
+<pre class='cython code score-0 '>  __pyx_v_9utilities_idx_F_ij_y_pluss = 3;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">25</span>: cdef int idx_F_ij_y_minus = 4</pre>
+<pre class='cython code score-0 '>  __pyx_v_9utilities_idx_F_ij_y_minus = 4;
+</pre><pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">26</span>: cdef int idx_F_ij_s = 5</pre>
+<pre class='cython code score-0 '>  __pyx_v_9utilities_idx_F_ij_s = 5;
+</pre><pre class="cython line score-0">&#xA0;<span class="">27</span>: </pre>
+<pre class="cython line score-0" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">28</span>: cdef int num_idx_F_i = 6</pre>
+<pre class='cython code score-0 '>  __pyx_v_9utilities_num_idx_F_i = 6;
+</pre><pre class="cython line score-0">&#xA0;<span class="">29</span>: </pre>
+<pre class="cython line score-0">&#xA0;<span class="">30</span>: #   Label name for each component in F-matrix</pre>
+<pre class="cython line score-23" onclick="(function(s){s.display=s.display==='block'?'none':'block'})(this.nextElementSibling.style)">+<span class="">31</span>: label_F_matrix = [</pre>
+<pre class='cython code score-23 '>  __pyx_t_1 = <span class='py_c_api'>PyList_New</span>(6);<span class='error_goto'> if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)</span>
   <span class='refnanny'>__Pyx_GOTREF</span>(__pyx_t_1);
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_kp_s_F__ii);
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_kp_s_F__ii);
@@ -341,14 +353,14 @@ body.cython { font-family: courier; font-size: 12; }
   <span class='pyx_macro_api'>__Pyx_INCREF</span>(__pyx_kp_s_F__s_i);
   <span class='refnanny'>__Pyx_GIVEREF</span>(__pyx_kp_s_F__s_i);
   <span class='py_macro_api'>PyList_SET_ITEM</span>(__pyx_t_1, 5, __pyx_kp_s_F__s_i);
-  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_label_F_matrix, __pyx_t_1) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 19, __pyx_L1_error)</span>
+  if (<span class='py_c_api'>PyDict_SetItem</span>(__pyx_d, __pyx_n_s_label_F_matrix, __pyx_t_1) &lt; 0) <span class='error_goto'>__PYX_ERR(0, 31, __pyx_L1_error)</span>
   <span class='pyx_macro_api'>__Pyx_DECREF</span>(__pyx_t_1); __pyx_t_1 = 0;
-</pre><pre class="cython line score-0">&#xA0;<span class="">20</span>:     r'$F_{ii}$',</pre>
-<pre class="cython line score-0">&#xA0;<span class="">21</span>:     r'$F_{i}^{x+}$',</pre>
-<pre class="cython line score-0">&#xA0;<span class="">22</span>:     r'$F_{i}^{x-}$',</pre>
-<pre class="cython line score-0">&#xA0;<span class="">23</span>:     r'$F_{i}^{y+}$',</pre>
-<pre class="cython line score-0">&#xA0;<span class="">24</span>:     r'$F_{i}^{y-}$',</pre>
-<pre class="cython line score-0">&#xA0;<span class="">25</span>:     r'$F_{s_i}$'</pre>
-<pre class="cython line score-0">&#xA0;<span class="">26</span>: ]</pre>
-<pre class="cython line score-0">&#xA0;<span class="">27</span>: </pre>
+</pre><pre class="cython line score-0">&#xA0;<span class="">32</span>:     r'$F_{ii}$',</pre>
+<pre class="cython line score-0">&#xA0;<span class="">33</span>:     r'$F_{i}^{x+}$',</pre>
+<pre class="cython line score-0">&#xA0;<span class="">34</span>:     r'$F_{i}^{x-}$',</pre>
+<pre class="cython line score-0">&#xA0;<span class="">35</span>:     r'$F_{i}^{y+}$',</pre>
+<pre class="cython line score-0">&#xA0;<span class="">36</span>:     r'$F_{i}^{y-}$',</pre>
+<pre class="cython line score-0">&#xA0;<span class="">37</span>:     r'$F_{s_i}$'</pre>
+<pre class="cython line score-0">&#xA0;<span class="">38</span>: ]</pre>
+<pre class="cython line score-0">&#xA0;<span class="">39</span>: </pre>
 </div></body></html>

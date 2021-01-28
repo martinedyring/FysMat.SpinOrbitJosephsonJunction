@@ -1,7 +1,18 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from utilities import label_F_matrix
+import sys
+sys.path.append("/Users/martinedh/Documents/NTNU/GitHub/FysMat/Prosjektoppgave")
+
+#from utilities import label_F_matrix
+label_F_matrix = [
+    r'$F_{ii}$',
+    r'$F_{i}^{x+}$',
+    r'$F_{i}^{x-}$',
+    r'$F_{i}^{y+}$',
+    r'$F_{i}^{y-}$',
+    r'$F_{s_i}$'
+]
 
 """
 This script contains ass plotting functions

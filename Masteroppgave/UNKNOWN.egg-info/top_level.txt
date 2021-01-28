@@ -1,1 +1,5 @@
-Masteroppgave
+__init__
+current_phase_calculations
+solve_hamiltonian
+system_class
+utilities

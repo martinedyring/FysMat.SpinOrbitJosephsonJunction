@@ -6,6 +6,18 @@ This script contains all extra function solve_hamiltonian.py needs
 #   Expecting x_pluss to be equal to x_minus, so I am only considering x_pluss
 #   Expecting ud_x to be equal to du_x, so I am only considering ud_x. Similar for y.
 
+cdef extern from "<complex.h>" namespace "std":
+    double complex conj(double complex z) nogil
+    double complex exp(double complex z ) nogil
+    double abs(double complex z) nogil
+cdef extern from "<math.h>" nogil:
+    double pow(double r, double e)
+    double exp(double r)
+    double tanh(double r)
+    double abs(double r)
+    double sin(double)
+    double cos(double)
+
 cdef int idx_F_i = 0
 cdef int idx_F_ij_x_pluss = 1
 cdef int idx_F_ij_x_minus = 2

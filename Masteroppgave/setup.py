@@ -22,17 +22,59 @@ import numpy
 
 extensions = [
     Extension(
-        name="*",
-        sources=["*.pyx"],
+        name="utilities",
+        sources=["utilities.pyx"],
         include_dirs=[numpy.get_include()],
         language='c++',
-        #extra_compile_args=[opnmp],
-        #extra_link_args=[opnmp]
+        #extra_compile_args=['-fopenmp'],
+        #extra_link_args=['-fopenmp'],
+        extra_compile_args=["-O3", "-ffast-math", "-march=native", "-Xpreprocessor", "-fopenmp"],
+        extra_link_args=["-Xpreprocessor", "-fopenmp"],
+    ),
+    Extension(
+        name="system_class",
+        sources=["system_class.pyx"],
+        include_dirs=[numpy.get_include()],
+        language='c++',
+        # extra_compile_args=['-fopenmp'],
+        # extra_link_args=['-fopenmp'],
+        extra_compile_args=["-O3", "-ffast-math", "-march=native", "-Xpreprocessor", "-fopenmp"],
+        extra_link_args=["-Xpreprocessor", "-fopenmp"],
+    ),
+    Extension(
+        name="solve_hamiltonian",
+        sources=["solve_hamiltonian.pyx"],
+        include_dirs=[numpy.get_include()],
+        language='c++',
+        # extra_compile_args=['-fopenmp'],
+        # extra_link_args=['-fopenmp'],
+        extra_compile_args=["-O3", "-ffast-math", "-march=native", "-Xpreprocessor", "-fopenmp"],
+        extra_link_args=["-Xpreprocessor", "-fopenmp"],
+    ),
+    Extension(
+        name="__init__",
+        sources=["__init__.pyx"],
+        include_dirs=[numpy.get_include()],
+        language='c++',
+        # extra_compile_args=['-fopenmp'],
+        # extra_link_args=['-fopenmp'],
+        extra_compile_args=["-O3", "-ffast-math", "-march=native", "-Xpreprocessor", "-fopenmp"],
+        extra_link_args=["-Xpreprocessor", "-fopenmp"],
+    ),
+    Extension(
+        name="current_phase_calculations",
+        sources=["current_phase_calculations.pyx"],
+        include_dirs=[numpy.get_include()],
+        language='c++',
+        # extra_compile_args=['-fopenmp'],
+        # extra_link_args=['-fopenmp'],
+        extra_compile_args=["-O3", "-ffast-math", "-march=native", "-Xpreprocessor", "-fopenmp"],
+        extra_link_args=["-Xpreprocessor", "-fopenmp"],
     ),
 ]
 
 setup(
-    ext_modules=cythonize(extensions, annotate=True, force=False, include_path=[numpy.get_include()]),
     include_dirs=[numpy.get_include()],
+    ext_modules=cythonize(extensions, annotate=True, force=False),
     cmdclass={'build_ext': build_ext},
 )

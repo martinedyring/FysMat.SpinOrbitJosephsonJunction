@@ -1,38 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/Masteroppgave/setup.py" line="24" mnemonic="7" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="619037fa-4b25-4024-aeda-7804730b2fd8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Master2021/Master2021.xcodeproj/project.xcworkspace/xcuserdata/martinedh.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Master2021/Master2021.xcodeproj/project.pbxproj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Master2021/Master2021.xcodeproj/project.xcworkspace/contents.xcworkspacedata" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Master2021/Master2021.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Master2021/Master2021.xcodeproj/xcuserdata/martinedh.xcuserdatad/xcschemes/xcschememanagement.plist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Master2021/Master2021/main.cpp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masteroppgave/.ipynb_checkpoints/Untitled-checkpoint.ipynb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masteroppgave/Untitled.ipynb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masteroppgave/__init__.pyx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masteroppgave/current_phase_calculations.pyx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masteroppgave/py_files/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masteroppgave/py_files/current_phase_calculations.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masteroppgave/setup.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.pxd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.pyx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masteroppgave/system_class.pxd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masteroppgave/system_class.pyx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masteroppgave/utilities.pxd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masteroppgave/utilities.pyx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Masteroppgave/current_phase_calculations.py" afterPath="$PROJECT_DIR$/Masteroppgave/.ipynb_checkpoints/current_phase_calculations-checkpoint.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Masteroppgave/main.py" afterPath="$PROJECT_DIR$/Masteroppgave/py_files/main.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.py" afterPath="$PROJECT_DIR$/Masteroppgave/py_files/solve_hamiltonian.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Masteroppgave/system_class.py" afterPath="$PROJECT_DIR$/Masteroppgave/py_files/system_class.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Masteroppgave/utilities.py" afterPath="$PROJECT_DIR$/Masteroppgave/py_files/utilities.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/FysMat.iml" afterPath="$PROJECT_DIR$/.idea/FysMat.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masteroppgave/Notebooks/how_to_save.ipynb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masteroppgave/Notebooks/test_energies.ipynb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masteroppgave/Notebooks/test_show.ipynb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masteroppgave/current_phase_calculations.pxd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masteroppgave/plot.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masteroppgave/testing.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Masteroppgave/testing.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Master2021/Master2021.xcodeproj/project.pbxproj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Master2021/Master2021.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Master2021/Master2021.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Master2021/Master2021.xcodeproj/project.xcworkspace/xcuserdata/martinedh.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Master2021/Master2021.xcodeproj/xcuserdata/martinedh.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Master2021/Master2021/main.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Masteroppgave/Masteroppgave/__init__.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Masteroppgave/Masteroppgave/current_phase_calculations.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Masteroppgave/Masteroppgave/solve_hamiltonian.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Masteroppgave/Masteroppgave/system_class.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Masteroppgave/Masteroppgave/utilities.so" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/build/temp.macosx-10.15-x86_64-2.7/__init__.o" afterPath="$PROJECT_DIR$/Masteroppgave/build/temp.macosx-10.15-x86_64-2.7/__init__.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/build/temp.macosx-10.15-x86_64-2.7/current_phase_calculations.o" afterPath="$PROJECT_DIR$/Masteroppgave/build/temp.macosx-10.15-x86_64-2.7/current_phase_calculations.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/build/temp.macosx-10.15-x86_64-2.7/solve_hamiltonian.o" afterPath="$PROJECT_DIR$/Masteroppgave/build/temp.macosx-10.15-x86_64-2.7/solve_hamiltonian.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/build/temp.macosx-10.15-x86_64-2.7/system_class.o" afterPath="$PROJECT_DIR$/Masteroppgave/build/temp.macosx-10.15-x86_64-2.7/system_class.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/build/temp.macosx-10.15-x86_64-2.7/utilities.o" afterPath="$PROJECT_DIR$/Masteroppgave/build/temp.macosx-10.15-x86_64-2.7/utilities.o" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/.idea/misc.xml" afterPath="$PROJECT_DIR$/Masteroppgave/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Masteroppgave/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pipfile" afterPath="$PROJECT_DIR$/Pipfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/.ipynb_checkpoints/Untitled-checkpoint.ipynb" afterPath="$PROJECT_DIR$/Masteroppgave/.ipynb_checkpoints/Untitled-checkpoint.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/Notebooks/.ipynb_checkpoints/SHMS-checkpoint.ipynb" afterPath="$PROJECT_DIR$/Masteroppgave/Notebooks/.ipynb_checkpoints/SHMS-checkpoint.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/UNKNOWN.egg-info/top_level.txt" afterPath="$PROJECT_DIR$/Masteroppgave/UNKNOWN.egg-info/top_level.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/Untitled.ipynb" afterPath="$PROJECT_DIR$/Masteroppgave/Untitled.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/current_phase_calculations.cpp" afterPath="$PROJECT_DIR$/Masteroppgave/current_phase_calculations.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/current_phase_calculations.html" afterPath="$PROJECT_DIR$/Masteroppgave/current_phase_calculations.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/current_phase_calculations.pyx" afterPath="$PROJECT_DIR$/Masteroppgave/current_phase_calculations.pyx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/setup.py" afterPath="$PROJECT_DIR$/Masteroppgave/setup.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.cpp" afterPath="$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.html" afterPath="$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.pyx" afterPath="$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.pyx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/system_class.cpp" afterPath="$PROJECT_DIR$/Masteroppgave/system_class.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/system_class.html" afterPath="$PROJECT_DIR$/Masteroppgave/system_class.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/system_class.pxd" afterPath="$PROJECT_DIR$/Masteroppgave/system_class.pxd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/system_class.pyx" afterPath="$PROJECT_DIR$/Masteroppgave/system_class.pyx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/utilities.cpp" afterPath="$PROJECT_DIR$/Masteroppgave/utilities.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/utilities.html" afterPath="$PROJECT_DIR$/Masteroppgave/utilities.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Masteroppgave/utilities.pyx" afterPath="$PROJECT_DIR$/Masteroppgave/utilities.pyx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current.ipynb" afterPath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/plots.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/plots.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,9 +59,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/FysMat$tester.coverage" NAME="tester Coverage Results" MODIFIED="1611825914358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prosjektoppgave-kopi" />
     <SUITE FILE_PATH="coverage/FysMat$Test.coverage" NAME="Test Coverage Results" MODIFIED="1600255280868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prosjektoppgave" />
     <SUITE FILE_PATH="coverage/FysMat$main.coverage" NAME="main Coverage Results" MODIFIED="1600512380287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prosjektoppgave" />
-    <SUITE FILE_PATH="coverage/FysMat$Unittests_in_setup.coverage" NAME="Unittests in setup Coverage Results" MODIFIED="1611319657527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Masteroppgave" />
+    <SUITE FILE_PATH="coverage/FysMat$system_class_pyx.coverage" NAME="system_class.pyx Coverage Results" MODIFIED="1611746839958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Masteroppgave" />
+    <SUITE FILE_PATH="coverage/FysMat$utilities.coverage" NAME="utilities Coverage Results" MODIFIED="1611825196706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prosjektoppgave" />
+    <SUITE FILE_PATH="coverage/FysMat$Unittests_in_setup.coverage" NAME="Unittests in setup Coverage Results" MODIFIED="1611583296615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Masteroppgave" />
+    <SUITE FILE_PATH="coverage/FysMat$Unittests_in_setup__1_.coverage" NAME="Unittests in setup (1) Coverage Results" MODIFIED="1611823532858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Masteroppgave" />
+    <SUITE FILE_PATH="coverage/FysMat$testing.coverage" NAME="testing Coverage Results" MODIFIED="1611824946862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Masteroppgave" />
+    <SUITE FILE_PATH="coverage/FysMat$system_class_pxd.coverage" NAME="system_class.pxd Coverage Results" MODIFIED="1611747581090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Masteroppgave" />
+    <SUITE FILE_PATH="coverage/FysMat$testing__1_.coverage" NAME="testing (1) Coverage Results" MODIFIED="1611825869137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prosjektoppgave-kopi" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -52,53 +76,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="setup.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Masteroppgave/setup.py">
+      <file leaf-file-name="utilities.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="29" column="9" lean-forward="false" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-              <folding>
-                <element signature="e#126#165#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="298">
+              <caret line="26" column="6" lean-forward="false" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="current_phase_calculations.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Masteroppgave/current_phase_calculations.cpp">
+      <file leaf-file-name="solve_hamiltonian.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="solve_hamiltonian.pxd" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.pxd">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="system_class.pxd" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Masteroppgave/system_class.pxd">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="56" column="28" lean-forward="false" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="system_class.pyx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Masteroppgave/system_class.pyx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7620">
-              <caret line="516" column="75" lean-forward="false" selection-start-line="516" selection-start-column="75" selection-end-line="516" selection-end-column="75" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -106,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="solve_hamiltonian.pyx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.pyx">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="195">
+              <caret line="59" column="14" lean-forward="false" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -118,34 +110,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utilities.pyx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Masteroppgave/utilities.pyx">
+      <file leaf-file-name="system_class.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="current_phase_calculations.pyx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Masteroppgave/current_phase_calculations.pyx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="34" column="80" lean-forward="false" selection-start-line="34" selection-start-column="80" selection-end-line="34" selection-end-column="80" />
+            <state relative-caret-position="150">
+              <caret line="10" column="107" lean-forward="false" selection-start-line="10" selection-start-column="107" selection-end-line="10" selection-end-column="107" />
               <folding>
-                <element signature="e#0#17#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utilities.pxd" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Masteroppgave/utilities.pxd">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -168,6 +140,16 @@
       <find>values</find>
       <find>ky</find>
       <find>self.L_y</find>
+      <find>idx_f_i</find>
+      <find>idx_f</find>
+      <find>np.sum</find>
+      <find>np</find>
+      <find>conj</find>
+      <find>exp</find>
+      <find>sqrt</find>
+      <find>log</find>
+      <find>t_0</find>
+      <find>pi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -185,7 +167,6 @@
         <option value="$PROJECT_DIR$/Prosjektoppgave/bdg_solver_notebook.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/notebook_bdg_solver.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/utilities.py" />
-        <option value="$PROJECT_DIR$/Prosjektoppgave/plots.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/phasediagrams.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/system_class.py" />
@@ -193,16 +174,31 @@
         <option value="$PROJECT_DIR$/Masteroppgave/example.py" />
         <option value="$PROJECT_DIR$/Masteroppgave/example.pyx" />
         <option value="$PROJECT_DIR$/Masteroppgave/utilities.py" />
-        <option value="$PROJECT_DIR$/Masteroppgave/utilities.pyx" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/Pipfile" />
         <option value="$PROJECT_DIR$/Masteroppgave/utilities.pxd" />
+        <option value="$PROJECT_DIR$/Masteroppgave/utilities.pyx" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/plot.pyx.py" />
+        <option value="$PROJECT_DIR$/Masteroppgave/plot.pxd" />
+        <option value="$PROJECT_DIR$/Masteroppgave/plot.pyx" />
+        <option value="$PROJECT_DIR$/Masteroppgave/plot.py" />
+        <option value="$PROJECT_DIR$/Masteroppgave/Notebooks/.ipynb_checkpoints/how_to_save.ipynb" />
+        <option value="$PROJECT_DIR$/Masteroppgave/Notebooks/.ipynb_checkpoints/how_to_save.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/plots.py" />
+        <option value="$PROJECT_DIR$/Masteroppgave/Notebooks/test_show.ipynb" />
+        <option value="$PROJECT_DIR$/Masteroppgave/Notebooks/test_show.py" />
+        <option value="$PROJECT_DIR$/Masteroppgave/Notebooks/test_energies.py" />
         <option value="$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.pxd" />
-        <option value="$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.pyx" />
-        <option value="$PROJECT_DIR$/Masteroppgave/current_phase_calculations.pyx" />
+        <option value="$PROJECT_DIR$/Masteroppgave/current_phase_calculations.pxd" />
         <option value="$PROJECT_DIR$/Masteroppgave/system_class.pxd" />
+        <option value="$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.pyx" />
         <option value="$PROJECT_DIR$/Masteroppgave/system_class.pyx" />
+        <option value="$PROJECT_DIR$/Masteroppgave/testing.txt" />
+        <option value="$PROJECT_DIR$/Masteroppgave/current_phase_calculations.pyx" />
         <option value="$PROJECT_DIR$/Masteroppgave/setup.py" />
+        <option value="$PROJECT_DIR$/Masteroppgave/testing.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave-kopi/testing.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave-kopi/tester.py" />
       </list>
     </option>
   </component>
@@ -213,10 +209,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="114" />
     <option name="y" value="23" />
-    <option name="width" value="1326" />
-    <option name="height" value="830" />
+    <option name="width" value="1398" />
+    <option name="height" value="828" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -249,8 +244,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -273,12 +266,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Masteroppgave" />
+              <option name="myItemId" value="Prosjektoppgave" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -291,50 +286,20 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Masteroppgave/Notebooks" />
       <recent name="$PROJECT_DIR$/Masteroppgave" />
+      <recent name="$PROJECT_DIR$/Master" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Masteroppgave/Notebooks" />
+      <recent name="$PROJECT_DIR$/Masteroppgave" />
+      <recent name="$PROJECT_DIR$/Master/Master" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Masteroppgave/py_files" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in setup">
-    <configuration default="false" name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Prosjektoppgave" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="FysMat" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Prosjektoppgave/Test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Prosjektoppgave" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="FysMat" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Prosjektoppgave/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in setup" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.tester">
+    <configuration default="false" name="Unittests in setup (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
@@ -355,6 +320,78 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="system_class.pxd" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Masteroppgave" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FysMat" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Masteroppgave/system_class.pxd" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="utilities" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Prosjektoppgave" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FysMat" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Prosjektoppgave/utilities.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="testing (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Prosjektoppgave-kopi" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FysMat" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Prosjektoppgave-kopi/testing.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="tester" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Prosjektoppgave-kopi" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FysMat" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Prosjektoppgave-kopi/tester.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
@@ -571,16 +608,39 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="Python.Test" />
-      <item index="1" class="java.lang.String" itemvalue="Python.main" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in setup" />
+    <configuration default="false" name="testing" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Masteroppgave" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FysMat" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Masteroppgave/testing.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <list size="6">
+      <item index="0" class="java.lang.String" itemvalue="Python.testing" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in setup (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Python.system_class.pxd" />
+      <item index="3" class="java.lang.String" itemvalue="Python.utilities" />
+      <item index="4" class="java.lang.String" itemvalue="Python.testing (1)" />
+      <item index="5" class="java.lang.String" itemvalue="Python.tester" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in setup" />
-        <item index="1" class="java.lang.String" itemvalue="Python.main" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Test" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.tester" />
+        <item index="1" class="java.lang.String" itemvalue="Python.testing (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.utilities" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in setup (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Python.system_class.pxd" />
       </list>
     </recent_temporary>
   </component>
@@ -598,35 +658,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_setup - 2021.01.22 at 13h 25m 04s.xml">
-      <configuration name="Unittests in setup" configurationId="tests" />
+    <history-entry file="Unittests_in_setup_(1) - 2021.01.27 at 17h 38m 18s.xml">
+      <configuration name="Unittests in setup (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_setup - 2021.01.22 at 13h 25m 48s.xml">
-      <configuration name="Unittests in setup" configurationId="tests" />
+    <history-entry file="Unittests_in_setup_(1) - 2021.01.27 at 17h 38m 29s.xml">
+      <configuration name="Unittests in setup (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_setup - 2021.01.22 at 13h 29m 50s.xml">
-      <configuration name="Unittests in setup" configurationId="tests" />
+    <history-entry file="Unittests_in_setup_(1) - 2021.01.27 at 17h 38m 38s.xml">
+      <configuration name="Unittests in setup (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_setup - 2021.01.22 at 13h 30m 47s.xml">
-      <configuration name="Unittests in setup" configurationId="tests" />
+    <history-entry file="Unittests_in_setup_(1) - 2021.01.27 at 17h 39m 16s.xml">
+      <configuration name="Unittests in setup (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_setup - 2021.01.22 at 13h 34m 03s.xml">
-      <configuration name="Unittests in setup" configurationId="tests" />
+    <history-entry file="Unittests_in_setup_(1) - 2021.01.27 at 17h 44m 17s.xml">
+      <configuration name="Unittests in setup (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_setup - 2021.01.22 at 13h 34m 34s.xml">
-      <configuration name="Unittests in setup" configurationId="tests" />
+    <history-entry file="Unittests_in_setup_(1) - 2021.01.27 at 17h 44m 36s.xml">
+      <configuration name="Unittests in setup (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_setup - 2021.01.22 at 13h 44m 52s.xml">
-      <configuration name="Unittests in setup" configurationId="tests" />
+    <history-entry file="Unittests_in_setup_(1) - 2021.01.27 at 17h 45m 40s.xml">
+      <configuration name="Unittests in setup (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_setup - 2021.01.22 at 13h 45m 52s.xml">
-      <configuration name="Unittests in setup" configurationId="tests" />
+    <history-entry file="Unittests_in_setup_(1) - 2021.01.27 at 17h 46m 04s.xml">
+      <configuration name="Unittests in setup (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_setup - 2021.01.22 at 13h 46m 48s.xml">
-      <configuration name="Unittests in setup" configurationId="tests" />
+    <history-entry file="Unittests_in_setup_(1) - 2021.01.28 at 09h 45m 11s.xml">
+      <configuration name="Unittests in setup (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_setup - 2021.01.22 at 13h 48m 20s.xml">
-      <configuration name="Unittests in setup" configurationId="tests" />
+    <history-entry file="Unittests_in_setup_(1) - 2021.01.28 at 09h 45m 40s.xml">
+      <configuration name="Unittests in setup (1)" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -639,26 +699,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="114" y="23" width="1326" height="830" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1398" height="828" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32788163" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27138644" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24525745" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46195653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39972898" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32791328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32791328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -670,16 +730,16 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38753387" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29132792" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21244635" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22757599" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32791328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39972898" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -690,167 +750,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="59" column="0" lean-forward="true" selection-start-line="53" selection-start-column="3" selection-end-line="59" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="41" column="26" lean-forward="false" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="80" column="22" lean-forward="true" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/plots.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1590">
-          <caret line="109" column="42" lean-forward="false" selection-start-line="109" selection-start-column="42" selection-end-line="109" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/test_bdg_solver.ipynb" />
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/bdg_solver_notebook.py" />
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/notebook_bdg_solver.py" />
-    <entry file="file://$PROJECT_DIR$/test_func.ipynb" />
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/pairing_amplitude.py" />
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/Inspo_basespace.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1589">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solver_bdg.py" />
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/inspo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="68" column="29" lean-forward="false" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/Test.py" />
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="80" column="0" lean-forward="false" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/plots.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="66" column="20" lean-forward="false" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="166" column="99" lean-forward="false" selection-start-line="166" selection-start-column="99" selection-end-line="166" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/phasediagrams.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="63" column="19" lean-forward="false" selection-start-line="63" selection-start-column="19" selection-end-line="63" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Masteroppgave/py_files/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Masteroppgave/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Masteroppgave/py_files/system_class.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Masteroppgave/py_files/current_phase_calculations.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Masteroppgave/Untitled.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Masteroppgave/example.c" />
-    <entry file="file://$PROJECT_DIR$/Masteroppgave/current_phase_calculations.c" />
-    <entry file="file://$PROJECT_DIR$/Masteroppgave/py_files/utilities.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Masteroppgave/py_files/solve_hamiltonian.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Masteroppgave/UNKNOWN.egg-info/dependency_links.txt" />
     <entry file="file://$PROJECT_DIR$/Masteroppgave/UNKNOWN.egg-info/PKG-INFO" />
     <entry file="file://$PROJECT_DIR$/Masteroppgave/UNKNOWN.egg-info/SOURCES.txt" />
@@ -862,17 +766,17 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
             <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -886,13 +790,6 @@
     <entry file="file://$PROJECT_DIR$/Masteroppgave/current_phase_calculations.pyd" />
     <entry file="file://$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.pyd" />
     <entry file="file://$PROJECT_DIR$/Masteroppgave/system_class.pyd" />
-    <entry file="file://$PROJECT_DIR$/Masteroppgave/__init__.pyx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Masteroppgave/utilities.pxd">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -902,50 +799,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Masteroppgave/example.pyx" />
-    <entry file="file://$PROJECT_DIR$/Masteroppgave/utilities.pyx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.pxd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.pyx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Masteroppgave/current_phase_calculations.pyx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="34" column="80" lean-forward="false" selection-start-line="34" selection-start-column="80" selection-end-line="34" selection-end-column="80" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Masteroppgave/system_class.pxd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="56" column="28" lean-forward="false" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/numpy/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -953,23 +806,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Masteroppgave/system_class.pyx">
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/utilities.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7620">
-          <caret line="516" column="75" lean-forward="false" selection-start-line="516" selection-start-column="75" selection-end-line="516" selection-end-column="75" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Masteroppgave/setup.py">
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/current_phase_calculations.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="29" column="9" lean-forward="false" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-          <folding>
-            <element signature="e#126#165#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -977,6 +824,274 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/Untitled.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Master/Master/__init__.cpp" />
+    <entry file="file://$PROJECT_DIR$/Master/Master/setup.py" />
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3">
+          <caret line="25728" column="12" lean-forward="true" selection-start-line="25728" selection-start-column="12" selection-end-line="25728" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/plot.pyx.py" />
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/plot.pxd" />
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/plot.pyx" />
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/Notebooks/.ipynb_checkpoints/SHMS-checkpoint.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/Notebooks/how_to_save.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="4" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="7260">
+          <caret line="484" column="0" lean-forward="false" selection-start-line="484" selection-start-column="0" selection-end-line="484" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/Notebooks/test_show.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/Notebooks/test_show.ipynb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="1237" column="0" lean-forward="false" selection-start-line="1237" selection-start-column="0" selection-end-line="1237" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/plot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/plots.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/Notebooks/test_energies.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="571" column="0" lean-forward="true" selection-start-line="571" selection-start-column="0" selection-end-line="571" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Python/2.7/site-packages/Cython/Build/Dependencies.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13953">
+          <caret line="1224" column="0" lean-forward="false" selection-start-line="1224" selection-start-column="0" selection-end-line="1224" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/utilities.pyx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.pxd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/__init__.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5655">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/__init__.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/__init__.pyx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/testing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#33#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/system_class.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="9908" column="0" lean-forward="false" selection-start-line="9908" selection-start-column="0" selection-end-line="9908" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="70" column="8" lean-forward="false" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
+          <folding>
+            <element signature="e#126#165#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/testing.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="71" column="25" lean-forward="false" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/system_class.pxd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="95" column="45" lean-forward="false" selection-start-line="95" selection-start-column="45" selection-end-line="95" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/system_class.pyx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="529" column="56" lean-forward="false" selection-start-line="529" selection-start-column="56" selection-end-line="529" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#18#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/current_phase_calculations.pyx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="163" column="92" lean-forward="false" selection-start-line="163" selection-start-column="92" selection-end-line="163" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/current_phase_calculations.pxd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="34" column="69" lean-forward="false" selection-start-line="34" selection-start-column="69" selection-end-line="34" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Masteroppgave/solve_hamiltonian.pyx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="71" column="88" lean-forward="false" selection-start-line="71" selection-start-column="88" selection-end-line="71" selection-end-column="88" />
+          <folding>
+            <element signature="e#0#18#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="26" column="6" lean-forward="false" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="59" column="14" lean-forward="false" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="107" lean-forward="false" selection-start-line="10" selection-start-column="107" selection-end-line="10" selection-end-column="107" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave-kopi/testing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave-kopi/tester.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
