@@ -1,6 +1,8 @@
 # !/usr/bin/python
 # coding=utf-8
 
+import dask
+from dask import delayed
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -8,6 +10,9 @@ from solve_hamiltonian import solve_system, solve_system_new
 from system_class import System
 from plots import plot_complex_function, plot_pairing_amplitude
 from utilities import label_F_matrix
+
+from testing import testing as testing_run
+import time
 
 """
 This is the main function to run all programs
@@ -64,17 +69,17 @@ def solve_and_return_system_and_F_matrix(max_num_iter=100, tol=1e-4):
     F_matrix = system.F_matrix
     return system, F_matrix
 
+def solve_and_test_small_system(max_num_iter=100, tol=1e-5, phase=-np.pi/2):
 
-def solve_and_test_small_system(max_num_iter=100, tol=1e-4):
-
-    system = System(phase=0, L_y = 50,L_z=50, L_sc_0 = 0, L_nc=25, L_sc=25, L_soc=0, mu_sc = 0.9, mu_nc = 0.9, mu_soc = 0.85, u_sc = -4.2, beta=100)
+    system = System(phase=phase, L_y = 30,L_z=30, L_sc_0 = 25, L_nc=0, L_sc=25, L_soc=5, mu_sc = 0.9, mu_nc = 0.9, mu_soc = 0.85, u_sc = -4.2, beta=33.3)
     #system = System(phase=np.pi / 4, L_y=20, L_z=20, L_sc_0=7, L_h=5, L_sc=7, L_soc=0, mu_sc=0.9, mu_nc=0.9,mu_soc=0.85, u_sc=-4.2)
 
 
     #F_matrix = np.asarray(solve_system(system, 3, tol))
 
     #solve_system(system, max_num_iter, tol, juction=False)
-    solve_system_new(system, max_num_iter, tol, juction=False)
+    num_iter = solve_system_new(system, max_num_iter, tol, junction=True)
+    print( "num iteration is ", num_iter)
     F_matrix = system.F_matrix
     return system, F_matrix
 
@@ -221,3 +226,49 @@ def solve_for_shms_system(max_num_iter=100, tol=1e-5, xz=False, yz=False, alpha_
 
 #if __name__ == "__main__":
 #    pairing_amplitude()
+
+@delayed
+def run_eigh_calc():
+    system = System(phase=0, L_y=30, L_z=30, L_sc_0=25, L_nc=0, L_soc=5, L_sc=25, mu_sc=0.9, mu_nc=0.9, mu_soc=0.85, u_sc=-4.2, beta=100)
+    start=time.time()
+    testing_run(max_num_iter=100,
+               tol=10,
+               juction=False,
+               L_x=system.L_x,
+               L_y=system.L_y,
+               L_z=system.L_z,
+               L_sc=system.L_sc,
+               L_soc=system.L_soc,
+               mu_array=system.mu_array,
+               h_array=system.h_array,
+               U_array=system.U_array,
+               F_matrix=system.F_matrix,
+               t_x_array=system.t_x_array,
+               ky_array=system.ky_array,
+               kz_array=system.kz_array,
+               alpha_R_x_array=system.alpha_R_x_array,
+               alpha_R_y_array=system.alpha_R_y_array,
+               beta=system.beta,
+               phase=system.phase,
+               eigenvalues=system.eigenvalues,
+               eigenvectors=system.eigenvectors,
+               hamiltonian=system.hamiltonian)
+    duration = time.time()-start
+    return duration
+
+#@delayed
+def s(a):
+    for i in range(4000):
+        a+=i * np.sum(np.ones(i))
+    return a
+
+#@delayed
+def f(a):
+    for i in range(500):
+        np.linalg.eigh(a)
+        a[0] += a(a[0])
+    return a
+
+#print(run_eigh_calc())
+
+

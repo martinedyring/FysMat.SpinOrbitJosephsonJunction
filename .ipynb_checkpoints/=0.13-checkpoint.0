@@ -1,0 +1,14 @@
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... 
+Warning: 8 possible package resolutions (only showing differing packages):
+  - https://repo.continuum.io/pkgs/main/osx-64/conda-build-3.4.1-py36_0.tar.bz2/osx-64::conda-build-3.4.1-py36_0, https://repo.continuum.io/pkgs/main/osx-64/osx-64::conda-package-handling-1.7.2-py36h22f3db7_0, https://repo.continuum.io/pkgs/main/osx-64/python.app-2-py36h54569d5_7.tar.bz2/osx-64::python.app-2-py36h54569d5_7
+  - defaults/osx-64::python.app-2-py36h54569d5_7, https://repo.continuum.io/pkgs/main/osx-64/conda-build-3.4.1-py36_0.tar.bz2/osx-64::conda-build-3.4.1-py36_0, https://repo.continuum.io/pkgs/main/osx-64/osx-64::conda-package-handling-1.7.2-py36h22f3db7_0
+  - defaults/osx-64::conda-package-handling-1.7.2-py36h22f3db7_0, https://repo.continuum.io/pkgs/main/osx-64/conda-build-3.4.1-py36_0.tar.bz2/osx-64::conda-build-3.4.1-py36_0, https://repo.continuum.io/pkgs/main/osx-64/python.app-2-py36h54569d5_7.tar.bz2/osx-64::python.app-2-py36h54569d5_7
+  - defaults/osx-64::conda-package-handling-1.7.2-py36h22f3db7_0, defaults/osx-64::python.app-2-py36h54569d5_7, https://repo.continuum.io/pkgs/main/osx-64/conda-build-3.4.1-py36_0.tar.bz2/osx-64::conda-build-3.4.1-py36_0
+  - defaults/osx-64::conda-build-3.4.1-py36_0, defaults/osx-64::conda-package-handling-1.7.2-py36h22f3db7_0, https://repo.continuum.io/pkgs/main/osx-64/python.app-2-py36h54569d5_7.tar.bz2/osx-64::python.app-2-py36h54569d5_7
+  - defaults/osx-64::conda-build-3.4.1-py36_0, defaults/osx-64::conda-package-handling-1.7.2-py36h22f3db7_0, defaults/osx-64::python.app-2-py36h54569d5_7
+  - defaults/osx-64::conda-build-3.4.1-py36_0, https://repo.continuum.io/pkgs/main/osx-64/osx-64::conda-package-handling-1.7.2-py36h22f3db7_0, https://repo.continuum.io/pkgs/main/osx-64/python.app-2-py36h54569d5_7.tar.bz2/osx-64::python.app-2-py36h54569d5_7
+  - defaults/osx-64::conda-build-3.4.1-py36_0, defaults/osx-64::python.app-2-py36h54569d5_7, https://repo.continuum.io/pkgs/main/osx-64/osx-64::conda-package-handling-1.7.2-py36h22f3db7_0done
+
+# All requested packages already installed.
+

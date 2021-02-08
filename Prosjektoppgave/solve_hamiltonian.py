@@ -2,7 +2,7 @@ import numpy as np
 #from scipy.linalg import eigh
 from numpy.linalg import eigh
 from numba import njit
-
+from dask import delayed
 #from utilities import set_hamiltonian, calculate_F_matrix
 from utilities_t import idx_F_i
 
@@ -155,10 +155,10 @@ def solve_system(system, max_num_iter = 100, tol=1e-5, juction=True):
     """
     return #F_matrix
 
-def solve_system_new(system, max_num_iter = 100, tol=1e-5, juction=True):
-    F_matrix, eigenvalues, eigenvectors, hamiltonian = solve_system_numba(max_num_iter=max_num_iter,
+def solve_system_new(system, max_num_iter = 1000, tol=1e-3, junction=True):
+    F_matrix, eigenvalues, eigenvectors, hamiltonian, num_iter = solve_system_numba(max_num_iter=max_num_iter,
                                                                                                        tol=tol,
-                                                                                                       juction=juction,
+                                                                                                       junction=junction,
                                                                                                        L_x=system.L_x,
                                                                                                        L_y=system.L_y,
                                                                                                        L_z=system.L_z,
@@ -180,6 +180,7 @@ def solve_system_new(system, max_num_iter = 100, tol=1e-5, juction=True):
                                                                                                        hamiltonian=system.hamiltonian)
 
     system.F_matrix, system.eigenvalues, system.eigenvectors, system.hamiltonian = F_matrix, eigenvalues, eigenvectors, hamiltonian
+    return num_iter
 
 
 

@@ -8,7 +8,6 @@ with Numba but no jit-wrap around solve_system() using scipy.linalg.eigh RUNTIME
 with Numba AND njit-wrap around solve_system_numba() using scipy.linalg.eigh RUNTIME: not possible to run
 with Numba AND njit-wrap around solve_system_numba() using numpy.linalg.eigh RUNTIME: 164.69343915100035 s (2.7 min)
 
-
 preformace tips:
 @njit(fastmath=True, parallel=True)
 
@@ -16,4 +15,50 @@ preformace tips:
 
 
 
+L_sc=Lsc_0 = 25, L_soc = 3, Ly=Lz=30
+----------------------------------------------------
+Before update_hamiltonian() function: 
+    num iteration is  1001
+    Time:  8430.824717800002 s (140 min)
 
+After update_hamiltonian() implementation:
+    num iteration is  1001
+    Time:  5552.066057652992
+    CPU times: user 5h 28min 13s, sys: 4min 3s, total: 5h 32min 16s
+    Wall time: 1h 32min 32s
+    ----> 5.55 s per iteration
+
+
+NOTE: wrap current in a njit function, and rewrite the class function
+
+
+
+__________________________________________________________
+dask.dustribution: Run calculation parallel on CPU
+
+Saved output of np.linalg.eigh() as a delayed object (tmp_dask_builder.ipynb), and used dask.compute() at the end of each while-iteration. Tried 4,12, and 16 theads with 4 cores. Do not increase runtime compared to njit (on my computer). approx 13-22 sec on each while-iteration.
+
+An problem with dask is the memory. Error: "distributed.utils_perf - WARNING - full garbage collections took 10% CPU time recently (threshold: 10%)". Need somehow to clear memory or somehow after each .compute() calculation.
+
+
+
+
+OBS: set_rashba() is a bit non-flexible with the if-statement in line 354
+
+
+----- test run
+num iteration is  21
+Time:  192.72700259901467
+CPU times: user 7min 1s, sys: 8.2 s, total: 7min 9s
+Wall time: 3min 12s
+
+num iteration is  101
+Time:  833.7401537100086
+CPU times: user 32min 45s, sys: 34.4 s, total: 33min 20s
+Wall time: 13min 53s
+
+
+num iteration is  501
+Time:  3607.917537015979
+CPU times: user 2h 44min 13s, sys: 2min 22s, total: 2h 46min 36s
+Wall time: 1h 7s

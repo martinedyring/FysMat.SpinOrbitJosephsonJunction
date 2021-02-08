@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 
 from numba import prange
 
+import time
+
 from math import exp
 #from scipy.linalg import eigh
 #import numpy.linalg as eigh
@@ -17,11 +19,21 @@ def forcePhaseDifference(F_matrix, phase):
     F_matrix[-1, 0] = np.abs(F_matrix[-1, 0])
     return F_matrix
 
-
 @njit(fastmath=True, parallel=True)
 def calculate_F_matrix(F_matrix, L_x, L_y, L_z, eigenvalues, eigenvectors, beta):
+    F_matrix[:, idx_F_i] = 0.0 + 0.0j
     for i in prange(F_matrix.shape[0]):
-        F_matrix[i, idx_F_i] = np.sum(1 / (2 * L_y * L_z) * (1 + np.tanh(beta * eigenvalues[:, 1:, 1:] / 2)) * (eigenvectors[4 * i, :, 1:, 1:] * np.conj(eigenvectors[(4 * i) + 3, :, 1:, 1:])))
+        F_matrix[i, idx_F_i] += np.sum(1 / (2 * L_y * L_z) * (1 + np.tanh(beta * eigenvalues[:, 1:, 1:] / 2)) * (eigenvectors[4 * i, :, 1:, 1:] * np.conj(eigenvectors[(4 * i) + 3, :, 1:, 1:])))
+    """
+
+
+    for kz in range(eigenvectors.shape[3]):
+        for ky in range(eigenvectors.shape[2]):
+            for j in range(eigenvectors.shape[1]):
+                for i in prange(F_matrix.shape[0]):
+                    F_matrix[i, idx_F_i] += np.sum(1 / (2 * L_y * L_z) * (1 + np.tanh(beta * eigenvalues[j, ky, kz] / 2)) * (eigenvectors[4 * i, j, ky, kz] * np.conj(eigenvectors[(4 * i) + 3, j, ky, kz])))
+
+    """
     return F_matrix
 
 @njit(fastmath=True)
@@ -47,21 +59,23 @@ def set_epsilon(arr, i, j, ky, kz, mu_array, t_array):
 def delta_gap(i, U_array, F_matrix):
     return U_array[i] * F_matrix[i, idx_F_i]
 
+
+# har endre fra += til = grunnet update_hamiltonian. Sjekk at dette fungere fremdeles
 @njit(fastmath=True)
 def set_delta(arr, i, j, U_array, F_matrix):
     # Comment out +=, and remove the other comp from update_hamil to increase runtime and check if there is any diff. Shouldnt be diff in output.
     if i==j:
         #   Skjekk om du må bytte om index
-        arr[0][3] += -delta_gap(i, U_array, F_matrix)#/2
-        arr[1][2] += delta_gap(i, U_array, F_matrix)#/2
-        arr[2][1] += np.conj(delta_gap(i, U_array, F_matrix))#/2
-        arr[3][0] += -np.conj(delta_gap(i, U_array, F_matrix))#/2
+        arr[0][3] = -delta_gap(i, U_array, F_matrix)#/2
+        arr[1][2] = delta_gap(i, U_array, F_matrix)#/2
+        arr[2][1] = np.conj(delta_gap(i, U_array, F_matrix))#/2
+        arr[3][0] = -np.conj(delta_gap(i, U_array, F_matrix))#/2
 
     return arr
 
-@njit(fastmath=True)
+@njit(fastmath = True)
 def set_rashba_ky(arr, i, j, ky, kz, alpha_R_x_array, alpha_R_y_array, L_soc, L_sc):
-    I = 1.0j
+    #I = 1.0j
     sinky = np.sin(ky)
     sinkz = np.sin(kz)
 
@@ -73,10 +87,10 @@ def set_rashba_ky(arr, i, j, ky, kz, alpha_R_x_array, alpha_R_y_array, L_soc, L_
         y10 = alpha_R_y_array[i, 2]
         y11 = alpha_R_y_array[i, 0]
 
-        z01_up = -alpha_R_y_array[i, 1] - I * alpha_R_y_array[i, 0]
-        z10_up = -alpha_R_y_array[i, 1] + I * alpha_R_y_array[i, 0]
-        z01_down = -alpha_R_y_array[i, 1] + I * alpha_R_y_array[i, 0]
-        z10_down = -alpha_R_y_array[i, 1] - I * alpha_R_y_array[i, 0]
+        z01_up = -alpha_R_y_array[i, 1] - 1.0j * alpha_R_y_array[i, 0]
+        z10_up = -alpha_R_y_array[i, 1] + 1.0j * alpha_R_y_array[i, 0]
+        z01_down = -alpha_R_y_array[i, 1] + 1.0j * alpha_R_y_array[i, 0]
+        z10_down = -alpha_R_y_array[i, 1] - 1.0j * alpha_R_y_array[i, 0]
 
 
         # Upper left
@@ -92,39 +106,54 @@ def set_rashba_ky(arr, i, j, ky, kz, alpha_R_x_array, alpha_R_y_array, L_soc, L_
         arr[3][3] += sinky * y11
 
     # Backward jump X-
-    elif (i == (j - 1)) or (i == (j + 1)):
-    #elif j == i + 1 or j == i - 1:
-        #if j == i + 1:  # Backward jump X-
+    elif ((i == (j - 1)) or (i == (j + 1))):
+        # elif j == i + 1 or j == i - 1:
+        # if j == i + 1:  # Backward jump X-
+        l = j
+        xi = 0
+        if (i == (j - 1)):  # Backward jump X-
+            if (L_sc <= i < (L_sc + L_soc)):
+                l = i  # i
+            coeff = -1.0 / 4.0
 
-        if i == (j - 1):  # Backward jump X-
-            l = i #i
-            coeff = -1.0/4.0
+            #if ((L_sc <= i < (L_sc + L_soc)) and (L_sc <= j-1 < (L_sc + L_soc))):  # check if both i and j are inside soc material
+            #    xi = 1
         else:  # Forward jump X+
-            l = j#j
-            coeff = 1.0/4.0
+            if (L_sc <= i < (L_sc + L_soc)):
+                l = i
+            #l = i  # j
+            coeff = 1.0 / 4.0
 
-        if (L_sc <= i < (L_sc + L_soc)) and (L_sc <= j < (L_sc + L_soc)): #check if both i and j are inside soc material
-            coeff = coeff * 2
+            #if ((L_sc <= i < (L_sc + L_soc)) and (L_sc <= j+1 < (L_sc + L_soc))):  # check if both i and j are inside soc material
+            #    xi = 1
 
-        s00 = I *alpha_R_x_array[l, 1]
-        s01 = -alpha_R_x_array[l, 2] #maybe change sign on s01 and s10??
-        s10 = alpha_R_x_array[l, 2]
-        s11 = - I * alpha_R_x_array[l, 1]
+        if (L_sc <= i < (L_sc + L_soc)) and (L_sc <= j < (L_sc + L_soc)):# and (L_sc <= j-1 < (L_sc + L_soc)):  # check if both i and j are inside soc material
+            xi = 1
 
-        arr[0][0] += coeff * s00
-        arr[0][1] += coeff * s01
-        arr[1][0] += coeff * s10
-        arr[1][1] += coeff * s11
+        s00_up = 1.0j * alpha_R_x_array[int(l), 1]
+        s01_up = -alpha_R_x_array[int(l), 2]  # maybe change sign on s01 and s10??
+        s10_up = alpha_R_x_array[int(l), 2]
+        s11_up = - 1.0j * alpha_R_x_array[int(l), 1]
 
-        #arr[2][2] += conj(coeff * s00)
-        #arr[2][3] += conj(coeff * s01)
-        #arr[3][2] += conj(coeff * s10)
-        #arr[3][3] += conj(coeff * s11)
+        s00_down = 1.0j * alpha_R_x_array[int(l), 1]
+        s01_down = alpha_R_x_array[int(l), 2]  # maybe change sign on s01 and s10??
+        s10_down = -alpha_R_x_array[int(l), 2]
+        s11_down = - 1.0j * alpha_R_x_array[int(l), 1]
 
-        arr[2][2] += coeff * s00
-        arr[2][3] -= coeff * s01
-        arr[3][2] -= coeff * s10
-        arr[3][3] += coeff * s11
+        arr[0][0] += coeff * s00_up * (1 + xi)
+        arr[0][1] += coeff * s01_up * (1 + xi)
+        arr[1][0] += coeff * s10_up * (1 + xi)
+        arr[1][1] += coeff * s11_up * (1 + xi)
+
+        # arr[2][2] += conj(coeff * s00)
+        # arr[2][3] += conj(coeff * s01)
+        # arr[3][2] += conj(coeff * s10)
+        # arr[3][3] += conj(coeff * s11)
+
+        arr[2][2] += coeff * s00_down * (1 + xi)
+        arr[2][3] += coeff * s01_down * (1 + xi)
+        arr[3][2] += coeff * s10_down * (1 + xi)
+        arr[3][3] += coeff * s11_down * (1 + xi)
 
     return arr
 
@@ -143,22 +172,27 @@ def set_h(arr, i, j, h_array):
         arr[3][3] += h_array[i, 2]
     return arr
 
-@njit(fastmath=True, parallel=True)
+@njit(fastmath=True)
 def zero_init_hamiltonian(hamiltonian):
-    for i in prange(hamiltonian.shape[0]):
-        for j in range(hamiltonian.shape[1]):
-            hamiltonian[i][j] = 0.0 + 0.0j
+    hamiltonian[:,:] = 0.0 + 0.0j
     return hamiltonian
 
 @njit(fastmath=True, parallel=True)
 def set_hamiltonian(ky, kz, hamiltonian, L_x, L_sc, L_soc, mu_array, t_array, U_array, F_matrix, h_array, alpha_R_x_array, alpha_R_y_array):
-    hamiltonian = zero_init_hamiltonian(hamiltonian)
+    #hamiltonian = zero_init_hamiltonian(hamiltonian)
     for i in prange(L_x):
         for j in range(L_x):
             hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4] = set_epsilon(hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4], i, j, ky, kz, mu_array, t_array)
             hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4] = set_delta(hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4], i, j, U_array, F_matrix)
             hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4] = set_rashba_ky(hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4], i, j, ky, kz, alpha_R_x_array, alpha_R_y_array, L_soc, L_sc)
             hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4] = set_h(hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4], i, j, h_array)
+    return hamiltonian
+
+@njit(fastmath=True, parallel=True)
+def update_hamiltonian(hamiltonian, U_array, F_matrix, L_x):
+    for i in prange(L_x):
+        for j in range(L_x):
+            hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4] = set_delta(hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4], i, j, U_array, F_matrix)
     return hamiltonian
 
 #   Plot delta, U-term and F for the resulting hamiltonian
@@ -241,58 +275,83 @@ def compute_energy(L_x, U_array, F_matrix, mu_array, ky_array, kz_array, beta, t
 def current_along_lattice(L_x, L_y, L_z, L_sc_0, L_soc, beta, t, alpha_R_x_array, eigenvalues, eigenvectors):
     I = 1.0j
     current = np.zeros(L_x - 1, dtype=np.complex128)
-    tanh_coeff = 1 / (np.exp(beta * eigenvalues) + 1) / (L_y * L_z)  # 1/(system.L_y*system.L_z) *(1-np.tanh(system.beta * system.eigenvalues / 2)) #-
+    tanh_coeff = 1 / (np.exp(beta * eigenvalues) + 1)
+    tanh_coeff /= (L_y * L_z)  # 1/(system.L_y*system.L_z) *(1-np.tanh(system.beta * system.eigenvalues / 2)) #-
 
-    for ix in prange(1, len(current)):  # -1 because it doesnt give sense to check last point for I+
+
+    for ix in range(1, len(current)):  # -1 because it doesnt give sense to check last point for I+
         xi_ii = 0
         xi_minus = 0
         xi_pluss = 0
+
+        # """
         if (L_sc_0 <= ix < (L_sc_0 + L_soc)):  # check if both i and i are inside soc material
             xi_ii = 1
-        if (L_sc_0 <= ix < (L_sc_0 + L_soc)) and (L_sc_0 <= ix + 1 < (L_sc_0 + L_soc)):  # check if both i and i+1 are inside soc material
+        if (L_sc_0 <= ix < (L_sc_0 + L_soc)):  # and (system.L_sc_0 <= ix+1 < (system.L_sc_0 + system.L_soc)):# and (system.L_sc_0 <= ix-1 < (system.L_sc_0 + system.L_soc)): #check if both i and i+1 are inside soc material
             xi_pluss = 1
-        if (L_sc_0 <= ix < (L_sc_0 + L_soc)) and (L_sc_0 <= ix - 1 < (L_sc_0 + L_soc)):  # check if both i and i-1 are inside soc material
+        if (L_sc_0 <= ix < (L_sc_0 + L_soc)):  # and (system.L_sc_0 <= ix-1 < (system.L_sc_0 + system.L_soc)):# and (system.L_sc_0 <= ix+1 < (system.L_sc_0 + system.L_soc)): #check if both i and i-1 are inside soc material
             xi_minus = 1
 
-        B_pluss = 0.0 + I / 4 * (alpha_R_x_array[ix, 1] - alpha_R_x_array[ix, 2]) * (1 + xi_ii)
-        B_minus = 0.0 + I / 4 * (alpha_R_x_array[ix - 1, 1] - alpha_R_x_array[ix - 1, 2]) * (1 + xi_minus)
-        C_pluss = 0.0 - I / 4 * (alpha_R_x_array[ix + 1, 1] - alpha_R_x_array[ix + 1, 2]) * (1 + xi_pluss)
-        C_minus = 0.0 - I / 4 * (alpha_R_x_array[ix, 1] - alpha_R_x_array[ix, 2]) * (1 + xi_ii)
+        B_opp_opp_psite = 1.0j / 4 * alpha_R_x_array[ix, 1] * (1 + xi_ii)
+        B_opp_opp_pluss = 1.0j / 4 * alpha_R_x_array[ix + 1, 1] * (1 + xi_pluss)
+        B_opp_opp_minus = 1.0j / 4 * alpha_R_x_array[ix - 1, 1] * (1 + xi_minus)
+        B_opp_opp_msite = 1.0j / 4 * alpha_R_x_array[ix, 1] * (1 + xi_ii)
+
+        B_ned_ned_psite = - 1.0j / 4 * alpha_R_x_array[ix, 1] * (1 + xi_ii)
+        B_ned_ned_pluss = - 1.0j / 4 * alpha_R_x_array[ix + 1, 1] * (1 + xi_pluss)
+        B_ned_ned_minus = - 1.0j / 4 * alpha_R_x_array[ix - 1, 1] * (1 + xi_minus)
+        B_ned_ned_msite = - 1.0j / 4 * alpha_R_x_array[ix, 1] * (1 + xi_ii)
+
+        B_opp_ned_psite = - 1.0 / 4 * alpha_R_x_array[ix, 2] * (1 + xi_ii)
+        B_opp_ned_pluss = - 1.0 / 4 * alpha_R_x_array[ix + 1, 2] * (1 + xi_pluss)
+        B_opp_ned_minus = - 1.0 / 4 * alpha_R_x_array[ix - 1, 2] * (1 + xi_minus)
+        B_opp_ned_msite = - 1.0 / 4 * alpha_R_x_array[ix, 2] * (1 + xi_ii)
+
+        B_ned_opp_psite = + 1.0 / 4 * alpha_R_x_array[ix, 2] * (1 + xi_ii)
+        B_ned_opp_pluss = + 1.0 / 4 * alpha_R_x_array[ix + 1, 2] * (1 + xi_pluss)
+        B_ned_opp_minus = + 1.0 / 4 * alpha_R_x_array[ix - 1, 2] * (1 + xi_minus)
+        B_ned_opp_msite = + 1.0 / 4 * alpha_R_x_array[ix, 2] * (1 + xi_ii)
+
 
         # ---- Hopping x+ (imag)----#
         #:
-        current[ix] += 2 * np.sum(t * tanh_coeff[:, 1:, 1:] * (np.conj(eigenvectors[4 * ix, :, 1:, 1:]) * eigenvectors[4 * (ix + 1), :, 1:,1:]))  # * (np.exp(1.0j * system.ky_array[1:]) * np.exp(1.0j * system.kz_array[1:])))) #sigma = opp
-        current[ix] -= 2 * np.sum(t * tanh_coeff[:, 1:, 1:] * (np.conj(eigenvectors[4 * ix, :, 1:, 1:]) * eigenvectors[4 * (ix - 1), :, 1:,1:]))  # * (np.exp(-1.0j * system.ky_array[1:]) * np.exp(-1.0j * system.kz_array[1:])))) #sigma = opp
+        current[ix] += np.imag(2 * np.sum(t * tanh_coeff[:, 1:, 1:] * (np.conj(eigenvectors[4 * ix, :, 1:, 1:]) * eigenvectors[4 * (ix + 1), :, 1:, 1:])))  # opp opp # * (np.exp(1.0j * system.ky_array[1:]) * np.exp(1.0j * system.kz_array[1:])))) #sigma = opp
+        current[ix] += np.imag(2 * np.sum(t * tanh_coeff[:, 1:, 1:] * (np.conj(eigenvectors[4 * ix + 1, :, 1:, 1:]) * eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:])))  # ned ned # * (np.exp(1.0j * system.ky_array[1:]) * np.exp(1.0j * system.kz_array[1:])))) #sigma = opp
+
+        current[ix] -= np.imag(2 * np.sum(t * tanh_coeff[:, 1:, 1:] * (np.conj(eigenvectors[4 * ix, :, 1:, 1:]) * eigenvectors[4 * (ix - 1), :, 1:, 1:])))  # opp opp # # * (np.exp(-1.0j * system.ky_array[1:]) * np.exp(-1.0j * system.kz_array[1:])))) #sigma = opp
+        current[ix] -= np.imag(2 * np.sum(t * tanh_coeff[:, 1:, 1:] * (np.conj(eigenvectors[4 * ix + 1, :, 1:, 1:]) * eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:])))  # ned ned # # * (np.exp(-1.0j * system.ky_array[1:]) * np.exp(-1.0j * system.kz_array[1:])))) #sigma = opp
 
         # --- Rashba x+ (real)----#
         #:
-        current[ix] += 1.0j * np.sum(tanh_coeff[:, 1:, 1:] * C_minus * (np.conj(eigenvectors[4 * ix, :, 1:, 1:]) * eigenvectors[4 * (ix + 1), :, 1:, 1:]))  # opp opp
-        current[ix] += 1.0j * np.sum(tanh_coeff[:, 1:, 1:] * C_pluss * (np.conj(eigenvectors[4 * (ix + 1), :, 1:, 1:]) * eigenvectors[4 * ix, :, 1:, 1:]))  # opp opp
-        current[ix] -= 1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_minus * (np.conj(eigenvectors[4 * (ix - 1), :, 1:, 1:]) * eigenvectors[4 * ix, :, 1:, 1:]))  # opp opp
-        current[ix] -= 1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_pluss * (np.conj(eigenvectors[4 * ix, :, 1:, 1:]) * eigenvectors[4 * (ix - 1), :, 1:, 1:]))  # opp opp
+        # """
+        current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_opp_psite * (np.conj(eigenvectors[4 * ix, :, 1:, 1:]) * eigenvectors[4 * (ix + 1), :, 1:, 1:])))  # opp opp
+        current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_opp_pluss * (np.conj(eigenvectors[4 * (ix + 1), :, 1:, 1:]) * eigenvectors[4 * ix, :, 1:, 1:])))  # opp opp
+        current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_opp_minus * (np.conj(eigenvectors[4 * (ix - 1), :, 1:, 1:]) * eigenvectors[4 * ix, :, 1:, 1:])))  # opp opp
+        current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_opp_msite * (np.conj(eigenvectors[4 * ix, :, 1:, 1:]) * eigenvectors[4 * (ix - 1), :, 1:, 1:])))  # opp opp
 
-        current[ix] += 1.0j * np.sum(tanh_coeff[:, 1:, 1:] * C_minus * (np.conj(eigenvectors[4 * ix + 1, :, 1:, 1:]) * eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:]))  # ned ned
-        current[ix] += 1.0j * np.sum(tanh_coeff[:, 1:, 1:] * C_pluss * (np.conj(eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:]) * eigenvectors[4 * ix + 1, :, 1:, 1:]))  # ned ned
-        current[ix] -= 1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_minus * (np.conj(eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:]) * eigenvectors[4 * ix + 1, :, 1:, 1:]))  # ned ned
-        current[ix] -= 1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_pluss * (np.conj(eigenvectors[4 * ix + 1, :, 1:, 1:]) * eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:]))  # ned ned
+        current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_ned_psite * (np.conj(eigenvectors[4 * ix + 1, :, 1:, 1:]) * eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:])))  # ned ned
+        current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_ned_pluss * (np.conj(eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:]) * eigenvectors[4 * ix + 1, :, 1:, 1:])))  # ned ned
+        current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_ned_minus * (np.conj(eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:]) * eigenvectors[4 * ix + 1, :, 1:, 1:])))  # ned ned
+        current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_ned_msite * (np.conj(eigenvectors[4 * ix + 1, :, 1:, 1:]) * eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:])))  # ned ned
 
         #:
-        current[ix] += 1.0j * np.sum(tanh_coeff[:, 1:, 1:] * C_minus * (np.conj(eigenvectors[4 * ix, :, 1:, 1:]) * eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:]))  # opp ned
-        current[ix] += 1.0j * np.sum(tanh_coeff[:, 1:, 1:] * C_pluss * (np.conj(eigenvectors[4 * (ix + 1), :, 1:, 1:]) * eigenvectors[4 * ix + 1, :, 1:, 1:]))  # opp ned
-        current[ix] -= 1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_minus * (np.conj(eigenvectors[4 * (ix - 1), :, 1:, 1:]) * eigenvectors[4 * ix + 1, :, 1:, 1:]))  # opp ned
-        current[ix] -= 1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_pluss * (np.conj(eigenvectors[4 * ix, :, 1:, 1:]) * eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:]))  # opp ned
+        current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_ned_psite * (np.conj(eigenvectors[4 * ix, :, 1:, 1:]) * eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:])))  # opp ned
+        current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_ned_pluss * (np.conj(eigenvectors[4 * (ix + 1), :, 1:, 1:]) * eigenvectors[4 * ix + 1, :, 1:, 1:])))  # opp ned
+        current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_ned_minus * (np.conj(eigenvectors[4 * (ix - 1), :, 1:, 1:]) * eigenvectors[4 * ix + 1, :, 1:, 1:])))  # opp ned
+        current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_ned_msite * (np.conj(eigenvectors[4 * ix, :, 1:, 1:]) * eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:])))  # opp ned
 
-        current[ix] += 1.0j * np.sum(tanh_coeff[:, 1:, 1:] * C_minus * (np.conj(eigenvectors[4 * ix + 1, :, 1:, 1:]) * eigenvectors[4 * (ix + 1), :, 1:, 1:]))  # ned opp
-        current[ix] += 1.0j * np.sum(tanh_coeff[:, 1:, 1:] * C_pluss * (np.conj(eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:]) * eigenvectors[4 * ix, :, 1:, 1:]))  # ned opp
-        current[ix] -= 1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_minus * (np.conj(eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:]) * eigenvectors[4 * ix, :, 1:, 1:]))  # ned opp
-        current[ix] -= 1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_pluss * (np.conj(eigenvectors[4 * ix + 1, :, 1:, 1:]) * eigenvectors[4 * (ix - 1), :, 1:, 1:]))  # ned opp
+        current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_opp_psite * (np.conj(eigenvectors[4 * ix + 1, :, 1:, 1:]) * eigenvectors[4 * (ix + 1), :, 1:, 1:])))  # ned opp
+        current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_opp_pluss * (np.conj(eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:]) * eigenvectors[4 * ix, :, 1:, 1:])))  # ned opp
+        current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_opp_minus * (np.conj(eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:]) * eigenvectors[4 * ix, :, 1:, 1:])))  # ned opp
+        current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_opp_msite * (np.conj(eigenvectors[4 * ix + 1, :, 1:, 1:]) * eigenvectors[4 * (ix - 1), :, 1:, 1:])))  # ned opp
+        # """
 
     return current
 
-@njit(fastmath=True)
+@njit(fastmath=True, parallel=True)
 def solve_system_numba(max_num_iter,
                        tol,
-                       juction,
+                       junction,
                        L_x,
                        L_y,
                        L_z,
@@ -317,34 +376,44 @@ def solve_system_numba(max_num_iter,
     #delta_diff = np.ones
     num_delta_over_tol = L_x
     delta_store = np.ones((L_x, 2), dtype=np.complex128) # 1.column NEW, 2.column OLD
+
     while num_delta_over_tol > 0 and tmp_num_iter <= max_num_iter:
         #print("Iteration nr. %i" % (tmp_num_iter + 1))
-        for ky_idx in range(1, len(ky_array)): # form k=-pi to k=pi
+        #start = time.time()
+        for ky_idx in prange(1, len(ky_array)): # form k=-pi to k=pi  #prange, set 1/2-2020
             for kz_idx in range(1, len(kz_array)):
-                hamiltonian = set_hamiltonian(ky=ky_array[ky_idx],
-                                             kz=kz_array[kz_idx],
-                                             hamiltonian=hamiltonian,
-                                             L_x=L_x,
-                                             L_sc=L_sc,
-                                             L_soc=L_soc,
-                                             mu_array=mu_array,
-                                             t_array=t_x_array,
-                                             U_array=U_array,
-                                             F_matrix=F_matrix,
-                                             h_array=h_array,
-                                             alpha_R_x_array=alpha_R_x_array,
-                                             alpha_R_y_array=alpha_R_y_array)
+                if tmp_num_iter==0:
+                    hamiltonian[:,:, ky_idx, kz_idx] = set_hamiltonian(ky=ky_array[ky_idx],
+                                                                     kz=kz_array[kz_idx],
+                                                                     hamiltonian=hamiltonian[:,:, ky_idx, kz_idx],
+                                                                     L_x=L_x,
+                                                                     L_sc=L_sc,
+                                                                     L_soc=L_soc,
+                                                                     mu_array=mu_array,
+                                                                     t_array=t_x_array,
+                                                                     U_array=U_array,
+                                                                     F_matrix=F_matrix,
+                                                                     h_array=h_array,
+                                                                     alpha_R_x_array=alpha_R_x_array,
+                                                                     alpha_R_y_array=alpha_R_y_array)
+                else:
+                    hamiltonian[:,:, ky_idx, kz_idx] = update_hamiltonian(hamiltonian=hamiltonian[:,:, ky_idx, kz_idx],
+                                                                          U_array=U_array,
+                                                                          F_matrix=F_matrix,
+                                                                          L_x=L_x)
                 # Calculates the eigenvalues from hamiltonian.
-                evalues, evectors = np.linalg.eigh(hamiltonian)
-                eigenvalues[:, ky_idx, kz_idx], eigenvectors[:, :, ky_idx, kz_idx] = evalues, evectors
+                #evalues, evectors = np.linalg.eigh(hamiltonian)
+                eigenvalues[:, ky_idx, kz_idx], eigenvectors[:, :, ky_idx, kz_idx] = np.linalg.eigh(hamiltonian[:,:, ky_idx, kz_idx]) #evalues, evectors
+        #duration = time.time() - start
+        #print(duration)
         F_matrix = calculate_F_matrix(F_matrix=F_matrix,
-                                             L_x=L_x,
-                                             L_y=L_y,
-                                             L_z=L_z,
-                                             eigenvalues=eigenvalues,
-                                             eigenvectors=eigenvectors,
-                                             beta=beta)
-        if juction==True:
+                                     L_x=L_x,
+                                     L_y=L_y,
+                                     L_z=L_z,
+                                     eigenvalues=eigenvalues,
+                                     eigenvectors=eigenvectors,
+                                     beta=beta)
+        if junction==True:
             #F_matrix = forcePhaseDifference(F_matrix=F_matrix,
                                             #phase=phase)
             F_matrix[0, 0] = np.abs(F_matrix[0, 0]) * np.exp(1.0j * phase)  # phase_plus
@@ -359,4 +428,4 @@ def solve_system_numba(max_num_iter,
         tmp_num_iter += 1
 
         num_delta_over_tol = len(np.where(delta_diff > tol)[0])
-    return F_matrix, eigenvalues, eigenvectors, hamiltonian
+    return F_matrix, eigenvalues, eigenvectors, hamiltonian, tmp_num_iter
