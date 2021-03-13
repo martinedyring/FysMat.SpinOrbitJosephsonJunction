@@ -155,7 +155,7 @@ def solve_system(system, max_num_iter = 100, tol=1e-5, juction=True):
     """
     return #F_matrix
 
-def solve_system_new(system, max_num_iter = 1000, tol=1e-3, junction=True):
+def solve_system_selfconsistent(system, max_num_iter = 1000, tol=1e-3, junction=True):
     F_matrix, eigenvalues, eigenvectors, hamiltonian, num_iter = solve_system_numba(max_num_iter=max_num_iter,
                                                                                                        tol=tol,
                                                                                                        junction=junction,

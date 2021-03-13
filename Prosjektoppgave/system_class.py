@@ -1,7 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from numba import jit
-
+from scipy.special import expit
+import decimal
+import bigfloat
 
 from utilities_t import idx_F_i, idx_F_ij_x_pluss, idx_F_ij_x_minus, idx_F_ij_y_pluss, idx_F_ij_y_minus, idx_F_ij_s, num_idx_F_i
 from numpy import conj, tanh, exp, sqrt, cos, sin, log#, sqrt #as conj, tanh, exp, cos, sin, sqrt
@@ -14,24 +16,19 @@ This script define the class System which contains all necessary information to 
 
 class System:
     def __init__(self,
-                 L_y = 100,
-                 L_z = 102,
-                 L_sc = 50,
-                 L_nc = 50,
-                 L_soc = 2,
+                 L_y = 0,
+                 L_z = 0,
+                 L_sc = 0,
+                 L_nc = 0,
+                 L_soc = 0,
                  L_sc_0 = 0,
                  L_f = 0,
 
-                 t_x = 1,  #  0.5,
-                 t_y = 1,  # 0.5,
-                 t = 0.5,  # t used in compute energy
-                 t_sc = 0.5,
-                 t_0 = 1,  #0.5,
-                 t_nc = 0.5,
+                 t = 0,  # t used in compute energy
 
-                 h = [0.0,0.0,1.0],  #hx, hy, hz
+                 h = [0.0,0.0,0.0],  #hx, hy, hz
 
-                 u_sc = -2.1,  #-4.2, # V_ij in superconductor
+                 u_sc = 0,  #-4.2, # V_ij in superconductor
                  u_nc = 0.0,  #-4.2,
                  u_soc = 0.0,  #-4.2,
                  u_f = 0.0,
@@ -39,19 +36,19 @@ class System:
                  mu_s = -3.5,  #s
                  mu_d = -0.5,
                  mu_pxpy = -1.5,
-                 mu_nc = 1.9,  #0.9,
-                 mu_sc = 1.9,  #0.9,
-                 mu_soc = 1.7,  #0.85,
+                 mu_nc = 0.0,  #0.9,
+                 mu_sc = 0.0,  #0.9,
+                 mu_soc = 0.0,  #0.85,
                  alpha_r = np.array([0.1, 0.0, 0.0], dtype=np.float64),
                  U = -4.2,
-                 wd = 0.6,
+                 wd = 0.0,
                  F = 0.3,
 
-                 alpha_R_initial = [0.0, 0.0, 0.5],  #0.1
+                 alpha_R_initial = [0.0, 0.0, 0.0],  #0.1
 
-                 beta = 200,  #np.inf,
+                 beta = 0,  #np.inf,
 
-                 phase=np.pi/4,
+                 phase=0.0,
                  old_solution = False, #True if there is sendt in an initial phase from last system
                  old_F_matrix_guess = np.array([0.0],dtype=np.complex128),
                  old_phase_array=np.array([0.0], dtype=np.complex128),
@@ -81,11 +78,6 @@ class System:
         self.L_x = self.L_sc_0 + self.L_nc + self.L_f + self.L_soc + self.L_sc
         self.L_y = L_y
         self.L_z = L_z
-        self.t_x = t_x
-        self.t_y = t_y
-        self.t_sc = t_sc
-        self.t_0 = t_0
-        self.t_nc = t_nc
         self.t = t
 
 
@@ -107,7 +99,7 @@ class System:
 
         self.debye_freq = wd
 
-        self.phase = phase
+        self.phase = -phase
         if old_solution == True:
             #self.phase_array = np.hstack((np.ones(self.L_sc_0) * self.phase, np.zeros(L_nc + L_sc))).ravel()
             self.F_sc_0_initial = old_F_matrix_guess[:self.L_sc_0, :]
@@ -166,7 +158,7 @@ class System:
         #    self.ky_array = np.linspace(-np.pi, np.pi, num=(self.L_y), endpoint=False, dtype=np.float64)
         #    self.kz_array = np.linspace(-np.pi, np.pi, num =(self.L_z), endpoint=False, dtype=np.float64)
 
-        self.ky_array = np.linspace(-np.pi, np.pi, num=(self.L_y), endpoint=True, dtype=np.float64)
+        self.ky_array = np.linspace(-np.pi, np.pi, num =(self.L_y), endpoint=True, dtype=np.float64)
         self.kz_array = np.linspace(-np.pi, np.pi, num =(self.L_z), endpoint=True, dtype=np.float64)
 
         # F_matrix: F_ii, F_orbital, F_x+, F_x-, F_y+, F_y-
@@ -198,7 +190,7 @@ class System:
         # L_x = L_nc + L_soc + L_sc
         #self.set_phase_initial = np.linspace(1.0j * self.phase, 0, self.L_x, dtype=np.complex128)
         for i in range(self.L_x):
-            self.t_y_array[i] = t_y
+            self.t_y_array[i] = t
             if i < self.L_sc_0:           #   SC
                 self.F_matrix[i, :] = self.F_sc_0_initial[i, :] *  np.exp(1.0j * self.phase_array[i])     # Set all F values to inital condition for SC material (+1 s-orbital)
                 self.U_array[i] = self.u_sc #* np.exp(1.0j * np.pi/2)
@@ -257,7 +249,7 @@ class System:
         """
         # Some parameters only rely on neighbors in x-direction, and thus has only NX-1 links
         for i in range(self.L_x -1):
-            self.t_x_array[i] = self.t_x
+            self.t_x_array[i] = self.t
 
 
     def epsilon_ijk(self, i, j, ky, kz, spin):  # spin can take two values: 1 = up, 2 = down
@@ -861,11 +853,11 @@ class System:
             U_energy += np.abs(delta_array[u])**2 / self.U_array[u]
 
 
-        #hopping_energy = np.sum(np.sum(2 * self.t_0* cos(self.k_array[:])) + self.mu_array[:])
-        #hopping_energy = np.sum(2 * self.t_0 * (cos(self.ky_array[:] + cos(self.kz_array[:]))))
-        hopping_energy = np.sum(2 * self.t_0 * (cos(self.ky_array[1:] + cos(self.kz_array[1:]))))
+        #hopping_energy = np.sum(np.sum(2 * self.t* cos(self.k_array[:])) + self.mu_array[:])
+        #hopping_energy = np.sum(2 * self.t * (cos(self.ky_array[:] + cos(self.kz_array[:]))))
+        hopping_energy = np.sum(2 * self.t * (cos(self.ky_array[1:] + cos(self.kz_array[1:]))))
         epsilon_energy = np.sum(hopping_energy + self.mu_array[:])
-        #hopping_energy = self.L_x*np.sum(2 * self.t_0 * cos(self.k_array[:]) + np.sum(self.mu_array[:]))
+        #hopping_energy = self.L_x*np.sum(2 * self.t * cos(self.k_array[:]) + np.sum(self.mu_array[:]))
 
         H_0 = self.L_x * U_energy - epsilon_energy
         #H_0 = - hopping_energy
@@ -908,10 +900,47 @@ class System:
     def current_along_lattice(self):
 
         current = np.zeros(self.L_x - 1, dtype=np.float64)
-        tanh_coeff = 1 / (np.exp(self.beta * self.eigenvalues) + 1)
-        tanh_coeff /= (self.L_y * self.L_z)  # 1/(system.L_y*system.L_z) *(1-np.tanh(system.beta * system.eigenvalues / 2)) #-
+        mod_energies = self.beta * self.eigenvalues
 
-        t = self.t_0
+
+        mod_energies = mod_energies.astype(np.float128)
+
+        """
+        print("energies:")
+        print(mod_energies.shape)
+        print(type(mod_energies))
+        print(type(mod_energies[0, 0, 0]))
+
+        print('before:')
+        x_tmp = np.linspace(-15, 15, mod_energies.shape[1])
+        for i in range(mod_energies.shape[0]):
+            plt.plot(x_tmp, mod_energies[i, :, 15])
+        plt.show()
+        """
+        exp_energies = np.exp(mod_energies[:,1:,1:], dtype=np.float128)
+        #exp_energies = bigfloat.exp(mod_energies, bigfloat.precision(100))
+        #energies = (self.beta * self.eigenvalues).tolist()
+        #decimal.getcontext().prec = 100
+        #mod_energies = np.asarray([np.asarray([np.asarray([decimal.Decimal(i) for i in e], dtype=object) for e in el], dtype=object) for el in energies], dtype=object)
+
+        """
+        print("exp:")
+        print(mod_energies.shape)
+        print(type(mod_energies))
+        print(type(mod_energies[0, 0, 0]))
+        """
+
+        #tanh_coeff = np.float128(1.0) / (np.exp(self.beta * self.eigenvalues, dtype=np.float128) + 1) / (self.L_y * self.L_z)  # 1/(system.L_y*system.L_z) *(1-np.tanh(system.beta * system.eigenvalues / 2)) #-
+
+        tanh_coeff = np.zeros(shape=(4 * self.L_x, (self.L_y), (self.L_z)), dtype=np.float64)
+        tanh_coeff[:,1:,1:] = 1.0 / (exp_energies + 1) / (self.L_y * self.L_z)  # 1/(system.L_y*system.L_z) *(1-np.tanh(system.beta * system.eigenvalues / 2)) #-
+
+
+        # try to use scipy.​special.expit(x)
+        #tanh_coeff = expit(-self.beta * self.eigenvalues)
+        #tanh_coeff /= (self.L_y * self.L_z)  # 1/(system.L_y*system.L_z) *(1-np.tanh(system.beta * system.eigenvalues / 2)) #-
+
+        t = self.t
 
         for ix in range(1, len(current)):  # -1 because it doesnt give sense to check last point for I+
             xi_ii = 0
@@ -921,30 +950,30 @@ class System:
 
             if (self.L_sc_0 <= ix < (self.L_sc_0 + self.L_soc)):  # check if both i and i are inside soc material
                 xi_ii = 1
-            if (self.L_sc_0 <= ix < (self.L_sc_0 + self.L_soc)):  # and (system.L_sc_0 <= ix+1 < (system.L_sc_0 + system.L_soc)):# and (system.L_sc_0 <= ix-1 < (system.L_sc_0 + system.L_soc)): #check if both i and i+1 are inside soc material
+            if (self.L_sc_0 <= ix < (self.L_sc_0 + self.L_soc)): # and (self.L_sc_0 <= ix+1 < (self.L_sc_0 + self.L_soc)):# and (system.L_sc_0 <= ix-1 < (system.L_sc_0 + system.L_soc)): #check if both i and i+1 are inside soc material
                 xi_pluss = 1
-            if (self.L_sc_0 <= ix < (self.L_sc_0 + self.L_soc)):  # and (system.L_sc_0 <= ix-1 < (system.L_sc_0 + system.L_soc)):# and (system.L_sc_0 <= ix+1 < (system.L_sc_0 + system.L_soc)): #check if both i and i-1 are inside soc material
+            if (self.L_sc_0 <= ix < (self.L_sc_0 + self.L_soc)): # and (self.L_sc_0 <= ix-1 < (self.L_sc_0 + self.L_soc)):# and (system.L_sc_0 <= ix+1 < (system.L_sc_0 + system.L_soc)): #check if both i and i-1 are inside soc material
                 xi_minus = 1
 
-            B_opp_opp_psite = 1.0j / 4 * self.alpha_R_x_array[ix, 1] * (1 + xi_ii)
-            B_opp_opp_pluss = 1.0j / 4 * self.alpha_R_x_array[ix + 1, 1] * (1 + xi_pluss)
-            B_opp_opp_minus = 1.0j / 4 * self.alpha_R_x_array[ix - 1, 1] * (1 + xi_minus)
-            B_opp_opp_msite = 1.0j / 4 * self.alpha_R_x_array[ix, 1] * (1 + xi_ii)
+            B_opp_opp_psite = 1.0 / 4 * self.alpha_R_x_array[ix, 1] * (1 + xi_ii)
+            B_opp_opp_pluss = 1.0 / 4 * self.alpha_R_x_array[ix + 1, 1] * (1 + xi_pluss)
+            B_opp_opp_minus = 1.0 / 4 * self.alpha_R_x_array[ix - 1, 1] * (1 + xi_minus)
+            B_opp_opp_msite = 1.0 / 4 * self.alpha_R_x_array[ix, 1] * (1 + xi_ii)
 
-            B_ned_ned_psite = - 1.0j / 4 * self.alpha_R_x_array[ix, 1] * (1 + xi_ii)
-            B_ned_ned_pluss = - 1.0j / 4 * self.alpha_R_x_array[ix + 1, 1] * (1 + xi_pluss)
-            B_ned_ned_minus = - 1.0j / 4 * self.alpha_R_x_array[ix - 1, 1] * (1 + xi_minus)
-            B_ned_ned_msite = - 1.0j / 4 * self.alpha_R_x_array[ix, 1] * (1 + xi_ii)
+            B_ned_ned_psite = - 1.0 / 4 * self.alpha_R_x_array[ix, 1] * (1 + xi_ii)
+            B_ned_ned_pluss = - 1.0 / 4 * self.alpha_R_x_array[ix + 1, 1] * (1 + xi_pluss)
+            B_ned_ned_minus = - 1.0 / 4 * self.alpha_R_x_array[ix - 1, 1] * (1 + xi_minus)
+            B_ned_ned_msite = - 1.0 / 4 * self.alpha_R_x_array[ix, 1] * (1 + xi_ii)
 
-            B_opp_ned_psite = - 1.0 / 4 * self.alpha_R_x_array[ix, 2] * (1 + xi_ii)
-            B_opp_ned_pluss = - 1.0 / 4 * self.alpha_R_x_array[ix + 1, 2] * (1 + xi_pluss)
-            B_opp_ned_minus = - 1.0 / 4 * self.alpha_R_x_array[ix - 1, 2] * (1 + xi_minus)
-            B_opp_ned_msite = - 1.0 / 4 * self.alpha_R_x_array[ix, 2] * (1 + xi_ii)
+            B_opp_ned_psite = + 1.0j / 4 * self.alpha_R_x_array[ix, 2] * (1 + xi_ii)
+            B_opp_ned_pluss = + 1.0j / 4 * self.alpha_R_x_array[ix + 1, 2] * (1 + xi_pluss)
+            B_opp_ned_minus = + 1.0j / 4 * self.alpha_R_x_array[ix - 1, 2] * (1 + xi_minus)
+            B_opp_ned_msite = + 1.0j / 4 * self.alpha_R_x_array[ix, 2] * (1 + xi_ii)
 
-            B_ned_opp_psite = + 1.0 / 4 * self.alpha_R_x_array[ix, 2] * (1 + xi_ii)
-            B_ned_opp_pluss = + 1.0 / 4 * self.alpha_R_x_array[ix + 1, 2] * (1 + xi_pluss)
-            B_ned_opp_minus = + 1.0 / 4 * self.alpha_R_x_array[ix - 1, 2] * (1 + xi_minus)
-            B_ned_opp_msite = + 1.0 / 4 * self.alpha_R_x_array[ix, 2] * (1 + xi_ii)
+            B_ned_opp_psite = - 1.0j / 4 * self.alpha_R_x_array[ix, 2] * (1 + xi_ii)
+            B_ned_opp_pluss = - 1.0j / 4 * self.alpha_R_x_array[ix + 1, 2] * (1 + xi_pluss)
+            B_ned_opp_minus = - 1.0j / 4 * self.alpha_R_x_array[ix - 1, 2] * (1 + xi_minus)
+            B_ned_opp_msite = - 1.0j / 4 * self.alpha_R_x_array[ix, 2] * (1 + xi_ii)
 
             # ---- Hopping x+ (imag)----#
             #:
@@ -957,26 +986,26 @@ class System:
             # --- Rashba x+ (real)----#
             #:
             # """
-            current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_opp_psite * (np.conj(self.eigenvectors[4 * ix, :, 1:, 1:]) * self.eigenvectors[4 * (ix + 1), :, 1:, 1:])))  # opp opp
-            current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_opp_pluss * (np.conj(self.eigenvectors[4 * (ix + 1), :, 1:, 1:]) * self.eigenvectors[4 * ix, :, 1:, 1:])))  # opp opp
-            current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_opp_minus * (np.conj(self.eigenvectors[4 * (ix - 1), :, 1:, 1:]) * self.eigenvectors[4 * ix, :, 1:, 1:])))  # opp opp
-            current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_opp_msite * (np.conj(self.eigenvectors[4 * ix, :, 1:, 1:]) * self.eigenvectors[4 * (ix - 1), :, 1:, 1:])))  # opp opp
+            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_opp_psite * (np.conj(self.eigenvectors[4 * ix, :, 1:, 1:]) * self.eigenvectors[4 * (ix + 1), :, 1:, 1:])))  # opp opp
+            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_opp_pluss * (np.conj(self.eigenvectors[4 * (ix + 1), :, 1:, 1:]) * self.eigenvectors[4 * ix, :, 1:, 1:])))  # opp opp
+            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_opp_minus * (np.conj(self.eigenvectors[4 * (ix - 1), :, 1:, 1:]) * self.eigenvectors[4 * ix, :, 1:, 1:])))  # opp opp
+            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_opp_msite * (np.conj(self.eigenvectors[4 * ix, :, 1:, 1:]) * self.eigenvectors[4 * (ix - 1), :, 1:, 1:])))  # opp opp
 
-            current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_ned_psite * (np.conj(self.eigenvectors[4 * ix + 1, :, 1:, 1:]) * self.eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:])))  # ned ned
-            current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_ned_pluss * (np.conj(self.eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:]) * self.eigenvectors[4 * ix + 1, :, 1:, 1:])))  # ned ned
-            current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_ned_minus * (np.conj(self.eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:]) * self.eigenvectors[4 * ix + 1, :, 1:, 1:])))  # ned ned
-            current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_ned_msite * (np.conj(self.eigenvectors[4 * ix + 1, :, 1:, 1:]) * self.eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:])))  # ned ned
+            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_ned_psite * (np.conj(self.eigenvectors[4 * ix + 1, :, 1:, 1:]) * self.eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:])))  # ned ned
+            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_ned_pluss * (np.conj(self.eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:]) * self.eigenvectors[4 * ix + 1, :, 1:, 1:])))  # ned ned
+            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_ned_minus * (np.conj(self.eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:]) * self.eigenvectors[4 * ix + 1, :, 1:, 1:])))  # ned ned
+            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_ned_msite * (np.conj(self.eigenvectors[4 * ix + 1, :, 1:, 1:]) * self.eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:])))  # ned ned
 
             #:
-            current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_ned_psite * (np.conj(self.eigenvectors[4 * ix, :, 1:, 1:]) * self.eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:])))  # opp ned
-            current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_ned_pluss * (np.conj(self.eigenvectors[4 * (ix + 1), :, 1:, 1:]) * self.eigenvectors[4 * ix + 1, :, 1:, 1:])))  # opp ned
-            current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_ned_minus * (np.conj(self.eigenvectors[4 * (ix - 1), :, 1:, 1:]) * self.eigenvectors[4 * ix + 1, :, 1:, 1:])))  # opp ned
-            current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_ned_msite * (np.conj(self.eigenvectors[4 * ix, :, 1:, 1:]) * self.eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:])))  # opp ned
+            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_ned_psite * (np.conj(self.eigenvectors[4 * ix, :, 1:, 1:]) * self.eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:])))  # opp ned
+            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_ned_pluss * (np.conj(self.eigenvectors[4 * (ix + 1), :, 1:, 1:]) * self.eigenvectors[4 * ix + 1, :, 1:, 1:])))  # opp ned
+            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_ned_minus * (np.conj(self.eigenvectors[4 * (ix - 1), :, 1:, 1:]) * self.eigenvectors[4 * ix + 1, :, 1:, 1:])))  # opp ned
+            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_ned_msite * (np.conj(self.eigenvectors[4 * ix, :, 1:, 1:]) * self.eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:])))  # opp ned
 
-            current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_opp_psite * (np.conj(self.eigenvectors[4 * ix + 1, :, 1:, 1:]) * self.eigenvectors[4 * (ix + 1), :, 1:, 1:])))  # ned opp
-            current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_opp_pluss * (np.conj(self.eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:]) * self.eigenvectors[4 * ix, :, 1:, 1:])))  # ned opp
-            current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_opp_minus * (np.conj(self.eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:]) * self.eigenvectors[4 * ix, :, 1:, 1:])))  # ned opp
-            current[ix] -= np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_opp_msite * (np.conj(self.eigenvectors[4 * ix + 1, :, 1:, 1:]) * self.eigenvectors[4 * (ix - 1), :, 1:, 1:])))  # ned opp
+            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_opp_psite * (np.conj(self.eigenvectors[4 * ix + 1, :, 1:, 1:]) * self.eigenvectors[4 * (ix + 1), :, 1:, 1:])))  # ned opp
+            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_opp_pluss * (np.conj(self.eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:]) * self.eigenvectors[4 * ix, :, 1:, 1:])))  # ned opp
+            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_opp_minus * (np.conj(self.eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:]) * self.eigenvectors[4 * ix, :, 1:, 1:])))  # ned opp
+            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_opp_msite * (np.conj(self.eigenvectors[4 * ix + 1, :, 1:, 1:]) * self.eigenvectors[4 * (ix - 1), :, 1:, 1:])))  # ned opp
             # """
 
         return current

@@ -62,3 +62,19 @@ num iteration is  501
 Time:  3607.917537015979
 CPU times: user 2h 44min 13s, sys: 2min 22s, total: 2h 46min 36s
 Wall time: 1h 7s
+
+num iteration is  1001
+Time:  9062.504609639
+CPU times: user 5h 30min 14s, sys: 5min 31s, total: 5h 35min 46s
+Wall time: 2h 31min 2s
+
+num iteration is  1501
+Time:  8832.236793185992
+CPU times: user 8h 40min 25s, sys: 6min 54s, total: 8h 47min 20s
+Wall time: 2h 27min 12s
+
+-------------------------------------------------
+current runtime test:
+- prange, range
+CPU times: user 1h 6min 14s, sys: 4min 14s, total: 1h 10min 29s
+Wall time: 26min 7s

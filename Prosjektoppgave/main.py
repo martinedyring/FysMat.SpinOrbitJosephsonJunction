@@ -6,7 +6,7 @@ from dask import delayed
 import numpy as np
 import matplotlib.pyplot as plt
 
-from solve_hamiltonian import solve_system, solve_system_new
+from solve_hamiltonian import solve_system, solve_system_selfconsistent
 from system_class import System
 from plots import plot_complex_function, plot_pairing_amplitude
 from utilities import label_F_matrix
@@ -69,16 +69,16 @@ def solve_and_return_system_and_F_matrix(max_num_iter=100, tol=1e-4):
     F_matrix = system.F_matrix
     return system, F_matrix
 
-def solve_and_test_small_system(max_num_iter=100, tol=1e-5, phase=-np.pi/2):
+def solve_and_test_small_system(max_num_iter=100, tol=1e-5, phase=np.pi/2):
 
-    system = System(phase=phase, L_y = 30,L_z=30, L_sc_0 = 25, L_nc=0, L_sc=25, L_soc=5, mu_sc = 0.9, mu_nc = 0.9, mu_soc = 0.85, u_sc = -4.2, beta=33.3)
+    system = System(phase=phase, alpha_R_initial=np.array([0.0,0.0,0.5]), L_y = 30,L_z=30, L_sc_0 = 25, L_nc=0, L_sc=25, L_soc=5, mu_sc = 0.9, mu_nc = 0.9, mu_soc = 0.85, u_sc = -4.2, beta=33.3, t=1)
     #system = System(phase=np.pi / 4, L_y=20, L_z=20, L_sc_0=7, L_h=5, L_sc=7, L_soc=0, mu_sc=0.9, mu_nc=0.9,mu_soc=0.85, u_sc=-4.2)
 
 
     #F_matrix = np.asarray(solve_system(system, 3, tol))
 
     #solve_system(system, max_num_iter, tol, juction=False)
-    num_iter = solve_system_new(system, max_num_iter, tol, junction=True)
+    num_iter = solve_system_selfconsistent(system, max_num_iter, tol, junction=True)
     print( "num iteration is ", num_iter)
     F_matrix = system.F_matrix
     return system, F_matrix
@@ -103,6 +103,9 @@ def solve_for_sns_system(max_num_iter=2000, tol=1e-4):
     plt.grid()
     plt.show()
 
+    # delete old system class object
+    del system
+
     #plot_pairing_amplitude(system, system.F_matrix)
 
 
@@ -123,6 +126,9 @@ def solve_for_sns_system(max_num_iter=2000, tol=1e-4):
         plt.grid()
         plt.show()
         #plot_pairing_amplitude(system, system.F_matrix)
+
+        # delete old system class object
+        del system
 
     return current_midle, phase_array
 
@@ -145,6 +151,8 @@ def solve_for_sfs_system(max_num_iter=200, tol=1e-5):
     plt.grid()
     plt.show()
 
+    # delete old system class object
+    del system
 
     for i in range(1, len(L_f_array)):
         print("#_________ L_f = ",L_f_array[i],"_________#")
@@ -161,6 +169,10 @@ def solve_for_sfs_system(max_num_iter=200, tol=1e-5):
         plt.ylabel("current I_x")
         plt.grid()
         plt.show()
+
+        # delete old system class object
+        del system
+
     return current_midle, L_f_array
 
 def define_system(beta=np.inf, alpha_R_initial=[0,0,2], L_nc=50, L_soc=2, L_sc=50, L_y=102, L_z=102):
@@ -202,6 +214,8 @@ def solve_for_shms_system(max_num_iter=100, tol=1e-5, xz=False, yz=False, alpha_
 
     # plot_pairing_amplitude(system, system.F_matrix)
 
+    # delete old system class object
+    del system
 
     for i in range(1, alpha_array.shape[0]):
         print("#_________ Phase = ", alpha_array[i], "_________#")
@@ -220,6 +234,9 @@ def solve_for_shms_system(max_num_iter=100, tol=1e-5, xz=False, yz=False, alpha_
         plt.grid()
         plt.show()
         # plot_pairing_amplitude(system, system.F_matrix)
+
+        # delete old system class object
+        del system
 
     return current_midle, alpha_array
 

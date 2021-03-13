@@ -108,8 +108,8 @@ def set_rashba_ky(arr, i, j, ky, kz, alpha_R_x_array, alpha_R_y_array, L_soc, L_
     # Backward jump X-
     elif ((i == (j - 1)) or (i == (j + 1))):
         # elif j == i + 1 or j == i - 1:
-        # if j == i + 1:  # Backward jump X-
-        l = j
+        #if j == i + 1:  # Backward jump X-
+        l = j ### j
         xi = 0
         if (i == (j - 1)):  # Backward jump X-
             if (L_sc <= i < (L_sc + L_soc)):
@@ -181,6 +181,7 @@ def zero_init_hamiltonian(hamiltonian):
 def set_hamiltonian(ky, kz, hamiltonian, L_x, L_sc, L_soc, mu_array, t_array, U_array, F_matrix, h_array, alpha_R_x_array, alpha_R_y_array):
     #hamiltonian = zero_init_hamiltonian(hamiltonian)
     for i in prange(L_x):
+    #for i in prange(L_x):
         for j in range(L_x):
             hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4] = set_epsilon(hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4], i, j, ky, kz, mu_array, t_array)
             hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4] = set_delta(hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4], i, j, U_array, F_matrix)
@@ -383,36 +384,39 @@ def solve_system_numba(max_num_iter,
         for ky_idx in prange(1, len(ky_array)): # form k=-pi to k=pi  #prange, set 1/2-2020
             for kz_idx in range(1, len(kz_array)):
                 if tmp_num_iter==0:
-                    hamiltonian[:,:, ky_idx, kz_idx] = set_hamiltonian(ky=ky_array[ky_idx],
-                                                                     kz=kz_array[kz_idx],
-                                                                     hamiltonian=hamiltonian[:,:, ky_idx, kz_idx],
-                                                                     L_x=L_x,
-                                                                     L_sc=L_sc,
-                                                                     L_soc=L_soc,
-                                                                     mu_array=mu_array,
-                                                                     t_array=t_x_array,
-                                                                     U_array=U_array,
-                                                                     F_matrix=F_matrix,
-                                                                     h_array=h_array,
-                                                                     alpha_R_x_array=alpha_R_x_array,
-                                                                     alpha_R_y_array=alpha_R_y_array)
+                    ham = set_hamiltonian(ky=ky_array[ky_idx],
+                                         kz=kz_array[kz_idx],
+                                         hamiltonian=np.zeros(shape=(4*L_x, 4*L_x), dtype=np.complex128),
+                                         L_x=L_x,
+                                         L_sc=L_sc,
+                                         L_soc=L_soc,
+                                         mu_array=mu_array,
+                                         t_array=t_x_array,
+                                         U_array=U_array,
+                                         F_matrix=F_matrix,
+                                         h_array=h_array,
+                                         alpha_R_x_array=alpha_R_x_array,
+                                         alpha_R_y_array=alpha_R_y_array)
                 else:
-                    hamiltonian[:,:, ky_idx, kz_idx] = update_hamiltonian(hamiltonian=hamiltonian[:,:, ky_idx, kz_idx],
-                                                                          U_array=U_array,
-                                                                          F_matrix=F_matrix,
-                                                                          L_x=L_x)
+                    ham = update_hamiltonian(hamiltonian=np.copy(hamiltonian[:,:, ky_idx, kz_idx]),
+                                          U_array=U_array,
+                                          F_matrix=F_matrix,
+                                          L_x=L_x)
+
+                hamiltonian[:, :, ky_idx, kz_idx] = ham
                 # Calculates the eigenvalues from hamiltonian.
-                #evalues, evectors = np.linalg.eigh(hamiltonian)
-                eigenvalues[:, ky_idx, kz_idx], eigenvectors[:, :, ky_idx, kz_idx] = np.linalg.eigh(hamiltonian[:,:, ky_idx, kz_idx]) #evalues, evectors
+                evalues, evectors = np.linalg.eigh(hamiltonian[:,:, ky_idx, kz_idx])
+                eigenvalues[:, ky_idx, kz_idx], eigenvectors[:, :, ky_idx, kz_idx] = evalues, evectors
         #duration = time.time() - start
         #print(duration)
-        F_matrix = calculate_F_matrix(F_matrix=F_matrix,
+        fmatrix = calculate_F_matrix(F_matrix=F_matrix,
                                      L_x=L_x,
                                      L_y=L_y,
                                      L_z=L_z,
                                      eigenvalues=eigenvalues,
                                      eigenvectors=eigenvectors,
                                      beta=beta)
+        F_matrix = fmatrix
         if junction==True:
             #F_matrix = forcePhaseDifference(F_matrix=F_matrix,
                                             #phase=phase)

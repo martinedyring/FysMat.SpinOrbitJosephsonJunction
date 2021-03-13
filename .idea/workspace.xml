@@ -2,31 +2,76 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="619037fa-4b25-4024-aeda-7804730b2fd8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Prosjektoppgave/testing.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/computation/determinant.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/Test_pa-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/Untitled1-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/kladd-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/notebook-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/pa-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/untitled-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Test_pa.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Untitled1.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/kladd.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/notebook.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/pa.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/untitled.ipynb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_sc_tole-6_LzLy=60.png" afterPath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_sc_tole-6_LzLy=60.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Prosjektoppgave/How_to/How_to_save.ipynb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Prosjektoppgave/current_nonconsistent.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Prosjektoppgave/current_selfconsistent.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Prosjektoppgave/nonconsistent_solution.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/DOS all, mu_s=0.9, mu_soc=0.85, u=-4.2-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/DOS nc, mu_s=0.9, mu_soc=0.85, u=-4.2-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/DOS sc, mu_s=0.9, mu_soc=0.85, u=-4.2-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/DOS soc, mu_s=0.9, mu_soc=0.85, u=-4.2-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/Hamilton components, mu_s=0.9, mu_soc=0.85, u=-4.2-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/PD - free_energy_lambda_angle_xz, strength=1.5-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/PD - free_energy_lambda_angle_xz, strength=2.5-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/PD - free_energy_lambda_angle_yz, strengt=1.5-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/PD - free_energy_lambda_angle_yz, strengt=2.5-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/PD - free_energy_lambda_strength, n=z-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/PD_2D_alpha_strength_and_theta_angel_yz-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/correlation function, mu_s=0.9, mu_soc=0.85, u=-4.2-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/current_sc_iter=1000_LzLy=30_3_2_2021-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/current_sc_iter=100_LzLy=30_3_2_2021-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/current_sfs_L_change-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/current_sfs_L_change_hz=1-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/current_sfs_L_change_hz=1_5-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/current_sfs_L_change_hz=2-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/current_sns_1000itr-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/current_sns_phase_change_5-5-5_tole_2-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/current_sns_phase_change_old_convergence_criterium-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/free_energy_lambda_angle_xz, stength=0.8-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/free_energy_lambda_angle_yz, stength=0.8-checkpoint.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/DOS all, mu_s=0.9, mu_soc=0.85, u=-4.2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/DOS nc, mu_s=0.9, mu_soc=0.85, u=-4.2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/DOS sc, mu_s=0.9, mu_soc=0.85, u=-4.2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/DOS soc, mu_s=0.9, mu_soc=0.85, u=-4.2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Hamilton components, mu_s=0.9, mu_soc=0.85, u=-4.2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/PD - free_energy_lambda_angle_xz, strength=1.5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/PD - free_energy_lambda_angle_xz, strength=2.5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/PD - free_energy_lambda_angle_yz, strengt=1.5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/PD - free_energy_lambda_angle_yz, strengt=2.5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/PD - free_energy_lambda_strength, n=z.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/PD_2D_alpha_strength_and_theta_angel_xz.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/PD_2D_alpha_strength_and_theta_angel_xz_side1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/PD_2D_alpha_strength_and_theta_angel_xz_side2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/PD_2D_alpha_strength_and_theta_angel_yz.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/correlation function, mu_s=0.9, mu_soc=0.85, u=-4.2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_sc_iter=1000_LzLy=30_3_2_2021.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_sc_iter=100_LzLy=30_3_2_2021.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_sc_tole-6_LzLy=60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_sfs_L_change.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_sfs_L_change_hz=1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_sfs_L_change_hz=1_5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_sfs_L_change_hz=2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_sns_1000itr.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_sns_phase_change_5-5-5_tole_2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_sns_phase_change_old_convergence_criterium.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_soc_iter=100_LzLy=30_5_2_2021.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_soc_iter=20_LzLy=30_5_2_2021.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_soc_iter=500_LzLy=30_5_2_2021.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/free_energy_lambda_angle_xz, stength=0.8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/free_energy_lambda_angle_yz, stength=0.8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/mydask.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/test_b.npz" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/Current-checkpoint.ipynb" afterPath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/Current-checkpoint.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current.ipynb" afterPath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/DOS.ipynb" afterPath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/DOS.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/main.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/system_class.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/system_class.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/system_helper.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/system_helper.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/untitled.txt" afterPath="$PROJECT_DIR$/Prosjektoppgave/untitled.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/computation/.ipynb_checkpoints/sympy_test-checkpoint.ipynb" afterPath="$PROJECT_DIR$/computation/.ipynb_checkpoints/sympy_test-checkpoint.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/computation/determinant.py" afterPath="$PROJECT_DIR$/computation/determinant.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/computation/sympy_test.ipynb" afterPath="$PROJECT_DIR$/computation/sympy_test.ipynb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,6 +85,7 @@
     <SUITE FILE_PATH="coverage/FysMat$main.coverage" NAME="main Coverage Results" MODIFIED="1600512380287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prosjektoppgave" />
     <SUITE FILE_PATH="coverage/FysMat$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1611923025575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prosjektoppgave" />
     <SUITE FILE_PATH="coverage/FysMat$var.coverage" NAME="var Coverage Results" MODIFIED="1611827925455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prosjektoppgave" />
+    <SUITE FILE_PATH="coverage/FysMat$determinant.coverage" NAME="determinant Coverage Results" MODIFIED="1612953092072" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/computation" />
     <SUITE FILE_PATH="coverage/FysMat$system_helper.coverage" NAME="system_helper Coverage Results" MODIFIED="1611833939788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prosjektoppgave" />
     <SUITE FILE_PATH="coverage/FysMat$plots.coverage" NAME="plots Coverage Results" MODIFIED="1611922693024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prosjektoppgave" />
     <SUITE FILE_PATH="coverage/FysMat$solve_hamiltonian.coverage" NAME="solve_hamiltonian Coverage Results" MODIFIED="1611828169888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Prosjektoppgave" />
@@ -50,69 +96,56 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="system_class.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="system_class.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="49" column="49" lean-forward="false" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
+            <state relative-caret-position="828">
+              <caret line="175" column="24" lean-forward="true" selection-start-line="175" selection-start-column="24" selection-end-line="175" selection-end-column="24" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#6501#6574#0" expanded="false" />
-                <element signature="e#10834#10876#0" expanded="false" />
-                <element signature="e#12091#12537#1" expanded="false" />
-                <element signature="e#12813#13461#0" expanded="false" />
-                <element signature="e#12813#12823#0" expanded="false" />
-                <element signature="e#13327#13389#0" expanded="false" />
-                <element signature="e#13517#13749#0" expanded="false" />
-                <element signature="e#13787#13837#0" expanded="false" />
-                <element signature="e#13883#14703#0" expanded="false" />
-                <element signature="e#14292#14684#1" expanded="false" />
-                <element signature="e#17578#18148#0" expanded="false" />
-                <element signature="e#18195#18381#0" expanded="false" />
-                <element signature="e#18195#18228#0" expanded="false" />
-                <element signature="e#18430#19136#0" expanded="false" />
-                <element signature="e#19180#44990#0" expanded="false" />
-                <element signature="e#19180#19259#0" expanded="false" />
-                <element signature="e#19451#19489#0" expanded="false" />
-                <element signature="e#20815#20834#0" expanded="false" />
-                <element signature="e#24930#35129#1" expanded="false" />
-                <element signature="e#35138#35152#0" expanded="false" />
-                <element signature="e#35299#35314#0" expanded="false" />
-                <element signature="e#38098#44970#1" expanded="false" />
-                <element signature="e#45041#48857#0" expanded="false" />
-                <element signature="e#45170#45191#0" expanded="false" />
-                <element signature="e#45469#45511#0" expanded="false" />
-                <element signature="e#47002#48030#1" expanded="false" />
-                <element signature="e#48043#48062#0" expanded="false" />
-                <element signature="e#49002#49865#0" expanded="false" />
-                <element signature="e#49994#50885#0" expanded="false" />
-                <element signature="e#50890#50952#0" expanded="false" />
-                <element signature="e#51087#51765#0" expanded="false" />
-                <element signature="e#51829#51853#0" expanded="false" />
-                <element signature="e#51894#51917#0" expanded="false" />
-                <element signature="e#51979#52096#0" expanded="false" />
-                <element signature="e#52178#54567#0" expanded="false" />
-                <element signature="e#52580#52589#0" expanded="false" />
-                <element signature="e#52707#53393#1" expanded="false" />
-                <element signature="e#54653#55971#0" expanded="false" />
-                <element signature="e#56292#58804#0" expanded="false" />
-                <element signature="e#56436#57551#1" expanded="false" />
-                <element signature="e#57778#57865#0" expanded="false" />
-                <element signature="e#58294#58317#0" expanded="false" />
-                <element signature="e#58646#58751#0" expanded="false" />
-                <element signature="e#58850#60081#0" expanded="false" />
-                <marker date="1612529622262" expanded="false" signature="14752:17540" ph="..." />
+                <element signature="e#6268#6341#0" expanded="false" />
+                <element signature="e#10600#10642#0" expanded="false" />
+                <element signature="e#11857#12303#1" expanded="false" />
+                <element signature="e#12577#13225#0" expanded="false" />
+                <element signature="e#12577#12587#0" expanded="false" />
+                <element signature="e#13091#13153#0" expanded="false" />
+                <element signature="e#13281#13513#0" expanded="false" />
+                <element signature="e#13551#13601#0" expanded="false" />
+                <element signature="e#13647#14467#0" expanded="false" />
+                <element signature="e#14056#14448#1" expanded="false" />
+                <element signature="e#17342#17912#0" expanded="false" />
+                <element signature="e#17959#18145#0" expanded="false" />
+                <element signature="e#17959#17992#0" expanded="false" />
+                <element signature="e#18194#18900#0" expanded="false" />
+                <element signature="e#18944#19023#0" expanded="false" />
+                <element signature="e#19215#19253#0" expanded="false" />
+                <element signature="e#20579#34893#0" expanded="false" />
+                <element signature="e#20579#20598#0" expanded="false" />
+                <element signature="e#24694#34893#1" expanded="false" />
+                <element signature="e#34902#34916#0" expanded="false" />
+                <element signature="e#35063#35078#0" expanded="false" />
+                <element signature="e#37862#44734#1" expanded="false" />
+                <element signature="e#44805#48621#0" expanded="false" />
+                <element signature="e#44934#44955#0" expanded="false" />
+                <element signature="e#45233#45275#0" expanded="false" />
+                <element signature="e#46766#47794#1" expanded="false" />
+                <element signature="e#47807#47826#0" expanded="false" />
+                <element signature="e#48766#49629#0" expanded="false" />
+                <element signature="e#50654#50716#0" expanded="false" />
+                <element signature="e#51593#51617#0" expanded="false" />
+                <element signature="e#51658#51681#0" expanded="false" />
+                <element signature="e#51743#51860#0" expanded="false" />
+                <element signature="e#51942#54331#0" expanded="false" />
+                <element signature="e#52344#52353#0" expanded="false" />
+                <element signature="e#52471#53157#1" expanded="false" />
+                <element signature="e#54417#55735#0" expanded="false" />
+                <element signature="e#56056#58560#0" expanded="false" />
+                <element signature="e#56200#57315#1" expanded="false" />
+                <element signature="e#57542#57627#0" expanded="false" />
+                <element signature="e#58050#58073#0" expanded="false" />
+                <element signature="e#58402#58507#0" expanded="false" />
+                <element signature="e#58606#59837#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utilities_t.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities_t.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-150">
-              <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -120,89 +153,69 @@
       <file leaf-file-name="system_helper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="325" column="13" lean-forward="true" selection-start-line="325" selection-start-column="13" selection-end-line="325" selection-end-column="13" />
+            <state relative-caret-position="-971">
+              <caret line="76" column="84" lean-forward="false" selection-start-line="76" selection-start-column="84" selection-end-line="76" selection-end-column="84" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
                 <element signature="e#1405#1719#0" expanded="false" />
                 <element signature="e#1801#2061#0" expanded="false" />
                 <element signature="e#2125#2165#0" expanded="false" />
                 <element signature="e#2324#2777#0" expanded="false" />
-                <element signature="e#5938#6408#0" expanded="false" />
-                <element signature="e#6475#6527#0" expanded="false" />
-                <element signature="e#7544#7759#0" expanded="false" />
-                <element signature="e#7906#8702#0" expanded="false" />
-                <element signature="e#9927#10627#0" expanded="false" />
+                <element signature="e#2891#5889#0" expanded="false" />
+                <element signature="e#5943#6413#0" expanded="false" />
+                <element signature="e#6480#6532#0" expanded="false" />
+                <element signature="e#7938#8734#0" expanded="false" />
+                <element signature="e#9959#10659#0" expanded="false" />
+                <element signature="e#11150#17283#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="determinant.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/computation/determinant.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testing.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Prosjektoppgave/testing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="solve_hamiltonian.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="157" column="58" lean-forward="false" selection-start-line="157" selection-start-column="58" selection-end-line="157" selection-end-column="58" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#450#7560#0" expanded="false" />
-                <element signature="e#450#490#0" expanded="false" />
-                <element signature="e#1408#1420#0" expanded="false" />
-                <element signature="e#3159#3304#0" expanded="false" />
-                <element signature="e#3695#3721#0" expanded="false" />
-                <element signature="e#6747#7539#1" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="73" column="87" lean-forward="false" selection-start-line="73" selection-start-column="87" selection-end-line="73" selection-end-column="87" />
+            <state relative-caret-position="-315">
+              <caret line="90" column="68" lean-forward="false" selection-start-line="90" selection-start-column="68" selection-end-line="90" selection-end-column="68" />
               <folding>
                 <element signature="e#35#46#0" expanded="true" />
-                <element signature="e#490#2333#0" expanded="false" />
-                <element signature="e#2410#2652#0" expanded="false" />
-                <element signature="e#3375#5201#0" expanded="false" />
-                <element signature="e#5261#6921#0" expanded="false" />
-                <element signature="e#7029#7203#0" expanded="false" />
-                <marker date="1612529645715" expanded="false" signature="7321:9751" ph="..." />
+                <element signature="e#501#2344#0" expanded="false" />
+                <element signature="e#2421#2663#0" expanded="false" />
+                <element signature="e#5442#7216#0" expanded="false" />
+                <element signature="e#7324#7498#0" expanded="false" />
+                <element signature="e#10195#11257#0" expanded="false" />
+                <element signature="e#11283#11351#0" expanded="false" />
+                <element signature="e#11377#11460#0" expanded="false" />
+                <marker date="1613994872259" expanded="true" signature="7616:10159" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plots.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Prosjektoppgave/plots.py">
+      <file leaf-file-name="current_nonconsistent.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prosjektoppgave/current_nonconsistent.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+            <state relative-caret-position="1770">
+              <caret line="218" column="83" lean-forward="false" selection-start-line="218" selection-start-column="83" selection-end-line="218" selection-end-column="83" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#0#36#0" expanded="true" />
+                <element signature="e#842#5358#1" expanded="false" />
+                <element signature="e#8779#9076#1" expanded="false" />
+                <element signature="e#10484#12291#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nonconsistent_solution.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prosjektoppgave/nonconsistent_solution.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <folding>
+                <element signature="e#886#1005#0" expanded="false" />
+                <element signature="e#3093#3124#0" expanded="false" />
+                <element signature="e#3150#6177#1" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -228,6 +241,8 @@
       <find>self.L_y</find>
       <find>self.</find>
       <find>sel</find>
+      <find>t_0</find>
+      <find>hermitian</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -253,11 +268,16 @@
         <option value="$PROJECT_DIR$/Prosjektoppgave/hamiltonian_helper.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/Notebooks/test_dask_new.npz" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/testing.py" />
-        <option value="$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/How_to/How_to_save.py" />
         <option value="$PROJECT_DIR$/computation/determinant.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/nonconsistent_solution.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/selfconsistant_solution.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/main.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/current_selfconsistent.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/current_nonconsistent.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/system_helper.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/system_class.py" />
-        <option value="$PROJECT_DIR$/Prosjektoppgave/main.py" />
       </list>
     </option>
   </component>
@@ -341,25 +361,7 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
-  <component name="RunManager" selected="Python.main (1)">
-    <configuration default="false" name="var" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Prosjektoppgave" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="FysMat" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Prosjektoppgave/var.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.determinant">
     <configuration default="false" name="solve_hamiltonian" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -428,6 +430,24 @@
       <module name="FysMat" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Prosjektoppgave/plots.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="determinant" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/computation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="FysMat" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/computation/determinant.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -647,19 +667,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.var" />
-      <item index="1" class="java.lang.String" itemvalue="Python.solve_hamiltonian" />
-      <item index="2" class="java.lang.String" itemvalue="Python.system_helper" />
-      <item index="3" class="java.lang.String" itemvalue="Python.main (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Python.plots" />
+      <item index="0" class="java.lang.String" itemvalue="Python.solve_hamiltonian" />
+      <item index="1" class="java.lang.String" itemvalue="Python.system_helper" />
+      <item index="2" class="java.lang.String" itemvalue="Python.main (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Python.plots" />
+      <item index="4" class="java.lang.String" itemvalue="Python.determinant" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.main (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.plots" />
-        <item index="2" class="java.lang.String" itemvalue="Python.system_helper" />
-        <item index="3" class="java.lang.String" itemvalue="Python.solve_hamiltonian" />
-        <item index="4" class="java.lang.String" itemvalue="Python.var" />
+        <item index="0" class="java.lang.String" itemvalue="Python.determinant" />
+        <item index="1" class="java.lang.String" itemvalue="Python.main (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.plots" />
+        <item index="3" class="java.lang.String" itemvalue="Python.system_helper" />
+        <item index="4" class="java.lang.String" itemvalue="Python.solve_hamiltonian" />
       </list>
     </recent_temporary>
   </component>
@@ -680,44 +700,44 @@
     <frame x="0" y="23" width="1440" height="828" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.076537915" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.05293276" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962447" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32880434" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0027173914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42527175" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20652173" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16440217" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.062947065" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962447" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32880434" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20652173" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0027173914" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20243205" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16440217" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -728,21 +748,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="19" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main_t.py" />
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/plots.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian_t.py" />
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian_t.py" />
     <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main_t.py" />
     <entry file="file://$PROJECT_DIR$/Prosjektoppgave/plots.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -869,69 +879,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/Notebooks/test_b.npz">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1770">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/Notebooks/test_dask_new.npz">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities_t.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/plots.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/Notebooks/test_b.npz" />
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/Notebooks/test_dask_new.npz" />
     <entry file="file://$PROJECT_DIR$/Masteroppgave/system_class.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
           <caret line="477" column="0" lean-forward="true" selection-start-line="419" selection-start-column="4" selection-end-line="477" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="157" column="58" lean-forward="false" selection-start-line="157" selection-start-column="58" selection-end-line="157" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#450#7560#0" expanded="false" />
-            <element signature="e#450#490#0" expanded="false" />
-            <element signature="e#1408#1420#0" expanded="false" />
-            <element signature="e#3159#3304#0" expanded="false" />
-            <element signature="e#3695#3721#0" expanded="false" />
-            <element signature="e#6747#7539#1" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/computation/determinant.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -939,98 +892,162 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities_t.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-150">
+          <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/How_to/How_to_save.ipynb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="484" column="0" lean-forward="false" selection-start-line="484" selection-start-column="0" selection-end-line="484" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/computation/determinant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="157" column="24" lean-forward="false" selection-start-line="157" selection-start-column="24" selection-end-line="157" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/plots.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-75">
+          <caret line="24" column="94" lean-forward="false" selection-start-line="24" selection-start-column="94" selection-end-line="24" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/current_selfconsistent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/nonconsistent_solution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
-            <element signature="e#0#30#0" expanded="true" />
+            <element signature="e#886#1005#0" expanded="false" />
+            <element signature="e#3093#3124#0" expanded="false" />
+            <element signature="e#3150#6177#1" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_helper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="325" column="13" lean-forward="true" selection-start-line="325" selection-start-column="13" selection-end-line="325" selection-end-column="13" />
+        <state relative-caret-position="-971">
+          <caret line="76" column="84" lean-forward="false" selection-start-line="76" selection-start-column="84" selection-end-line="76" selection-end-column="84" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
             <element signature="e#1405#1719#0" expanded="false" />
             <element signature="e#1801#2061#0" expanded="false" />
             <element signature="e#2125#2165#0" expanded="false" />
             <element signature="e#2324#2777#0" expanded="false" />
-            <element signature="e#5938#6408#0" expanded="false" />
-            <element signature="e#6475#6527#0" expanded="false" />
-            <element signature="e#7544#7759#0" expanded="false" />
-            <element signature="e#7906#8702#0" expanded="false" />
-            <element signature="e#9927#10627#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="49" column="49" lean-forward="false" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#6501#6574#0" expanded="false" />
-            <element signature="e#10834#10876#0" expanded="false" />
-            <element signature="e#12091#12537#1" expanded="false" />
-            <element signature="e#12813#13461#0" expanded="false" />
-            <element signature="e#12813#12823#0" expanded="false" />
-            <element signature="e#13327#13389#0" expanded="false" />
-            <element signature="e#13517#13749#0" expanded="false" />
-            <element signature="e#13787#13837#0" expanded="false" />
-            <element signature="e#13883#14703#0" expanded="false" />
-            <element signature="e#14292#14684#1" expanded="false" />
-            <element signature="e#17578#18148#0" expanded="false" />
-            <element signature="e#18195#18381#0" expanded="false" />
-            <element signature="e#18195#18228#0" expanded="false" />
-            <element signature="e#18430#19136#0" expanded="false" />
-            <element signature="e#19180#44990#0" expanded="false" />
-            <element signature="e#19180#19259#0" expanded="false" />
-            <element signature="e#19451#19489#0" expanded="false" />
-            <element signature="e#20815#20834#0" expanded="false" />
-            <element signature="e#24930#35129#1" expanded="false" />
-            <element signature="e#35138#35152#0" expanded="false" />
-            <element signature="e#35299#35314#0" expanded="false" />
-            <element signature="e#38098#44970#1" expanded="false" />
-            <element signature="e#45041#48857#0" expanded="false" />
-            <element signature="e#45170#45191#0" expanded="false" />
-            <element signature="e#45469#45511#0" expanded="false" />
-            <element signature="e#47002#48030#1" expanded="false" />
-            <element signature="e#48043#48062#0" expanded="false" />
-            <element signature="e#49002#49865#0" expanded="false" />
-            <element signature="e#49994#50885#0" expanded="false" />
-            <element signature="e#50890#50952#0" expanded="false" />
-            <element signature="e#51087#51765#0" expanded="false" />
-            <element signature="e#51829#51853#0" expanded="false" />
-            <element signature="e#51894#51917#0" expanded="false" />
-            <element signature="e#51979#52096#0" expanded="false" />
-            <element signature="e#52178#54567#0" expanded="false" />
-            <element signature="e#52580#52589#0" expanded="false" />
-            <element signature="e#52707#53393#1" expanded="false" />
-            <element signature="e#54653#55971#0" expanded="false" />
-            <element signature="e#56292#58804#0" expanded="false" />
-            <element signature="e#56436#57551#1" expanded="false" />
-            <element signature="e#57778#57865#0" expanded="false" />
-            <element signature="e#58294#58317#0" expanded="false" />
-            <element signature="e#58646#58751#0" expanded="false" />
-            <element signature="e#58850#60081#0" expanded="false" />
-            <marker date="1612529622262" expanded="false" signature="14752:17540" ph="..." />
+            <element signature="e#2891#5889#0" expanded="false" />
+            <element signature="e#5943#6413#0" expanded="false" />
+            <element signature="e#6480#6532#0" expanded="false" />
+            <element signature="e#7938#8734#0" expanded="false" />
+            <element signature="e#9959#10659#0" expanded="false" />
+            <element signature="e#11150#17283#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="73" column="87" lean-forward="false" selection-start-line="73" selection-start-column="87" selection-end-line="73" selection-end-column="87" />
+        <state relative-caret-position="-315">
+          <caret line="90" column="68" lean-forward="false" selection-start-line="90" selection-start-column="68" selection-end-line="90" selection-end-column="68" />
           <folding>
             <element signature="e#35#46#0" expanded="true" />
-            <element signature="e#490#2333#0" expanded="false" />
-            <element signature="e#2410#2652#0" expanded="false" />
-            <element signature="e#3375#5201#0" expanded="false" />
-            <element signature="e#5261#6921#0" expanded="false" />
-            <element signature="e#7029#7203#0" expanded="false" />
-            <marker date="1612529645715" expanded="false" signature="7321:9751" ph="..." />
+            <element signature="e#501#2344#0" expanded="false" />
+            <element signature="e#2421#2663#0" expanded="false" />
+            <element signature="e#5442#7216#0" expanded="false" />
+            <element signature="e#7324#7498#0" expanded="false" />
+            <element signature="e#10195#11257#0" expanded="false" />
+            <element signature="e#11283#11351#0" expanded="false" />
+            <element signature="e#11377#11460#0" expanded="false" />
+            <marker date="1613994872259" expanded="true" signature="7616:10159" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/current_nonconsistent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1770">
+          <caret line="218" column="83" lean-forward="false" selection-start-line="218" selection-start-column="83" selection-end-line="218" selection-end-column="83" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#842#5358#1" expanded="false" />
+            <element signature="e#8779#9076#1" expanded="false" />
+            <element signature="e#10484#12291#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="828">
+          <caret line="175" column="24" lean-forward="true" selection-start-line="175" selection-start-column="24" selection-end-line="175" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#6268#6341#0" expanded="false" />
+            <element signature="e#10600#10642#0" expanded="false" />
+            <element signature="e#11857#12303#1" expanded="false" />
+            <element signature="e#12577#13225#0" expanded="false" />
+            <element signature="e#12577#12587#0" expanded="false" />
+            <element signature="e#13091#13153#0" expanded="false" />
+            <element signature="e#13281#13513#0" expanded="false" />
+            <element signature="e#13551#13601#0" expanded="false" />
+            <element signature="e#13647#14467#0" expanded="false" />
+            <element signature="e#14056#14448#1" expanded="false" />
+            <element signature="e#17342#17912#0" expanded="false" />
+            <element signature="e#17959#18145#0" expanded="false" />
+            <element signature="e#17959#17992#0" expanded="false" />
+            <element signature="e#18194#18900#0" expanded="false" />
+            <element signature="e#18944#19023#0" expanded="false" />
+            <element signature="e#19215#19253#0" expanded="false" />
+            <element signature="e#20579#34893#0" expanded="false" />
+            <element signature="e#20579#20598#0" expanded="false" />
+            <element signature="e#24694#34893#1" expanded="false" />
+            <element signature="e#34902#34916#0" expanded="false" />
+            <element signature="e#35063#35078#0" expanded="false" />
+            <element signature="e#37862#44734#1" expanded="false" />
+            <element signature="e#44805#48621#0" expanded="false" />
+            <element signature="e#44934#44955#0" expanded="false" />
+            <element signature="e#45233#45275#0" expanded="false" />
+            <element signature="e#46766#47794#1" expanded="false" />
+            <element signature="e#47807#47826#0" expanded="false" />
+            <element signature="e#48766#49629#0" expanded="false" />
+            <element signature="e#50654#50716#0" expanded="false" />
+            <element signature="e#51593#51617#0" expanded="false" />
+            <element signature="e#51658#51681#0" expanded="false" />
+            <element signature="e#51743#51860#0" expanded="false" />
+            <element signature="e#51942#54331#0" expanded="false" />
+            <element signature="e#52344#52353#0" expanded="false" />
+            <element signature="e#52471#53157#1" expanded="false" />
+            <element signature="e#54417#55735#0" expanded="false" />
+            <element signature="e#56056#58560#0" expanded="false" />
+            <element signature="e#56200#57315#1" expanded="false" />
+            <element signature="e#57542#57627#0" expanded="false" />
+            <element signature="e#58050#58073#0" expanded="false" />
+            <element signature="e#58402#58507#0" expanded="false" />
+            <element signature="e#58606#59837#0" expanded="false" />
           </folding>
         </state>
       </provider>
