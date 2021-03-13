@@ -33,11 +33,11 @@ def solve_system(system, max_num_iter = 100, tol=1e-5, juction=True):
         #    system.update_hamiltonian()
         #system.set_hamiltonian()
         # We need to solve the system for all k-s
-        for ky_idx in range(1, len(system.ky_array)): # form k=-pi to k=pi
+        for ky_idx in range(len(system.ky_array)): # form k=-pi to k=pi
             #if tmp > 0:
             #    system.update_hamiltonian()
             # mulig å ta bort set_hamiltionian, og heller ha en if test i update_hamiltonian for å opdater u og initialisere hamiltionian til 0
-            for kz_idx in range(1, len(system.kz_array)):
+            for kz_idx in range(len(system.kz_array)):
 
                 system.hamiltonian = set_hamiltonian(ky=system.ky_array[ky_idx],
                                                      kz=system.kz_array[kz_idx],

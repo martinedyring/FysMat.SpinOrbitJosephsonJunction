@@ -27,8 +27,8 @@ def solve_system_nonconsistent(junction,
 
 
     #for ky_idx in prange(1, len(ky_array))
-    for ky_idx in prange(1, len(ky_array)): # form k=-pi to k=pi  #prange, set 1/2-2020
-        for kz_idx in range(1, len(kz_array)):
+    for ky_idx in prange(len(ky_array)): # form k=-pi to k=pi  #prange, set 1/2-2020
+        for kz_idx in range(len(kz_array)):
             hamiltonian[:,:, ky_idx, kz_idx] = set_hamiltonian(ky=ky_array[ky_idx],
                                                                  kz=kz_array[kz_idx],
                                                                  hamiltonian=np.zeros(shape=(4*L_x, 4*L_x), dtype=np.complex128),

@@ -59,7 +59,6 @@ def set_epsilon(arr, i, j, ky, kz, mu_array, t_array):
 def delta_gap(i, U_array, F_matrix):
     return U_array[i] * F_matrix[i, idx_F_i]
 
-
 # har endre fra += til = grunnet update_hamiltonian. Sjekk at dette fungere fremdeles
 @njit(fastmath=True)
 def set_delta(arr, i, j, U_array, F_matrix):

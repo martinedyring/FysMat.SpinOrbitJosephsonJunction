@@ -158,8 +158,8 @@ class System:
         #    self.ky_array = np.linspace(-np.pi, np.pi, num=(self.L_y), endpoint=False, dtype=np.float64)
         #    self.kz_array = np.linspace(-np.pi, np.pi, num =(self.L_z), endpoint=False, dtype=np.float64)
 
-        self.ky_array = np.linspace(-np.pi, np.pi, num =(self.L_y), endpoint=True, dtype=np.float64)
-        self.kz_array = np.linspace(-np.pi, np.pi, num =(self.L_z), endpoint=True, dtype=np.float64)
+        self.ky_array = np.linspace(0, np.pi, num =(self.L_y//2 + 1), endpoint=False, dtype=np.float64)
+        self.kz_array = np.linspace(0, np.pi, num =(self.L_z//2 + 1), endpoint=False, dtype=np.float64)
 
         # F_matrix: F_ii, F_orbital, F_x+, F_x-, F_y+, F_y-
         self.F_matrix = np.zeros((self.L_x, num_idx_F_i), dtype=np.complex128)  #   2D, one row for each F-comp
@@ -175,16 +175,16 @@ class System:
 
         #   Eigenvectors
         #self.eigenvectors = np.zeros(shape=(4 * self.L_x, 4 * self.L_x, (self.L_y + 2) // 2, (self.L_z + 2) // 2), dtype=np.complex128)
-        self.eigenvectors = np.zeros(shape=(4 * self.L_x, 4 * self.L_x, (self.L_y), (self.L_z)),dtype=np.complex128)
+        self.eigenvectors = np.zeros(shape=(4 * self.L_x, 4 * self.L_x, (self.L_y//2 + 1), (self.L_z//2 + 1)),dtype=np.complex128)
 
 
         #   Eigenvalues
         #self.eigenvalues = np.zeros(shape=(4 * self.L_x, (self.L_y + 2) // 2, (self.L_z + 2) // 2), dtype=np.float128)
-        self.eigenvalues = np.zeros(shape=(4 * self.L_x, (self.L_y), (self.L_z)), dtype=np.float64)
+        self.eigenvalues = np.zeros(shape=(4 * self.L_x, (self.L_y//2 + 1), (self.L_z//2 + 1)), dtype=np.float64)
 
         #   Hamiltonian
         #self.hamiltonian = np.zeros(shape=(self.L_x * 4, self.L_x * 4), dtype=np.complex128)
-        self.hamiltonian = np.zeros(shape=(self.L_x * 4, self.L_x * 4, self.L_y, self.L_z), dtype=np.complex128)
+        self.hamiltonian = np.zeros(shape=(self.L_x * 4, self.L_x * 4, self.L_y//2 + 1, self.L_z//2 + 1), dtype=np.complex128)
 
         #   Fill inn values in matrix
         # L_x = L_nc + L_soc + L_sc
@@ -900,113 +900,278 @@ class System:
     def current_along_lattice(self):
 
         current = np.zeros(self.L_x - 1, dtype=np.float64)
-        mod_energies = self.beta * self.eigenvalues
 
-
-        mod_energies = mod_energies.astype(np.float128)
-
-        """
-        print("energies:")
-        print(mod_energies.shape)
-        print(type(mod_energies))
-        print(type(mod_energies[0, 0, 0]))
-
-        print('before:')
-        x_tmp = np.linspace(-15, 15, mod_energies.shape[1])
-        for i in range(mod_energies.shape[0]):
-            plt.plot(x_tmp, mod_energies[i, :, 15])
-        plt.show()
-        """
-        exp_energies = np.exp(mod_energies[:,1:,1:], dtype=np.float128)
-        #exp_energies = bigfloat.exp(mod_energies, bigfloat.precision(100))
-        #energies = (self.beta * self.eigenvalues).tolist()
-        #decimal.getcontext().prec = 100
-        #mod_energies = np.asarray([np.asarray([np.asarray([decimal.Decimal(i) for i in e], dtype=object) for e in el], dtype=object) for el in energies], dtype=object)
-
-        """
-        print("exp:")
-        print(mod_energies.shape)
-        print(type(mod_energies))
-        print(type(mod_energies[0, 0, 0]))
-        """
-
-        #tanh_coeff = np.float128(1.0) / (np.exp(self.beta * self.eigenvalues, dtype=np.float128) + 1) / (self.L_y * self.L_z)  # 1/(system.L_y*system.L_z) *(1-np.tanh(system.beta * system.eigenvalues / 2)) #-
-
-        tanh_coeff = np.zeros(shape=(4 * self.L_x, (self.L_y), (self.L_z)), dtype=np.float64)
-        tanh_coeff[:,1:,1:] = 1.0 / (exp_energies + 1) / (self.L_y * self.L_z)  # 1/(system.L_y*system.L_z) *(1-np.tanh(system.beta * system.eigenvalues / 2)) #-
-
-
-        # try to use scipy.​special.expit(x)
-        #tanh_coeff = expit(-self.beta * self.eigenvalues)
-        #tanh_coeff /= (self.L_y * self.L_z)  # 1/(system.L_y*system.L_z) *(1-np.tanh(system.beta * system.eigenvalues / 2)) #-
-
-        t = self.t
+        #   k > 0
+        exp_energies = np.exp(self.beta * self.eigenvalues[:, :, :], dtype=np.float64)
+        fermi_func = np.zeros(shape=(4 * self.L_x, (self.L_y//2 + 1), (self.L_z//2 + 1)), dtype=np.float64) # n ky kz
+        fermi_func[:,:,:] = 1.0 / (exp_energies + 1)  # 1/(system.L_y*system.L_z) *(1-np.tanh(system.beta * system.eigenvalues / 2)) #-
 
         for ix in range(1, len(current)):  # -1 because it doesnt give sense to check last point for I+
             xi_ii = 0
-            xi_minus = 0
-            xi_pluss = 0
-
-
-            if (self.L_sc_0 <= ix < (self.L_sc_0 + self.L_soc)):  # check if both i and i are inside soc material
+            if (self.L_sc_0 <= ix < (self.L_sc_0 + self.L_soc)):  # and (system.L_sc_0 <= ix-1 < (system.L_sc_0 + system.L_soc)):# and (system.L_sc_0 <= ix+1 < (system.L_sc_0 + system.L_soc)): #check if both i and i-1 are inside soc material
                 xi_ii = 1
-            if (self.L_sc_0 <= ix < (self.L_sc_0 + self.L_soc)): # and (self.L_sc_0 <= ix+1 < (self.L_sc_0 + self.L_soc)):# and (system.L_sc_0 <= ix-1 < (system.L_sc_0 + system.L_soc)): #check if both i and i+1 are inside soc material
-                xi_pluss = 1
-            if (self.L_sc_0 <= ix < (self.L_sc_0 + self.L_soc)): # and (self.L_sc_0 <= ix-1 < (self.L_sc_0 + self.L_soc)):# and (system.L_sc_0 <= ix+1 < (system.L_sc_0 + system.L_soc)): #check if both i and i-1 are inside soc material
-                xi_minus = 1
 
-            B_opp_opp_psite = 1.0 / 4 * self.alpha_R_x_array[ix, 1] * (1 + xi_ii)
-            B_opp_opp_pluss = 1.0 / 4 * self.alpha_R_x_array[ix + 1, 1] * (1 + xi_pluss)
-            B_opp_opp_minus = 1.0 / 4 * self.alpha_R_x_array[ix - 1, 1] * (1 + xi_minus)
-            B_opp_opp_msite = 1.0 / 4 * self.alpha_R_x_array[ix, 1] * (1 + xi_ii)
+            B_opp_opp_osite = 1.0 / 4 * self.alpha_R_x_array[ix, 1] * (1 + xi_ii)
+            B_opp_opp_pluss = 1.0 / 4 * self.alpha_R_x_array[ix + 1, 1] * (1 + xi_ii)
+            B_opp_opp_minus = 1.0 / 4 * self.alpha_R_x_array[ix - 1, 1] * (1 + xi_ii)
 
-            B_ned_ned_psite = - 1.0 / 4 * self.alpha_R_x_array[ix, 1] * (1 + xi_ii)
-            B_ned_ned_pluss = - 1.0 / 4 * self.alpha_R_x_array[ix + 1, 1] * (1 + xi_pluss)
-            B_ned_ned_minus = - 1.0 / 4 * self.alpha_R_x_array[ix - 1, 1] * (1 + xi_minus)
-            B_ned_ned_msite = - 1.0 / 4 * self.alpha_R_x_array[ix, 1] * (1 + xi_ii)
+            B_ned_ned_osite = - 1.0 / 4 * self.alpha_R_x_array[ix, 1] * (1 + xi_ii)
+            B_ned_ned_pluss = - 1.0 / 4 * self.alpha_R_x_array[ix + 1, 1] * (1 + xi_ii)
+            B_ned_ned_minus = - 1.0 / 4 * self.alpha_R_x_array[ix - 1, 1] * (1 + xi_ii)
 
-            B_opp_ned_psite = + 1.0j / 4 * self.alpha_R_x_array[ix, 2] * (1 + xi_ii)
-            B_opp_ned_pluss = + 1.0j / 4 * self.alpha_R_x_array[ix + 1, 2] * (1 + xi_pluss)
-            B_opp_ned_minus = + 1.0j / 4 * self.alpha_R_x_array[ix - 1, 2] * (1 + xi_minus)
-            B_opp_ned_msite = + 1.0j / 4 * self.alpha_R_x_array[ix, 2] * (1 + xi_ii)
+            B_opp_ned_osite = + 1.0j / 4 * self.alpha_R_x_array[ix, 2] * (1 + xi_ii)
+            B_opp_ned_pluss = + 1.0j / 4 * self.alpha_R_x_array[ix + 1, 2] * (1 + xi_ii)
+            B_opp_ned_minus = + 1.0j / 4 * self.alpha_R_x_array[ix - 1, 2] * (1 + xi_ii)
 
-            B_ned_opp_psite = - 1.0j / 4 * self.alpha_R_x_array[ix, 2] * (1 + xi_ii)
-            B_ned_opp_pluss = - 1.0j / 4 * self.alpha_R_x_array[ix + 1, 2] * (1 + xi_pluss)
-            B_ned_opp_minus = - 1.0j / 4 * self.alpha_R_x_array[ix - 1, 2] * (1 + xi_minus)
-            B_ned_opp_msite = - 1.0j / 4 * self.alpha_R_x_array[ix, 2] * (1 + xi_ii)
+            B_ned_opp_osite = - 1.0j / 4 * self.alpha_R_x_array[ix, 2] * (1 + xi_ii)
+            B_ned_opp_pluss = - 1.0j / 4 * self.alpha_R_x_array[ix + 1, 2] * (1 + xi_ii)
+            B_ned_opp_minus = - 1.0j / 4 * self.alpha_R_x_array[ix - 1, 2] * (1 + xi_ii)
+
 
             # ---- Hopping x+ (imag)----#
-            #:
-            current[ix] += np.imag(2 * np.sum(t * tanh_coeff[:, 1:, 1:] * (np.conj(self.eigenvectors[4 * ix, :, 1:, 1:]) * self.eigenvectors[4 * (ix + 1), :, 1:, 1:])))  # opp opp # * (np.exp(1.0j * system.ky_array[1:]) * np.exp(1.0j * system.kz_array[1:])))) #sigma = opp
-            current[ix] += np.imag(2 * np.sum(t * tanh_coeff[:, 1:, 1:] * (np.conj(self.eigenvectors[4 * ix + 1, :, 1:, 1:]) * self.eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:])))  # ned ned # * (np.exp(1.0j * system.ky_array[1:]) * np.exp(1.0j * system.kz_array[1:])))) #sigma = opp
+            #------------k > 0
+            current[ix] += np.imag(2 * self.t / (self.L_y * self.L_z) * np.sum(
+                fermi_func[:, 1:, 1:] * (np.conj(self.eigenvectors[4 * ix, :, 1:, 1:])
+                                         * self.eigenvectors[4 * (ix + 1), :, 1:, 1:])
+                + (1 - fermi_func[:, 1:, 1:]) * (self.eigenvectors[4 * ix + 2, :, 1:, 1:]
+                                                 * conj(self.eigenvectors[4 * (ix + 1) + 2, :, 1:, 1:]))))  # opp opp
+            current[ix] += np.imag(2 * self.t / (self.L_y * self.L_z) * np.sum(
+                fermi_func[:, 1:, 1:] * (np.conj(self.eigenvectors[4 * ix + 1, :, 1:, 1:]) *
+                                         self.eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:])
+                + (1 - fermi_func[:, 1:, 1:]) * (self.eigenvectors[4 * ix + 3, :, 1:, 1:]
+                                                 * np.conj(self.eigenvectors[4 * (ix + 1) + 3, :, 1:, 1:]))))  # ned ned
 
-            current[ix] -= np.imag(2 * np.sum(t * tanh_coeff[:, 1:, 1:] * (np.conj(self.eigenvectors[4 * ix, :, 1:, 1:]) * self.eigenvectors[4 * (ix - 1), :, 1:, 1:])))  # opp opp # # * (np.exp(-1.0j * system.ky_array[1:]) * np.exp(-1.0j * system.kz_array[1:])))) #sigma = opp
-            current[ix] -= np.imag(2 * np.sum(t * tanh_coeff[:, 1:, 1:] * (np.conj(self.eigenvectors[4 * ix + 1, :, 1:, 1:]) * self.eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:])))  # ned ned # # * (np.exp(-1.0j * system.ky_array[1:]) * np.exp(-1.0j * system.kz_array[1:])))) #sigma = opp
+            current[ix] -= np.imag(2 * self.t / (self.L_y * self.L_z) * np.sum(
+                fermi_func[:, 1:, 1:] * (np.conj(self.eigenvectors[4 * ix, :, 1:, 1:])
+                                         * self.eigenvectors[4 * (ix - 1), :, 1:, 1:])
+                + (1 - fermi_func[:, 1:, 1:]) * (self.eigenvectors[4 * ix + 2, :, 1:, 1:]
+                                                 * np.conj(self.eigenvectors[4 * (ix - 1) + 2, :, 1:, 1:]))))  # opp opp
+            current[ix] -= np.imag(2 * self.t / (self.L_y * self.L_z) * np.sum(
+                fermi_func[:, 1:, 1:] * (np.conj(self.eigenvectors[4 * ix + 1, :, 1:, 1:])
+                                         * self.eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:])
+                + (1 - fermi_func[:, 1:, 1:]) * (self.eigenvectors[4 * ix + 3, :, 1:, 1:]
+                                                 * np.conj(self.eigenvectors[4 * (ix - 1) + 3, :, 1:, 1:]))))  # ned ned
+
+            #-----------k = 0
+            current[ix] += np.imag(2 * self.t / (self.L_y * self.L_z) * np.sum(
+                fermi_func[2*self.L_x:, 0, 0] * (np.conj(self.eigenvectors[4 * ix, 2*self.L_x:, 0, 0])
+                                         * self.eigenvectors[4 * (ix + 1), 2*self.L_x:, 0, 0])
+                + (1 - fermi_func[2*self.L_x:, 0, 0]) * (self.eigenvectors[4 * ix + 2, 2*self.L_x:, 0, 0]
+                                                 * conj(self.eigenvectors[4 * (ix + 1) + 2, 2*self.L_x:, 0, 0]))))  # opp opp
+            current[ix] += np.imag(2 * self.t / (self.L_y * self.L_z) * np.sum(
+                fermi_func[2*self.L_x:, 0, 0] * (np.conj(self.eigenvectors[4 * ix + 1, 2*self.L_x:, 0, 0]) *
+                                         self.eigenvectors[4 * (ix + 1) + 1, 2*self.L_x:, 0, 0])
+                + (1 - fermi_func[2*self.L_x:, 0, 0]) * (self.eigenvectors[4 * ix + 3, 2*self.L_x:, 0, 0]
+                                                 * np.conj(self.eigenvectors[4 * (ix + 1) + 3, 2*self.L_x:, 0, 0]))))  # ned ned
+
+            current[ix] -= np.imag(2 * self.t / (self.L_y * self.L_z) * np.sum(
+                fermi_func[2*self.L_x:, 0, 0] * (np.conj(self.eigenvectors[4 * ix, 2*self.L_x:, 0, 0])
+                                         * self.eigenvectors[4 * (ix - 1), 2*self.L_x:, 0, 0])
+                + (1 - fermi_func[2*self.L_x:, 0, 0]) * (self.eigenvectors[4 * ix + 2, 2*self.L_x:, 0, 0]
+                                                 * np.conj(self.eigenvectors[4 * (ix - 1) + 2, 2*self.L_x:, 0, 0]))))  # opp opp
+            current[ix] -= np.imag(2 * self.t / (self.L_y * self.L_z) * np.sum(
+                fermi_func[2*self.L_x:, 0, 0] * (np.conj(self.eigenvectors[4 * ix + 1, 2*self.L_x:, 0, 0])
+                                         * self.eigenvectors[4 * (ix - 1) + 1, 2*self.L_x:, 0, 0])
+                + (1 - fermi_func[2*self.L_x:, 0, 0]) * (self.eigenvectors[4 * ix + 3, 2*self.L_x:, 0, 0]
+                                                 * np.conj(self.eigenvectors[4 * (ix - 1) + 3, 2*self.L_x:, 0, 0]))))  # ned ned
 
             # --- Rashba x+ (real)----#
-            #:
-            # """
-            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_opp_psite * (np.conj(self.eigenvectors[4 * ix, :, 1:, 1:]) * self.eigenvectors[4 * (ix + 1), :, 1:, 1:])))  # opp opp
-            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_opp_pluss * (np.conj(self.eigenvectors[4 * (ix + 1), :, 1:, 1:]) * self.eigenvectors[4 * ix, :, 1:, 1:])))  # opp opp
-            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_opp_minus * (np.conj(self.eigenvectors[4 * (ix - 1), :, 1:, 1:]) * self.eigenvectors[4 * ix, :, 1:, 1:])))  # opp opp
-            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_opp_msite * (np.conj(self.eigenvectors[4 * ix, :, 1:, 1:]) * self.eigenvectors[4 * (ix - 1), :, 1:, 1:])))  # opp opp
+            #------------k > 0
+            # OPP OPP
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(fermi_func[:, 1:, 1:] * B_opp_opp_osite * (np.conj(self.eigenvectors[4 * ix, :, 1:, 1:])
+                                                                                                                   * self.eigenvectors[4 * (ix + 1), :, 1:, 1:])
+                                                                        +(1-fermi_func[:, 1:, 1:]) * (B_opp_opp_osite) * (self.eigenvectors[4 * ix + 2, :, 1:, 1:]
+                                                                                                                   * np.conj(self.eigenvectors[4 * (ix + 1) + 2, :, 1:, 1:]))))  # opp opp
 
-            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_ned_psite * (np.conj(self.eigenvectors[4 * ix + 1, :, 1:, 1:]) * self.eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:])))  # ned ned
-            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_ned_pluss * (np.conj(self.eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:]) * self.eigenvectors[4 * ix + 1, :, 1:, 1:])))  # ned ned
-            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_ned_minus * (np.conj(self.eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:]) * self.eigenvectors[4 * ix + 1, :, 1:, 1:])))  # ned ned
-            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_ned_msite * (np.conj(self.eigenvectors[4 * ix + 1, :, 1:, 1:]) * self.eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:])))  # ned ned
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(fermi_func[:, 1:, 1:] * B_opp_opp_pluss * (np.conj(self.eigenvectors[4 * (ix + 1), :, 1:, 1:])
+                                                                                                                   * self.eigenvectors[4 * ix, :, 1:, 1:])
+                                                                        +(1-fermi_func[:, 1:, 1:]) * (B_opp_opp_pluss) * (self.eigenvectors[4 * (ix + 1) + 2, :, 1:, 1:]
+                                                                                                                   * np.conj(self.eigenvectors[4 * ix + 2, :, 1:, 1:]))))  # opp opp
 
-            #:
-            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_ned_psite * (np.conj(self.eigenvectors[4 * ix, :, 1:, 1:]) * self.eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:])))  # opp ned
-            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_ned_pluss * (np.conj(self.eigenvectors[4 * (ix + 1), :, 1:, 1:]) * self.eigenvectors[4 * ix + 1, :, 1:, 1:])))  # opp ned
-            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_ned_minus * (np.conj(self.eigenvectors[4 * (ix - 1), :, 1:, 1:]) * self.eigenvectors[4 * ix + 1, :, 1:, 1:])))  # opp ned
-            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_opp_ned_msite * (np.conj(self.eigenvectors[4 * ix, :, 1:, 1:]) * self.eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:])))  # opp ned
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(fermi_func[:, 1:, 1:] * B_opp_opp_minus * (np.conj(self.eigenvectors[4 * (ix - 1), :, 1:, 1:])
+                                                                                                                   * self.eigenvectors[4 * ix, :, 1:, 1:])
+                                                                        +(1-fermi_func[:, 1:, 1:]) * (B_opp_opp_minus) * (self.eigenvectors[4 * (ix - 1) + 2, :, 1:, 1:]
+                                                                                                                   * np.conj(self.eigenvectors[4 * ix + 2, :, 1:, 1:]))))  # opp opp
 
-            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_opp_psite * (np.conj(self.eigenvectors[4 * ix + 1, :, 1:, 1:]) * self.eigenvectors[4 * (ix + 1), :, 1:, 1:])))  # ned opp
-            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_opp_pluss * (np.conj(self.eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:]) * self.eigenvectors[4 * ix, :, 1:, 1:])))  # ned opp
-            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_opp_minus * (np.conj(self.eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:]) * self.eigenvectors[4 * ix, :, 1:, 1:])))  # ned opp
-            current[ix] += np.real(1.0j * np.sum(tanh_coeff[:, 1:, 1:] * B_ned_opp_msite * (np.conj(self.eigenvectors[4 * ix + 1, :, 1:, 1:]) * self.eigenvectors[4 * (ix - 1), :, 1:, 1:])))  # ned opp
-            # """
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(fermi_func[:, 1:, 1:] * B_opp_opp_osite * (np.conj(self.eigenvectors[4 * ix, :, 1:, 1:])
+                                                                                                                   * self.eigenvectors[4 * (ix - 1), :, 1:, 1:])
+                                                                        +(1-fermi_func[:, 1:, 1:]) * (B_opp_opp_osite) * (self.eigenvectors[4 * ix + 2, :, 1:, 1:]
+                                                                                                                   * np.conj(self.eigenvectors[4 * (ix - 1) + 2, :, 1:, 1:]))))  # opp opp
+            # NED NED
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(fermi_func[:, 1:, 1:] * B_ned_ned_osite * (np.conj(self.eigenvectors[4 * ix + 1, :, 1:, 1:])
+                                                                                                                   * self.eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:])
+                                                                        +(1-fermi_func[:, 1:, 1:]) * (B_ned_ned_osite) * (self.eigenvectors[4 * ix + 3, :, 1:, 1:]
+                                                                                                                   * np.conj(self.eigenvectors[4 * (ix + 1) + 3, :, 1:, 1:]))))  # ned ned
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(fermi_func[:, 1:, 1:] * B_ned_ned_pluss * (np.conj(self.eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:])
+                                                                                                                   * self.eigenvectors[4 * ix + 1, :, 1:, 1:])
+                                                                        +(1-fermi_func[:, 1:, 1:]) * (B_ned_ned_pluss) * (self.eigenvectors[4 * (ix + 1) + 3, :, 1:, 1:]
+                                                                                                                   * np.conj(self.eigenvectors[4 * ix + 3, :, 1:, 1:]))))  # ned ned
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(fermi_func[:, 1:, 1:] * B_ned_ned_minus * (np.conj(self.eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:])
+                                                                                                                   * self.eigenvectors[4 * ix + 1, :, 1:, 1:])
+                                                                        +(1-fermi_func[:, 1:, 1:]) * (B_ned_ned_minus) * (self.eigenvectors[4 * (ix - 1) + 3, :, 1:, 1:]
+                                                                                                                   * np.conj(self.eigenvectors[4 * ix + 3, :, 1:, 1:]))))  # ned ned
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(fermi_func[:, 1:, 1:] * B_ned_ned_osite * (np.conj(self.eigenvectors[4 * ix + 1, :, 1:, 1:])
+                                                                                                                   * self.eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:])
+                                                                        +(1-fermi_func[:, 1:, 1:]) * (B_ned_ned_osite) * (self.eigenvectors[4 * ix + 3, :, 1:, 1:]
+                                                                                                                   * np.conj(self.eigenvectors[4 * (ix - 1) + 3, :, 1:, 1:]))))  # ned ned
+            # OPP NED
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(fermi_func[:, 1:, 1:] * B_opp_ned_osite * (np.conj(self.eigenvectors[4 * ix, :, 1:, 1:])
+                                                                                                                   * self.eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:])
+                                                                        +(1-fermi_func[:, 1:, 1:]) * (B_opp_ned_osite) * (self.eigenvectors[4 * ix + 2, :, 1:, 1:]
+                                                                                                                   * np.conj(self.eigenvectors[4 * (ix + 1) + 3, :, 1:, 1:]))))  # opp ned
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(fermi_func[:, 1:, 1:] * B_opp_ned_pluss * (np.conj(self.eigenvectors[4 * (ix + 1), :, 1:, 1:])
+                                                                                                                   * self.eigenvectors[4 * ix + 1, :, 1:, 1:])
+                                                                        +(1-fermi_func[:, 1:, 1:]) * (B_opp_ned_pluss) * (self.eigenvectors[4 * (ix + 1) + 2, :, 1:, 1:]
+                                                                                                                   * np.conj(self.eigenvectors[4 * ix + 3, :, 1:, 1:]))))  # opp ned
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(fermi_func[:, 1:, 1:] * B_opp_ned_minus * (np.conj(self.eigenvectors[4 * (ix - 1), :, 1:, 1:])
+                                                                                                                   * self.eigenvectors[4 * ix + 1, :, 1:, 1:])
+                                                                        +(1-fermi_func[:, 1:, 1:]) * (B_opp_ned_minus) * (self.eigenvectors[4 * (ix - 1) + 2, :, 1:, 1:]
+                                                                                                                   * np.conj(self.eigenvectors[4 * ix + 3, :, 1:, 1:]))))  # opp ned
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(fermi_func[:, 1:, 1:] * B_opp_ned_osite * (np.conj(self.eigenvectors[4 * ix, :, 1:, 1:])
+                                                                                                                   * self.eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:])
+                                                                        +(1-fermi_func[:, 1:, 1:]) * (B_opp_ned_osite) * (self.eigenvectors[4 * ix + 2, :, 1:, 1:]
+                                                                                                                   * np.conj(self.eigenvectors[4 * (ix - 1) + 3, :, 1:, 1:]))))  # opp ned
+            # NED OPP
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(fermi_func[:, 1:, 1:] * B_ned_opp_osite * (np.conj(self.eigenvectors[4 * ix + 1, :, 1:, 1:])
+                                                                                                                   * self.eigenvectors[4 * (ix + 1), :, 1:, 1:])
+                                                                        +(1-fermi_func[:, 1:, 1:]) * (B_ned_opp_osite) * (self.eigenvectors[4 * ix + 3, :, 1:, 1:]
+                                                                                                                   * np.conj(self.eigenvectors[4 * (ix + 1) + 2, :, 1:, 1:]))))  # ned opp
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(fermi_func[:, 1:, 1:] * B_ned_opp_pluss * (np.conj(self.eigenvectors[4 * (ix + 1) + 1, :, 1:, 1:])
+                                                                                                                   * self.eigenvectors[4 * ix, :, 1:, 1:])
+                                                                        +(1-fermi_func[:, 1:, 1:]) * (B_ned_opp_pluss) * (self.eigenvectors[4 * (ix + 1) + 3, :, 1:, 1:]
+                                                                                                                   * np.conj(self.eigenvectors[4 * ix + 2, :, 1:, 1:]))))  # ned opp
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(fermi_func[:, 1:, 1:] * B_ned_opp_minus * (np.conj(self.eigenvectors[4 * (ix - 1) + 1, :, 1:, 1:])
+                                                                                                                   * self.eigenvectors[4 * ix, :, 1:, 1:])
+                                                                        +(1-fermi_func[:, 1:, 1:]) * (B_ned_opp_minus) * (self.eigenvectors[4 * (ix - 1) + 3, :, 1:, 1:]
+                                                                                                                   * np.conj(self.eigenvectors[4 * ix + 2, :, 1:, 1:]))))  # ned opp
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(fermi_func[:, 1:, 1:] * B_ned_opp_osite * (np.conj(self.eigenvectors[4 * ix + 1, :, 1:, 1:])
+                                                                                                                   * self.eigenvectors[4 * (ix - 1), :, 1:, 1:])
+                                                                        +(1-fermi_func[:, 1:, 1:]) * (B_ned_opp_osite) * (self.eigenvectors[4 * ix + 3, :, 1:, 1:]
+                                                                                                                   * np.conj(self.eigenvectors[4 * (ix - 1) + 2, :, 1:, 1:]))))  # ned opp
+
+
+            #   k = 0
+            # OPP OPP
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(
+                fermi_func[2 * self.L_x:, 0, 0] * B_opp_opp_osite * (np.conj(self.eigenvectors[4 * ix, 2*self.L_x:, 0, 0])
+                                                           * self.eigenvectors[4 * (ix + 1), 2*self.L_x:, 0, 0])
+                + (1 - fermi_func[2 * self.L_x:, 0, 0]) * (B_opp_opp_osite) * (self.eigenvectors[4 * ix + 2, 2*self.L_x:, 0, 0]
+                                                                            * np.conj(
+                    self.eigenvectors[4 * (ix + 1) + 2, 2*self.L_x:, 0, 0]))))  # opp opp
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(
+                fermi_func[2 * self.L_x:, 0, 0] * B_opp_opp_pluss * (np.conj(self.eigenvectors[4 * (ix + 1), 2*self.L_x:, 0, 0])
+                                                           * self.eigenvectors[4 * ix, 2*self.L_x:, 0, 0])
+                + (1 - fermi_func[2 * self.L_x:, 0, 0]) * (B_opp_opp_pluss) * (
+                self.eigenvectors[4 * (ix + 1) + 2, 2*self.L_x:, 0, 0]
+                * np.conj(self.eigenvectors[4 * ix + 2, 2*self.L_x:, 0, 0]))))  # opp opp
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(
+                fermi_func[2 * self.L_x:, 0, 0] * B_opp_opp_minus * (np.conj(self.eigenvectors[4 * (ix - 1), 2*self.L_x:, 0, 0])
+                                                           * self.eigenvectors[4 * ix, 2*self.L_x:, 0, 0])
+                + (1 - fermi_func[2 * self.L_x:, 0, 0]) * (B_opp_opp_minus) * (
+                self.eigenvectors[4 * (ix - 1) + 2, 2*self.L_x:, 0, 0]
+                * np.conj(self.eigenvectors[4 * ix + 2, 2*self.L_x:, 0, 0]))))  # opp opp
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(
+                fermi_func[2 * self.L_x:, 0, 0] * B_opp_opp_osite * (np.conj(self.eigenvectors[4 * ix, 2*self.L_x:, 0, 0])
+                                                           * self.eigenvectors[4 * (ix - 1), 2*self.L_x:, 0, 0])
+                + (1 - fermi_func[2 * self.L_x:, 0, 0]) * (B_opp_opp_osite) * (self.eigenvectors[4 * ix + 2, 2*self.L_x:, 0, 0]
+                                                                            * np.conj(
+                    self.eigenvectors[4 * (ix - 1) + 2, 2*self.L_x:, 0, 0]))))  # opp opp
+            # NED NED
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(
+                fermi_func[2 * self.L_x:, 0, 0] * B_ned_ned_osite * (np.conj(self.eigenvectors[4 * ix + 1, 2*self.L_x:, 0, 0])
+                                                           * self.eigenvectors[4 * (ix + 1) + 1, 2*self.L_x:, 0, 0])
+                + (1 - fermi_func[2 * self.L_x:, 0, 0]) * (B_ned_ned_osite) * (self.eigenvectors[4 * ix + 3, 2*self.L_x:, 0, 0]
+                                                                            * np.conj(
+                    self.eigenvectors[4 * (ix + 1) + 3, 2*self.L_x:, 0, 0]))))  # ned ned
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(
+                fermi_func[2 * self.L_x:, 0, 0] * B_ned_ned_pluss * (np.conj(self.eigenvectors[4 * (ix + 1) + 1, 2*self.L_x:, 0, 0])
+                                                           * self.eigenvectors[4 * ix + 1, 2*self.L_x:, 0, 0])
+                + (1 - fermi_func[2 * self.L_x:, 0, 0]) * (B_ned_ned_pluss) * (
+                self.eigenvectors[4 * (ix + 1) + 3, 2*self.L_x:, 0, 0]
+                * np.conj(self.eigenvectors[4 * ix + 3, 2*self.L_x:, 0, 0]))))  # ned ned
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(
+                fermi_func[2 * self.L_x:, 0, 0] * B_ned_ned_minus * (np.conj(self.eigenvectors[4 * (ix - 1) + 1, 2*self.L_x:, 0, 0])
+                                                           * self.eigenvectors[4 * ix + 1, 2*self.L_x:, 0, 0])
+                + (1 - fermi_func[2 * self.L_x:, 0, 0]) * (B_ned_ned_minus) * (
+                self.eigenvectors[4 * (ix - 1) + 3, 2*self.L_x:, 0, 0]
+                * np.conj(self.eigenvectors[4 * ix + 3, 2*self.L_x:, 0, 0]))))  # ned ned
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(
+                fermi_func[2 * self.L_x:, 0, 0] * B_ned_ned_osite * (np.conj(self.eigenvectors[4 * ix + 1, 2*self.L_x:, 0, 0])
+                                                           * self.eigenvectors[4 * (ix - 1) + 1, 2*self.L_x:, 0, 0])
+                + (1 - fermi_func[2 * self.L_x:, 0, 0]) * (B_ned_ned_osite) * (self.eigenvectors[4 * ix + 3, 2*self.L_x:, 0, 0]
+                                                                            * np.conj(
+                    self.eigenvectors[4 * (ix - 1) + 3, 2*self.L_x:, 0, 0]))))  # ned ned
+            # OPP NED
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(
+                fermi_func[2 * self.L_x:, 0, 0] * B_opp_ned_osite * (np.conj(self.eigenvectors[4 * ix, 2*self.L_x:, 0, 0])
+                                                           * self.eigenvectors[4 * (ix + 1) + 1, 2*self.L_x:, 0, 0])
+                + (1 - fermi_func[2 * self.L_x:, 0, 0]) * (B_opp_ned_osite) * (self.eigenvectors[4 * ix + 2, 2*self.L_x:, 0, 0]
+                                                                            * np.conj(
+                    self.eigenvectors[4 * (ix + 1) + 3, 2*self.L_x:, 0, 0]))))  # opp ned
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(
+                fermi_func[2 * self.L_x:, 0, 0] * B_opp_ned_pluss * (np.conj(self.eigenvectors[4 * (ix + 1), 2*self.L_x:, 0, 0])
+                                                           * self.eigenvectors[4 * ix + 1, 2*self.L_x:, 0, 0])
+                + (1 - fermi_func[2 * self.L_x:, 0, 0]) * (B_opp_ned_pluss) * (
+                self.eigenvectors[4 * (ix + 1) + 2, 2*self.L_x:, 0, 0]
+                * np.conj(self.eigenvectors[4 * ix + 3, 2*self.L_x:, 0, 0]))))  # opp ned
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(
+                fermi_func[2 * self.L_x:, 0, 0] * B_opp_ned_minus * (np.conj(self.eigenvectors[4 * (ix - 1), 2*self.L_x:, 0, 0])
+                                                           * self.eigenvectors[4 * ix + 1, 2*self.L_x:, 0, 0])
+                + (1 - fermi_func[2 * self.L_x:, 0, 0]) * (B_opp_ned_minus) * (
+                self.eigenvectors[4 * (ix - 1) + 2, 2*self.L_x:, 0, 0]
+                * np.conj(self.eigenvectors[4 * ix + 3, 2*self.L_x:, 0, 0]))))  # opp ned
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(
+                fermi_func[2 * self.L_x:, 0, 0] * B_opp_ned_osite * (np.conj(self.eigenvectors[4 * ix, 2*self.L_x:, 0, 0])
+                                                           * self.eigenvectors[4 * (ix - 1) + 1, 2*self.L_x:, 0, 0])
+                + (1 - fermi_func[2 * self.L_x:, 0, 0]) * (B_opp_ned_osite) * (self.eigenvectors[4 * ix + 2, 2*self.L_x:, 0, 0]
+                                                                            * np.conj(
+                    self.eigenvectors[4 * (ix - 1) + 3, 2*self.L_x:, 0, 0]))))  # opp ned
+            # NED OPP
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(
+                fermi_func[2 * self.L_x:, 0, 0] * B_ned_opp_osite * (np.conj(self.eigenvectors[4 * ix + 1, 2*self.L_x:, 0, 0])
+                                                           * self.eigenvectors[4 * (ix + 1), 2*self.L_x:, 0, 0])
+                + (1 - fermi_func[2 * self.L_x:, 0, 0]) * (B_ned_opp_osite) * (self.eigenvectors[4 * ix + 3, 2*self.L_x:, 0, 0]
+                                                                            * np.conj(
+                    self.eigenvectors[4 * (ix + 1) + 2, 2*self.L_x:, 0, 0]))))  # ned opp
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(
+                fermi_func[2 * self.L_x:, 0, 0] * B_ned_opp_pluss * (np.conj(self.eigenvectors[4 * (ix + 1) + 1, 2*self.L_x:, 0, 0])
+                                                           * self.eigenvectors[4 * ix, 2*self.L_x:, 0, 0])
+                + (1 - fermi_func[2 * self.L_x:, 0, 0]) * (B_ned_opp_pluss) * (
+                self.eigenvectors[4 * (ix + 1) + 3, 2*self.L_x:, 0, 0]
+                * np.conj(self.eigenvectors[4 * ix + 2, 2*self.L_x:, 0, 0]))))  # ned opp
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(
+                fermi_func[2 * self.L_x:, 0, 0] * B_ned_opp_minus * (np.conj(self.eigenvectors[4 * (ix - 1) + 1, 2*self.L_x:, 0, 0])
+                                                           * self.eigenvectors[4 * ix, 2*self.L_x:, 0, 0])
+                + (1 - fermi_func[2 * self.L_x:, 0, 0]) * (B_ned_opp_minus) * (
+                self.eigenvectors[4 * (ix - 1) + 3, 2*self.L_x:, 0, 0]
+                * np.conj(self.eigenvectors[4 * ix + 2, 2*self.L_x:, 0, 0]))))  # ned opp
+
+            current[ix] += np.real(1.0 / (self.L_y * self.L_z) * np.sum(
+                fermi_func[2 * self.L_x:, 0, 0] * B_ned_opp_osite * (np.conj(self.eigenvectors[4 * ix + 1, 2*self.L_x:, 0, 0])
+                                                           * self.eigenvectors[4 * (ix - 1), 2*self.L_x:, 0, 0])
+                + (1 - fermi_func[2 * self.L_x:, 0, 0]) * (B_ned_opp_osite) * (self.eigenvectors[4 * ix + 3, 2*self.L_x:, 0, 0]
+                                                                            * np.conj(
+                    self.eigenvectors[4 * (ix - 1) + 2, 2*self.L_x:, 0, 0]))))  # ned opp
 
         return current
 
