@@ -2,333 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="619037fa-4b25-4024-aeda-7804730b2fd8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current xz-plane/current_s_soc_s_theta=0.0, xz=TRUE, yz=FALSE.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current xz-plane/current_s_soc_s_theta=0.17, xz=TRUE, yz=FALSE.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current xz-plane/current_s_soc_s_theta=0.35, xz=TRUE, yz=FALSE.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current xz-plane/current_s_soc_s_theta=0.52, xz=TRUE, yz=FALSE.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current xz-plane/current_s_soc_s_theta=0.7, xz=TRUE, yz=FALSE.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current xz-plane/current_s_soc_s_theta=0.87, xz=TRUE, yz=FALSE.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current xz-plane/current_s_soc_s_theta=1.05, xz=TRUE, yz=FALSE.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current xz-plane/current_s_soc_s_theta=1.22, xz=TRUE, yz=FALSE.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current xz-plane/current_s_soc_s_theta=1.4, xz=TRUE, yz=FALSE.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current xz-plane/current_s_soc_s_theta=1.57, xz=TRUE, yz=FALSE.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current yz-plane/current_s_soc_s_theta=0.0, xz=FALSE, yz=TRUE.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current yz-plane/current_s_soc_s_theta=0.17, xz=FALSE, yz=TRUE.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current yz-plane/current_s_soc_s_theta=0.35, xz=FALSE, yz=TRUE.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current yz-plane/current_s_soc_s_theta=0.52, xz=FALSE, yz=TRUE.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current yz-plane/current_s_soc_s_theta=0.7, xz=FALSE, yz=TRUE.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current yz-plane/current_s_soc_s_theta=0.87, xz=FALSE, yz=TRUE.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current yz-plane/current_s_soc_s_theta=1.05, xz=FALSE, yz=TRUE.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current yz-plane/current_s_soc_s_theta=1.22, xz=FALSE, yz=TRUE.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current yz-plane/current_s_soc_s_theta=1.4, xz=FALSE, yz=TRUE.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/Current yz-plane/current_s_soc_s_theta=1.57, xz=FALSE, yz=TRUE.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.0_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.0_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.0_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.0_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.0_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.0_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.0_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.0_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.0_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.0_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.17_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.17_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.17_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.17_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.17_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.17_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.17_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.17_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.17_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.17_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.35_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.35_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.35_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.35_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.35_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.35_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.35_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.35_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.35_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.35_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.52_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.52_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.52_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.52_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.52_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.52_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.52_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.52_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.52_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.52_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.7_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.7_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.7_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.7_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.7_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.7_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.7_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.7_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.7_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.7_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.87_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.87_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.87_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.87_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.87_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.87_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.87_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.87_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.87_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=0.87_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.05_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.05_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.05_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.05_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.05_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.05_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.05_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.05_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.05_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.05_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.22_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.22_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.22_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.22_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.22_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.22_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.22_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.22_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.22_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.22_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.4_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.4_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.4_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.4_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.4_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.4_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.4_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.4_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.4_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.4_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.57_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.57_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.57_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.57_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.57_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.57_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.57_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.57_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.57_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.0, mu_soc=0.0, beta=33.3/current_s_soc_s_theta=1.57_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.0_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.0_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.0_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.0_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.0_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.0_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.0_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.0_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.0_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.0_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.17_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.17_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.17_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.17_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.17_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.17_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.17_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.17_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.17_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.17_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.35_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.35_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.35_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.35_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.35_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.35_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.35_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.35_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.35_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.35_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.52_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.52_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.52_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.52_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.52_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.52_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.52_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.52_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.52_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.52_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.7_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.7_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.7_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.7_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.7_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.7_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.7_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.7_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.7_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.7_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.87_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.87_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.87_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.87_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.87_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.87_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.87_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.87_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.87_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=0.87_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.05_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.05_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.05_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.05_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.05_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.05_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.05_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.05_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.05_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.05_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.22_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.22_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.22_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.22_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.22_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.22_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.22_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.22_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.22_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.22_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.4_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.4_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.4_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.4_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.4_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.4_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.4_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.4_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.4_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.4_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.57_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.57_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.57_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.57_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.57_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.57_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.57_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.57_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.57_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result, t=1, u=1, mu_sc=0.9, mu_soc=0.9, beta=33.3/current_s_soc_s_theta=1.57_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.0_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.0_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.0_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.0_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.0_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.0_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.0_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.0_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.0_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.0_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.17_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.17_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.17_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.17_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.17_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.17_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.17_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.17_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.17_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.17_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.35_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.35_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.35_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.35_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.35_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.35_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.35_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.35_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.35_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.35_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.52_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.52_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.52_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.52_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.52_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.52_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.52_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.52_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.52_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.52_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.7_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.7_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.7_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.7_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.7_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.7_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.7_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.7_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.7_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.7_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.87_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.87_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.87_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.87_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.87_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.87_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.87_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.87_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.87_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=0.87_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.05_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.05_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.05_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.05_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.05_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.05_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.05_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.05_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.05_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.05_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.22_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.22_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.22_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.22_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.22_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.22_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.22_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.22_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.22_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.22_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.4_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.4_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.4_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.4_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.4_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.4_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.4_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.4_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.4_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.4_phi=1.57.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.57_phi=0.0.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.57_phi=0.17.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.57_phi=0.35.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.57_phi=0.52.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.57_phi=0.7.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.57_phi=0.87.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.57_phi=1.05.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.57_phi=1.22.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.57_phi=1.4.npz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_nonconsistent_result_ t=1, u=1, mu_sc=0.0, mu_soc=0.5, beta=33.3/current_s_soc_s_theta=1.57_phi=1.57.npz" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/nonconsistent_solution.ipynb" afterPath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/nonconsistent_solution.ipynb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_s_soc_s_theta=0.0_phi=0.0.npz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_s_soc_s_theta=0.0_phi=0.17.npz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_s_soc_s_theta=0.0_phi=0.35.npz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_s_soc_s_theta=0.0_phi=0.52.npz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_s_soc_s_theta=0.0_phi=0.7.npz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_s_soc_s_theta=0.0_phi=0.87.npz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/current_s_soc_s_theta=0.0_phi=1.05.npz" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/DOS-checkpoint.ipynb" afterPath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/DOS-checkpoint.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/plot_current_nonconsistent_solution, mu=0.0-checkpoint.ipynb" afterPath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/.ipynb_checkpoints/plot_current_nonconsistent_solution, mu=0.0-checkpoint.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/DOS.ipynb" afterPath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/DOS.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/plot_current_nonconsistent_solution, mu=0.0.ipynb" afterPath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/plot_current_nonconsistent_solution, mu=0.0.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/run_nonconsistent_current_for_all.ipynb" afterPath="$PROJECT_DIR$/Prosjektoppgave/Notebooks/run_nonconsistent_current_for_all.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/current_nonconsistent.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/current_nonconsistent.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/main.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/nonconsistent_solution.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/nonconsistent_solution.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/plots.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/plots.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/system_class.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/system_class.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/system_helper.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/system_helper.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/utilities.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/utilities.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Prosjektoppgave/utilities_t.py" afterPath="$PROJECT_DIR$/Prosjektoppgave/utilities_t.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -353,56 +48,48 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="system_class.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="system_class.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="899" column="36" lean-forward="false" selection-start-line="899" selection-start-column="36" selection-end-line="899" selection-end-column="36" />
+            <state relative-caret-position="-1260">
+              <caret line="105" column="65" lean-forward="true" selection-start-line="105" selection-start-column="65" selection-end-line="105" selection-end-column="65" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#6268#6341#0" expanded="false" />
-                <element signature="e#10648#10690#0" expanded="false" />
-                <element signature="e#11905#12351#1" expanded="false" />
-                <element signature="e#12625#13273#0" expanded="false" />
-                <element signature="e#12625#12635#0" expanded="false" />
-                <element signature="e#13139#13201#0" expanded="false" />
-                <element signature="e#13329#13561#0" expanded="false" />
-                <element signature="e#13599#13649#0" expanded="false" />
-                <element signature="e#13695#14515#0" expanded="false" />
-                <element signature="e#14104#14496#1" expanded="false" />
-                <element signature="e#17390#17960#0" expanded="false" />
-                <element signature="e#18007#18193#0" expanded="false" />
-                <element signature="e#18007#18040#0" expanded="false" />
-                <element signature="e#18242#18948#0" expanded="false" />
-                <element signature="e#18992#19071#0" expanded="false" />
-                <element signature="e#19263#19301#0" expanded="false" />
-                <element signature="e#20627#34941#0" expanded="false" />
-                <element signature="e#20627#20646#0" expanded="false" />
-                <element signature="e#24742#34941#1" expanded="false" />
-                <element signature="e#34950#34964#0" expanded="false" />
-                <element signature="e#35111#35126#0" expanded="false" />
-                <element signature="e#37910#44782#1" expanded="false" />
-                <element signature="e#44853#48669#0" expanded="false" />
-                <element signature="e#44982#45003#0" expanded="false" />
-                <element signature="e#45281#45323#0" expanded="false" />
-                <element signature="e#46814#47842#1" expanded="false" />
-                <element signature="e#47855#47874#0" expanded="false" />
-                <element signature="e#48814#49677#0" expanded="false" />
-                <element signature="e#50702#50764#0" expanded="false" />
-                <element signature="e#51641#51665#0" expanded="false" />
-                <element signature="e#51706#51729#0" expanded="false" />
-                <element signature="e#51791#51908#0" expanded="false" />
-                <element signature="e#51990#54379#0" expanded="false" />
-                <element signature="e#52392#52401#0" expanded="false" />
-                <element signature="e#52519#53205#1" expanded="false" />
-                <element signature="e#54465#55783#0" expanded="false" />
-                <element signature="e#56104#58608#0" expanded="false" />
-                <element signature="e#56248#57363#1" expanded="false" />
-                <element signature="e#57590#57675#0" expanded="false" />
-                <element signature="e#58098#58121#0" expanded="false" />
-                <element signature="e#58450#58555#0" expanded="false" />
-                <element signature="e#58654#59885#0" expanded="false" />
-                <element signature="e#59933#86340#0" expanded="false" />
+                <element signature="e#6450#6523#0" expanded="false" />
+                <element signature="e#10830#10872#0" expanded="false" />
+                <element signature="e#12087#12533#1" expanded="false" />
+                <element signature="e#12807#13455#0" expanded="false" />
+                <element signature="e#12807#12817#0" expanded="false" />
+                <element signature="e#13321#13383#0" expanded="false" />
+                <element signature="e#13511#13743#0" expanded="false" />
+                <element signature="e#13781#13831#0" expanded="false" />
+                <element signature="e#13877#14697#0" expanded="false" />
+                <element signature="e#14286#14678#1" expanded="false" />
+                <element signature="e#17572#18142#0" expanded="false" />
+                <element signature="e#18189#18375#0" expanded="false" />
+                <element signature="e#18189#18222#0" expanded="false" />
+                <element signature="e#18424#19130#0" expanded="false" />
+                <element signature="e#44999#48815#0" expanded="false" />
+                <element signature="e#45128#45149#0" expanded="false" />
+                <element signature="e#45427#45469#0" expanded="false" />
+                <element signature="e#46960#47988#1" expanded="false" />
+                <element signature="e#48001#48020#0" expanded="false" />
+                <element signature="e#48960#49823#0" expanded="false" />
+                <element signature="e#49952#50843#0" expanded="false" />
+                <element signature="e#50848#50910#0" expanded="false" />
+                <element signature="e#51787#51811#0" expanded="false" />
+                <element signature="e#51852#51875#0" expanded="false" />
+                <element signature="e#51937#52054#0" expanded="false" />
+                <element signature="e#52136#54525#0" expanded="false" />
+                <element signature="e#52538#52547#0" expanded="false" />
+                <element signature="e#52665#53351#1" expanded="false" />
+                <element signature="e#54611#55929#0" expanded="false" />
+                <element signature="e#56250#58754#0" expanded="false" />
+                <element signature="e#56394#57509#1" expanded="false" />
+                <element signature="e#57736#57821#0" expanded="false" />
+                <element signature="e#58244#58267#0" expanded="false" />
+                <element signature="e#58596#58701#0" expanded="false" />
+                <element signature="e#58800#60031#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -411,19 +98,60 @@
       <file leaf-file-name="system_helper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="291" column="8" lean-forward="false" selection-start-line="291" selection-start-column="8" selection-end-line="292" selection-end-column="24" />
+            <state relative-caret-position="2076">
+              <caret line="244" column="0" lean-forward="false" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
-                <element signature="e#1405#1719#0" expanded="false" />
-                <element signature="e#1801#2061#0" expanded="false" />
-                <element signature="e#2125#2165#0" expanded="false" />
-                <element signature="e#2323#2776#0" expanded="false" />
-                <element signature="e#2890#5888#0" expanded="false" />
-                <element signature="e#5942#6412#0" expanded="false" />
-                <element signature="e#6479#6531#0" expanded="false" />
-                <element signature="e#7937#8733#0" expanded="false" />
-                <element signature="e#9958#10658#0" expanded="false" />
+                <element signature="e#14596#14910#0" expanded="false" />
+                <element signature="e#14992#15252#0" expanded="false" />
+                <element signature="e#16081#19079#0" expanded="false" />
+                <element signature="e#19133#19603#0" expanded="false" />
+                <element signature="e#19670#19722#0" expanded="false" />
+                <element signature="e#21128#21924#0" expanded="false" />
+                <element signature="e#23149#23849#0" expanded="false" />
+                <element signature="e#24001#30493#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plots.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Prosjektoppgave/plots.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="41" column="4" lean-forward="true" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utilities_t.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities_t.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="33" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="73" column="120" lean-forward="false" selection-start-line="73" selection-start-column="120" selection-end-line="73" selection-end-column="120" />
+              <folding>
+                <element signature="e#35#46#0" expanded="true" />
+                <element signature="e#503#2346#0" expanded="false" />
+                <element signature="e#2423#2665#0" expanded="false" />
+                <element signature="e#5451#7225#0" expanded="false" />
+                <element signature="e#7333#7507#0" expanded="false" />
+                <element signature="e#10204#11266#0" expanded="false" />
+                <element signature="e#11292#11360#0" expanded="false" />
+                <element signature="e#11386#11469#0" expanded="false" />
+                <marker date="1615889206205" expanded="true" signature="7625:10168" ph="..." />
               </folding>
             </state>
           </provider>
@@ -432,8 +160,8 @@
       <file leaf-file-name="solve_hamiltonian.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="14" column="69" lean-forward="false" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
+            <state relative-caret-position="165">
+              <caret line="160" column="105" lean-forward="false" selection-start-line="160" selection-start-column="105" selection-end-line="160" selection-end-column="105" />
               <folding>
                 <element signature="e#450#7554#0" expanded="false" />
               </folding>
@@ -444,12 +172,11 @@
       <file leaf-file-name="current_nonconsistent.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Prosjektoppgave/current_nonconsistent.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="678">
-              <caret line="214" column="89" lean-forward="false" selection-start-line="214" selection-start-column="89" selection-end-line="214" selection-end-column="89" />
+            <state relative-caret-position="705">
+              <caret line="108" column="83" lean-forward="false" selection-start-line="108" selection-start-column="83" selection-end-line="108" selection-end-column="83" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
                 <element signature="e#842#5358#1" expanded="false" />
-                <element signature="e#5413#9988#0" expanded="false" />
                 <element signature="e#8779#9076#1" expanded="false" />
                 <element signature="e#10484#12291#0" expanded="false" />
               </folding>
@@ -460,8 +187,8 @@
       <file leaf-file-name="nonconsistent_solution.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Prosjektoppgave/nonconsistent_solution.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="30" column="28" lean-forward="false" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+            <state relative-caret-position="243">
+              <caret line="35" column="75" lean-forward="true" selection-start-line="35" selection-start-column="75" selection-end-line="35" selection-end-column="75" />
               <folding>
                 <element signature="e#886#1005#0" expanded="false" />
                 <element signature="e#3087#3118#0" expanded="false" />
@@ -497,6 +224,7 @@
       <find>:, 1:, 1:]</find>
       <find>, :,</find>
       <find>np.conj(B</find>
+      <find>idx_f_ij</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -516,22 +244,23 @@
         <option value="$PROJECT_DIR$/Prosjektoppgave/utilities_f.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/var.py" />
         <option value="$PROJECT_DIR$/Masteroppgave/main.py" />
-        <option value="$PROJECT_DIR$/Prosjektoppgave/utilities.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/phasediagrams.py" />
-        <option value="$PROJECT_DIR$/Prosjektoppgave/plots.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/hamiltonian_helper.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/Notebooks/test_dask_new.npz" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/testing.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/How_to/How_to_save.py" />
         <option value="$PROJECT_DIR$/computation/determinant.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/selfconsistant_solution.py" />
-        <option value="$PROJECT_DIR$/Prosjektoppgave/main.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/current_selfconsistent.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/utilities.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/system_class.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/nonconsistent_solution.py" />
-        <option value="$PROJECT_DIR$/Prosjektoppgave/system_helper.py" />
         <option value="$PROJECT_DIR$/Prosjektoppgave/current_nonconsistent.py" />
-        <option value="$PROJECT_DIR$/Prosjektoppgave/system_class.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/main.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/plots.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/utilities_t.py" />
+        <option value="$PROJECT_DIR$/Prosjektoppgave/system_helper.py" />
       </list>
     </option>
   </component>
@@ -954,7 +683,7 @@
     <frame x="0" y="23" width="1440" height="828" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17668097" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14377682" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1002,7 +731,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="25" />
+      <option name="time" value="26" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1119,13 +848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4065">
-          <caret line="271" column="3" lean-forward="false" selection-start-line="271" selection-start-column="3" selection-end-line="271" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Prosjektoppgave/phasediagrams.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2243">
@@ -1149,13 +871,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities_t.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Prosjektoppgave/How_to/How_to_save.ipynb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
@@ -1170,60 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/plots.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="24" column="94" lean-forward="false" selection-start-line="24" selection-start-column="94" selection-end-line="24" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="90" column="68" lean-forward="false" selection-start-line="90" selection-start-column="68" selection-end-line="90" selection-end-column="68" />
-          <folding>
-            <element signature="e#35#46#0" expanded="true" />
-            <element signature="e#501#2344#0" expanded="false" />
-            <element signature="e#2421#2663#0" expanded="false" />
-            <element signature="e#5442#7216#0" expanded="false" />
-            <element signature="e#7324#7498#0" expanded="false" />
-            <element signature="e#10195#11257#0" expanded="false" />
-            <element signature="e#11283#11351#0" expanded="false" />
-            <element signature="e#11377#11460#0" expanded="false" />
-            <marker date="1613994872259" expanded="true" signature="7616:10159" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="14" column="69" lean-forward="false" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
-          <folding>
-            <element signature="e#450#7554#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="291" column="8" lean-forward="false" selection-start-line="291" selection-start-column="8" selection-end-line="292" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-            <element signature="e#1405#1719#0" expanded="false" />
-            <element signature="e#1801#2061#0" expanded="false" />
-            <element signature="e#2125#2165#0" expanded="false" />
-            <element signature="e#2323#2776#0" expanded="false" />
-            <element signature="e#2890#5888#0" expanded="false" />
-            <element signature="e#5942#6412#0" expanded="false" />
-            <element signature="e#6479#6531#0" expanded="false" />
-            <element signature="e#7937#8733#0" expanded="false" />
-            <element signature="e#9958#10658#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Prosjektoppgave/current_selfconsistent.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1095">
@@ -1232,10 +893,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/solve_hamiltonian.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="160" column="105" lean-forward="false" selection-start-line="160" selection-start-column="105" selection-end-line="160" selection-end-column="105" />
+          <folding>
+            <element signature="e#450#7554#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/current_nonconsistent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="108" column="83" lean-forward="false" selection-start-line="108" selection-start-column="83" selection-end-line="108" selection-end-column="83" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#842#5358#1" expanded="false" />
+            <element signature="e#8779#9076#1" expanded="false" />
+            <element signature="e#10484#12291#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Prosjektoppgave/nonconsistent_solution.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="30" column="28" lean-forward="false" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+        <state relative-caret-position="243">
+          <caret line="35" column="75" lean-forward="true" selection-start-line="35" selection-start-column="75" selection-end-line="35" selection-end-column="75" />
           <folding>
             <element signature="e#886#1005#0" expanded="false" />
             <element signature="e#3087#3118#0" expanded="false" />
@@ -1244,69 +938,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/current_nonconsistent.py">
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="678">
-          <caret line="214" column="89" lean-forward="false" selection-start-line="214" selection-start-column="89" selection-end-line="214" selection-end-column="89" />
+        <state relative-caret-position="240">
+          <caret line="73" column="120" lean-forward="false" selection-start-line="73" selection-start-column="120" selection-end-line="73" selection-end-column="120" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#842#5358#1" expanded="false" />
-            <element signature="e#5413#9988#0" expanded="false" />
-            <element signature="e#8779#9076#1" expanded="false" />
-            <element signature="e#10484#12291#0" expanded="false" />
+            <element signature="e#35#46#0" expanded="true" />
+            <element signature="e#503#2346#0" expanded="false" />
+            <element signature="e#2423#2665#0" expanded="false" />
+            <element signature="e#5451#7225#0" expanded="false" />
+            <element signature="e#7333#7507#0" expanded="false" />
+            <element signature="e#10204#11266#0" expanded="false" />
+            <element signature="e#11292#11360#0" expanded="false" />
+            <element signature="e#11386#11469#0" expanded="false" />
+            <marker date="1615889206205" expanded="true" signature="7625:10168" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="899" column="36" lean-forward="false" selection-start-line="899" selection-start-column="36" selection-end-line="899" selection-end-column="36" />
+        <state relative-caret-position="-1260">
+          <caret line="105" column="65" lean-forward="true" selection-start-line="105" selection-start-column="65" selection-end-line="105" selection-end-column="65" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#6268#6341#0" expanded="false" />
-            <element signature="e#10648#10690#0" expanded="false" />
-            <element signature="e#11905#12351#1" expanded="false" />
-            <element signature="e#12625#13273#0" expanded="false" />
-            <element signature="e#12625#12635#0" expanded="false" />
-            <element signature="e#13139#13201#0" expanded="false" />
-            <element signature="e#13329#13561#0" expanded="false" />
-            <element signature="e#13599#13649#0" expanded="false" />
-            <element signature="e#13695#14515#0" expanded="false" />
-            <element signature="e#14104#14496#1" expanded="false" />
-            <element signature="e#17390#17960#0" expanded="false" />
-            <element signature="e#18007#18193#0" expanded="false" />
-            <element signature="e#18007#18040#0" expanded="false" />
-            <element signature="e#18242#18948#0" expanded="false" />
-            <element signature="e#18992#19071#0" expanded="false" />
-            <element signature="e#19263#19301#0" expanded="false" />
-            <element signature="e#20627#34941#0" expanded="false" />
-            <element signature="e#20627#20646#0" expanded="false" />
-            <element signature="e#24742#34941#1" expanded="false" />
-            <element signature="e#34950#34964#0" expanded="false" />
-            <element signature="e#35111#35126#0" expanded="false" />
-            <element signature="e#37910#44782#1" expanded="false" />
-            <element signature="e#44853#48669#0" expanded="false" />
-            <element signature="e#44982#45003#0" expanded="false" />
-            <element signature="e#45281#45323#0" expanded="false" />
-            <element signature="e#46814#47842#1" expanded="false" />
-            <element signature="e#47855#47874#0" expanded="false" />
-            <element signature="e#48814#49677#0" expanded="false" />
-            <element signature="e#50702#50764#0" expanded="false" />
-            <element signature="e#51641#51665#0" expanded="false" />
-            <element signature="e#51706#51729#0" expanded="false" />
-            <element signature="e#51791#51908#0" expanded="false" />
-            <element signature="e#51990#54379#0" expanded="false" />
-            <element signature="e#52392#52401#0" expanded="false" />
-            <element signature="e#52519#53205#1" expanded="false" />
-            <element signature="e#54465#55783#0" expanded="false" />
-            <element signature="e#56104#58608#0" expanded="false" />
-            <element signature="e#56248#57363#1" expanded="false" />
-            <element signature="e#57590#57675#0" expanded="false" />
-            <element signature="e#58098#58121#0" expanded="false" />
-            <element signature="e#58450#58555#0" expanded="false" />
-            <element signature="e#58654#59885#0" expanded="false" />
-            <element signature="e#59933#86340#0" expanded="false" />
+            <element signature="e#6450#6523#0" expanded="false" />
+            <element signature="e#10830#10872#0" expanded="false" />
+            <element signature="e#12087#12533#1" expanded="false" />
+            <element signature="e#12807#13455#0" expanded="false" />
+            <element signature="e#12807#12817#0" expanded="false" />
+            <element signature="e#13321#13383#0" expanded="false" />
+            <element signature="e#13511#13743#0" expanded="false" />
+            <element signature="e#13781#13831#0" expanded="false" />
+            <element signature="e#13877#14697#0" expanded="false" />
+            <element signature="e#14286#14678#1" expanded="false" />
+            <element signature="e#17572#18142#0" expanded="false" />
+            <element signature="e#18189#18375#0" expanded="false" />
+            <element signature="e#18189#18222#0" expanded="false" />
+            <element signature="e#18424#19130#0" expanded="false" />
+            <element signature="e#44999#48815#0" expanded="false" />
+            <element signature="e#45128#45149#0" expanded="false" />
+            <element signature="e#45427#45469#0" expanded="false" />
+            <element signature="e#46960#47988#1" expanded="false" />
+            <element signature="e#48001#48020#0" expanded="false" />
+            <element signature="e#48960#49823#0" expanded="false" />
+            <element signature="e#49952#50843#0" expanded="false" />
+            <element signature="e#50848#50910#0" expanded="false" />
+            <element signature="e#51787#51811#0" expanded="false" />
+            <element signature="e#51852#51875#0" expanded="false" />
+            <element signature="e#51937#52054#0" expanded="false" />
+            <element signature="e#52136#54525#0" expanded="false" />
+            <element signature="e#52538#52547#0" expanded="false" />
+            <element signature="e#52665#53351#1" expanded="false" />
+            <element signature="e#54611#55929#0" expanded="false" />
+            <element signature="e#56250#58754#0" expanded="false" />
+            <element signature="e#56394#57509#1" expanded="false" />
+            <element signature="e#57736#57821#0" expanded="false" />
+            <element signature="e#58244#58267#0" expanded="false" />
+            <element signature="e#58596#58701#0" expanded="false" />
+            <element signature="e#58800#60031#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/utilities_t.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="32" column="4" lean-forward="false" selection-start-line="32" selection-start-column="4" selection-end-line="33" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/system_helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2076">
+          <caret line="244" column="0" lean-forward="false" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#14596#14910#0" expanded="false" />
+            <element signature="e#14992#15252#0" expanded="false" />
+            <element signature="e#16081#19079#0" expanded="false" />
+            <element signature="e#19133#19603#0" expanded="false" />
+            <element signature="e#19670#19722#0" expanded="false" />
+            <element signature="e#21128#21924#0" expanded="false" />
+            <element signature="e#23149#23849#0" expanded="false" />
+            <element signature="e#24001#30493#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Prosjektoppgave/plots.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="41" column="4" lean-forward="true" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -168,7 +168,7 @@ def solve_system_selfconsistent(system, max_num_iter = 1000, tol=1e-3, junction=
                                                                                                        h_array=system.h_array,
                                                                                                        U_array=system.U_array,
                                                                                                        F_matrix=system.F_matrix,
-                                                                                                       t_x_array=system.t_x_array,
+                                                                                                       t_y_array=system.t_y_array,
                                                                                                        ky_array=system.ky_array,
                                                                                                        kz_array=system.kz_array,
                                                                                                        alpha_R_x_array=system.alpha_R_x_array,

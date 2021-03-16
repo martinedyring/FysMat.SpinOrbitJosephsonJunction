@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 from solve_hamiltonian import solve_system, solve_system_selfconsistent
 from system_class import System
 from plots import plot_complex_function, plot_pairing_amplitude
-from utilities import label_F_matrix
+from utilities_t import label_F_matrix
 
 from testing import testing as testing_run
 import time
@@ -69,9 +69,9 @@ def solve_and_return_system_and_F_matrix(max_num_iter=100, tol=1e-4):
     F_matrix = system.F_matrix
     return system, F_matrix
 
-def solve_and_test_small_system(max_num_iter=100, tol=1e-5, phase=np.pi/2):
+def solve_and_test_small_system(alpha_array_init, max_num_iter=100, tol=1e-5, phase=np.pi/2):
 
-    system = System(phase=phase, alpha_R_initial=np.array([0.0,0.0,0.5]), L_y = 30,L_z=30, L_sc_0 = 25, L_nc=0, L_sc=25, L_soc=5, mu_sc = 0.9, mu_nc = 0.9, mu_soc = 0.85, u_sc = -4.2, beta=33.3, t=1)
+    system = System(phase=phase, alpha_R_initial=alpha_array_init, L_y = 29,L_z=29, L_sc_0 =25, L_nc=0, L_sc=25, L_soc=5, mu_sc = 0.0, mu_nc = 0.0, mu_soc = 0.0, u_sc = -1, beta=33.3, t=1)
     #system = System(phase=np.pi / 4, L_y=20, L_z=20, L_sc_0=7, L_h=5, L_sc=7, L_soc=0, mu_sc=0.9, mu_nc=0.9,mu_soc=0.85, u_sc=-4.2)
 
 

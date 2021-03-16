@@ -1,9 +1,9 @@
 from numba import njit
 import numpy as np
 import matplotlib.pyplot as plt
-
+from math import exp
 from numba import prange
-
+from numpy import sin
 import time
 
 from math import exp
@@ -11,6 +11,36 @@ from math import exp
 #import numpy.linalg as eigh
 
 idx_F_i = 0
+
+idx_F_ud_x_pluss = 1
+idx_F_du_x_pluss = 2
+idx_F_dd_x_pluss = 3
+idx_F_uu_x_pluss = 4
+
+idx_F_uu_y_pluss = 5
+idx_F_dd_y_pluss = 6
+
+idx_F_ud_y_minus = 7
+idx_F_ud_y_pluss = 8
+
+num_idx_F_i = 9
+
+
+#   Label name for each component in F-matrix
+label_F_matrix = [
+    r'$F_{ii}$',
+    r'$F_{ud}^{x+}$',
+    r'$F_{du}^{x+}$',
+    r'$F_{dd}^{x+}$',
+    r'$F_{uu}^{x+}$',
+    r'$F_{uu}^{y+}$',
+    r'$F_{dd}^{y+}$',
+    r'$F_{ud}^{y+}$',
+    r'$F_{ud}^{y-}$',
+    r'$F_{s_i}$'
+]
+
+
 
 def forcePhaseDifference(F_matrix, phase):
     #phase_plus = np.exp(1.0j * phase)        #   SC_0
@@ -20,13 +50,188 @@ def forcePhaseDifference(F_matrix, phase):
     return F_matrix
 
 @njit(fastmath=True, parallel=True)
-def calculate_F_matrix(F_matrix, L_x, L_y, L_z, eigenvalues, eigenvectors, beta):
-    F_matrix[:, idx_F_i] = 0.0 + 0.0j
+def calculate_F_matrix(L_x, L_y, L_z, eigenvalues, eigenvectors, beta, ky_array, kz_array):
+    F_matrix = np.zeros((L_x, num_idx_F_i), dtype=np.complex128)
+
+    norm = 1/(L_y * L_z)
+    #mod =beta * eigenvalues[:, :, :]
+    #exp_energies = exp(mod[:, :, :])
+    fermi_func = np.zeros(shape=(4 * L_x, (L_y // 2 + 1), (L_z // 2 + 1)), dtype=np.float64)  # n ky kz
+    fermi_func[:, :, :] = 1/2*(1-np.tanh(beta*eigenvalues[:,:,:]/2)) # 1/(system.L_y*system.L_z) *(1-np.tanh(system.beta * system.eigenvalues / 2)) #-
     for i in prange(F_matrix.shape[0]):
-        F_matrix[i, idx_F_i] += np.sum(1 / (2 * L_y * L_z) * (1 + np.tanh(beta * eigenvalues[:, 1:, 1:] / 2)) * (eigenvectors[4 * i, :, 1:, 1:] * np.conj(eigenvectors[(4 * i) + 3, :, 1:, 1:])))
+        #------------------------------------------------------------
+        # UP DOWN - SAME POINT
+        # k > 0
+        F_matrix[i, idx_F_i] += norm*np.sum((1-fermi_func[:,1:,1:])
+                                            *(eigenvectors[4 * i, :, 1:, 1:]
+                                              *np.conj(eigenvectors[(4 * i) + 3, :, 1:, 1:]))
+                                            +fermi_func[:,1:,1:]
+                                            *(np.conj(eigenvectors[4 * i + 2, :, 1:, 1:])
+                                              *eigenvectors[(4 * i) + 1, :, 1:, 1:]))
+
+        # k = 0
+        F_matrix[i, idx_F_i] += norm*np.sum((1-fermi_func[2*L_x:, 0, 0])
+                                            *(eigenvectors[4 * i, 2*L_x:, 0, 0]
+                                              *np.conj(eigenvectors[(4 * i) + 3, 2*L_x:, 0, 0]))
+                                             +fermi_func[2*L_x:, 0, 0]
+                                            *(np.conj(eigenvectors[4 * i + 2, 2*L_x:, 0, 0])
+                                              *eigenvectors[(4 * i) + 1, 2*L_x:, 0, 0]))
+
+        # ------------------------------------------------------------
+        if (i < F_matrix.shape[0]-1):
+            # UP DOWN - X+
+            # k > 0
+            F_matrix[i, idx_F_ud_x_pluss] += norm * np.sum((1 - fermi_func[:, 1:, 1:])
+                                                  * (eigenvectors[4 * i, :, 1:, 1:]
+                                                     * np.conj(eigenvectors[(4 * (i+1)) + 3, :, 1:, 1:]))
+                                                  + fermi_func[:, 1:, 1:]
+                                                  * (np.conj(eigenvectors[4 * i + 2, :, 1:, 1:])
+                                                     * eigenvectors[(4 * (i+1)) + 1, :, 1:, 1:]))
+
+            # k = 0
+            F_matrix[i, idx_F_ud_x_pluss] += norm * np.sum((1 - fermi_func[2 * L_x:, 0, 0])
+                                                  * (eigenvectors[4 * i, 2 * L_x:, 0, 0]
+                                                     * np.conj(eigenvectors[(4 * (i+1)) + 3, 2 * L_x:, 0, 0]))
+                                                  + fermi_func[2 * L_x:, 0, 0]
+                                                  * (np.conj(eigenvectors[4 * i + 2, 2 * L_x:, 0, 0])
+                                                     * eigenvectors[(4 * (i+1)) + 1, 2 * L_x:, 0, 0]))
+            # ------------------------------------------------------------
+            # DOWN UP - X+
+            # k > 0
+            F_matrix[i, idx_F_du_x_pluss] += norm * np.sum((1 - fermi_func[:, 1:, 1:])
+                                                  * (eigenvectors[4 * i + 1, :, 1:, 1:]
+                                                     * np.conj(eigenvectors[(4 * (i+1)) + 2, :, 1:, 1:]))
+                                                  + fermi_func[:, 1:, 1:]
+                                                  * (np.conj(eigenvectors[4 * i + 3, :, 1:, 1:])
+                                                     * eigenvectors[(4 * (i+1)), :, 1:, 1:]))
+
+            # k = 0
+            F_matrix[i, idx_F_du_x_pluss] += norm * np.sum((1 - fermi_func[2 * L_x:, 0, 0])
+                                                  * (eigenvectors[4 * i + 1, 2 * L_x:, 0, 0]
+                                                     * np.conj(eigenvectors[(4 * (i+1)) + 2, 2 * L_x:, 0, 0]))
+                                                  + fermi_func[2 * L_x:, 0, 0]
+                                                  * (np.conj(eigenvectors[4 * i + 3, 2 * L_x:, 0, 0])
+                                                     * eigenvectors[(4 * (i+1)), 2 * L_x:, 0, 0]))
+            # ------------------------------------------------------------
+            # DOWN DOWN - X+
+            # k > 0
+            F_matrix[i, idx_F_dd_x_pluss] += norm * np.sum((1 - fermi_func[:, 1:, 1:])
+                                                  * (eigenvectors[4 * i+1, :, 1:, 1:]
+                                                     * np.conj(eigenvectors[(4 * (i+1)) + 3, :, 1:, 1:]))
+                                                  + fermi_func[:, 1:, 1:]
+                                                  * (np.conj(eigenvectors[4 * i + 3, :, 1:, 1:])
+                                                     * eigenvectors[(4 * (i+1)) + 1, :, 1:, 1:]))
+
+            # k = 0
+            F_matrix[i, idx_F_dd_x_pluss] += norm * np.sum((1 - fermi_func[2 * L_x:, 0, 0])
+                                                  * (eigenvectors[4 * i+1, 2 * L_x:, 0, 0]
+                                                     * np.conj(eigenvectors[(4 * (i+1)) + 3, 2 * L_x:, 0, 0]))
+                                                  + fermi_func[2 * L_x:, 0, 0]
+                                                  * (np.conj(eigenvectors[4 * i + 3, 2 * L_x:, 0, 0])
+                                                     * eigenvectors[(4 * (i+1)) + 1, 2 * L_x:, 0, 0]))
+            # ------------------------------------------------------------
+            # UP UP - X+
+            # k > 0
+            F_matrix[i, idx_F_uu_x_pluss] += norm * np.sum((1 - fermi_func[:, 1:, 1:])
+                                                  * (eigenvectors[4 * i, :, 1:, 1:]
+                                                     * np.conj(eigenvectors[(4 * (i+1)) + 2, :, 1:, 1:]))
+                                                  + fermi_func[:, 1:, 1:]
+                                                  * (np.conj(eigenvectors[4 * i + 2, :, 1:, 1:])
+                                                     * eigenvectors[(4 * (i+1)), :, 1:, 1:]))
+
+            # k = 0
+            F_matrix[i, idx_F_uu_x_pluss] += norm * np.sum((1 - fermi_func[2 * L_x:, 0, 0])
+                                                  * (eigenvectors[4 * i, 2 * L_x:, 0, 0]
+                                                     * np.conj(eigenvectors[(4 * (i+1)) + 2, 2 * L_x:, 0, 0]))
+                                                  + fermi_func[2 * L_x:, 0, 0]
+                                                  * (np.conj(eigenvectors[4 * i + 2, 2 * L_x:, 0, 0])
+                                                     * eigenvectors[(4 * (i+1)), 2 * L_x:, 0, 0]))
+
+        # ------------------------------------------------------------
+        for idx_ky in prange(1,len(ky_array)):
+            # UP UP - Y+
+            # k > 0
+            F_matrix[i, idx_F_uu_y_pluss] += norm * (np.sum((1 - fermi_func[:, idx_ky, 1:])
+                                                  * (eigenvectors[4 * i, :, idx_ky, 1:]
+                                                     * np.conj(eigenvectors[(4 * i) + 2, :, idx_ky, 1:])))
+                                                     *np.exp(-1.0j*ky_array[idx_ky])
+                                                  + np.sum(fermi_func[:, idx_ky, 1:]
+                                                  * (np.conj(eigenvectors[4 * i + 2, :, idx_ky, 1:])
+                                                     * eigenvectors[(4 * i), :, idx_ky, 1:]))
+                                                     *np.exp(1.0j*ky_array[idx_ky]))
+
+            # ------------------------------------------------------------
+            # DOWN DOWN - Y+
+            # k > 0
+            F_matrix[i, idx_F_dd_y_pluss] += norm * (np.sum((1 - fermi_func[:, idx_ky, 1:])
+                                                            * (eigenvectors[4 * i+1, :, idx_ky, 1:]
+                                                               * np.conj(eigenvectors[(4 * i) + 3, :, idx_ky, 1:])))
+                                                     * np.exp(-1.0j * ky_array[idx_ky])
+                                                     + np.sum(fermi_func[:, idx_ky, 1:]
+                                                              * (np.conj(eigenvectors[4 * i + 3, :, idx_ky, 1:])
+                                                                 * eigenvectors[(4 * i) + 1, :, idx_ky, 1:]))
+                                                     * np.exp(1.0j * ky_array[idx_ky]))
+
+            # ------------------------------------------------------------
+            # UP DOWN - Y-
+            # k > 0
+            F_matrix[i, idx_F_ud_y_minus] += norm * (np.sum((1 - fermi_func[:, idx_ky, 1:])
+                                                  * (eigenvectors[4 * i, :, idx_ky, 1:]
+                                                     * np.conj(eigenvectors[(4 * i) + 3, :, idx_ky, 1:])))*np.exp(1.0j*ky_array[idx_ky])
+                                                  + np.sum(fermi_func[:, idx_ky, 1:]
+                                                  * (np.conj(eigenvectors[4 * i + 2, :, idx_ky, 1:])
+                                                     * eigenvectors[(4 * i) + 1, :, idx_ky, 1:]))*np.exp(-1.0j*ky_array[idx_ky]))
+
+
+            # ------------------------------------------------------------
+            # UP DOWN - Y+
+            # k > 0
+            F_matrix[i, idx_F_ud_y_pluss] += norm * (np.sum((1 - fermi_func[:, idx_ky, 1:])
+                                                  * (eigenvectors[4 * i, :, idx_ky, 1:]
+                                                     * np.conj(eigenvectors[(4 * i) + 3, :, idx_ky, 1:])))*np.exp(-1.0j*ky_array[idx_ky])
+                                                  + np.sum(fermi_func[:, idx_ky, 1:]
+                                                  * (np.conj(eigenvectors[4 * i + 2, :, idx_ky, 1:])
+                                                     * eigenvectors[(4 * i) + 1, :, idx_ky, 1:]))*np.exp(1.0j*ky_array[idx_ky]))
+        # UP UP - Y+
+        # k = 0
+        F_matrix[i, idx_F_uu_y_pluss] += norm * (np.sum((1 - fermi_func[2 * L_x:, 0, 0])
+                                                        * (eigenvectors[4 * i, 2 * L_x:, 0, 0]
+                                                           * np.conj(eigenvectors[(4 * i) + 2, 2 * L_x:, 0, 0])))
+                                                 * np.exp(-1.0j * ky_array[0])
+                                                 + np.sum(fermi_func[2 * L_x:, 0, 0]
+                                                          * (np.conj(eigenvectors[4 * i + 2, 2 * L_x:, 0, 0])
+                                                             * eigenvectors[(4 * i), 2 * L_x:, 0, 0]))
+                                                 * np.exp(1.0j * ky_array[0]))
+        # DOWN DOWN - Y+
+        # k = 0
+        F_matrix[i, idx_F_dd_y_pluss] += norm * (np.sum((1 - fermi_func[2 * L_x:, 0, 0])
+                                                        * (eigenvectors[4 * i + 1, 2 * L_x:, 0, 0]
+                                                           * np.conj(eigenvectors[(4 * i) + 3, 2 * L_x:, 0, 0])))
+                                                 * np.exp(-1.0j * ky_array[0])
+                                                 + np.sum(fermi_func[2 * L_x:, 0, 0]
+                                                          * (np.conj(eigenvectors[4 * i + 3, 2 * L_x:, 0, 0])
+                                                             * eigenvectors[(4 * i) + 1, 2 * L_x:, 0, 0]))
+                                                 * np.exp(1.0j * ky_array[0]))
+        # UP DOWN - Y-
+        # k = 0
+        F_matrix[i, idx_F_ud_y_minus] += norm * (np.sum((1 - fermi_func[2 * L_x:, 0, 0])
+                                                        * (eigenvectors[4 * i, 2 * L_x:, 0, 0]
+                                                           * np.conj(eigenvectors[(4 * i) + 3, 2 * L_x:, 0, 0]))) * np.exp(1.0j * ky_array[0])
+                                                 + np.sum(fermi_func[2 * L_x:, 0, 0]
+                                                          * (np.conj(eigenvectors[4 * i + 2, 2 * L_x:, 0, 0])
+                                                             * eigenvectors[(4 * i) + 1, 2 * L_x:, 0, 0])) * np.exp(-1.0j * ky_array[0]))
+
+        # UP DOWN - Y+
+        # k = 0
+        F_matrix[i, idx_F_ud_y_pluss] += norm * (np.sum((1 - fermi_func[2 * L_x:, 0, 0])
+                                              * (eigenvectors[4 * i, 2 * L_x:, 0, 0]
+                                                 * np.conj(eigenvectors[(4 * i) + 3, 2 * L_x:, 0, 0])))*np.exp(-1.0j*ky_array[0])
+                                              + np.sum(fermi_func[2 * L_x:, 0, 0]
+                                              * (np.conj(eigenvectors[4 * i + 2, 2 * L_x:, 0, 0])
+                                                 * eigenvectors[(4 * i) + 1, 2 * L_x:, 0, 0]))*np.exp(1.0j*ky_array[0]))
+
+
     """
-
-
     for kz in range(eigenvectors.shape[3]):
         for ky in range(eigenvectors.shape[2]):
             for j in range(eigenvectors.shape[1]):
@@ -361,7 +566,7 @@ def solve_system_numba(max_num_iter,
                        h_array,
                        U_array,
                        F_matrix,
-                       t_x_array,
+                       t_y_array,
                        ky_array,
                        kz_array,
                        alpha_R_x_array,
@@ -380,8 +585,8 @@ def solve_system_numba(max_num_iter,
     while num_delta_over_tol > 0 and tmp_num_iter <= max_num_iter:
         #print("Iteration nr. %i" % (tmp_num_iter + 1))
         #start = time.time()
-        for ky_idx in prange(1, len(ky_array)): # form k=-pi to k=pi  #prange, set 1/2-2020
-            for kz_idx in range(1, len(kz_array)):
+        for ky_idx in prange(len(ky_array)): # form k=-pi to k=pi  #prange, set 1/2-2020
+            for kz_idx in range(len(kz_array)):
                 if tmp_num_iter==0:
                     ham = set_hamiltonian(ky=ky_array[ky_idx],
                                          kz=kz_array[kz_idx],
@@ -390,7 +595,7 @@ def solve_system_numba(max_num_iter,
                                          L_sc=L_sc,
                                          L_soc=L_soc,
                                          mu_array=mu_array,
-                                         t_array=t_x_array,
+                                         t_array=t_y_array,
                                          U_array=U_array,
                                          F_matrix=F_matrix,
                                          h_array=h_array,
@@ -405,29 +610,33 @@ def solve_system_numba(max_num_iter,
                 hamiltonian[:, :, ky_idx, kz_idx] = ham
                 # Calculates the eigenvalues from hamiltonian.
                 evalues, evectors = np.linalg.eigh(hamiltonian[:,:, ky_idx, kz_idx])
-                eigenvalues[:, ky_idx, kz_idx], eigenvectors[:, :, ky_idx, kz_idx] = evalues, evectors
+                eigenvalues[:, ky_idx, kz_idx], eigenvectors[:, :, ky_idx, kz_idx] = evalues[:], evectors[:,:]
         #duration = time.time() - start
         #print(duration)
-        fmatrix = calculate_F_matrix(F_matrix=F_matrix,
-                                     L_x=L_x,
+        fmatrix = calculate_F_matrix(L_x=L_x,
                                      L_y=L_y,
                                      L_z=L_z,
                                      eigenvalues=eigenvalues,
                                      eigenvectors=eigenvectors,
-                                     beta=beta)
+                                     beta=beta,
+                                     ky_array=ky_array,
+                                     kz_array=kz_array)
         F_matrix = fmatrix
+        #f_start = fmatrix[0,0]
+        #f_slutt = fmatrix[-1,0]
+
         if junction==True:
             #F_matrix = forcePhaseDifference(F_matrix=F_matrix,
                                             #phase=phase)
-            F_matrix[0, 0] = np.abs(F_matrix[0, 0]) * np.exp(1.0j * phase)  # phase_plus
-            F_matrix[-1, 0] = np.abs(F_matrix[-1, 0])
+            F_matrix[0, 0] = np.abs(F_matrix[0,0]) * np.exp(1.0j * phase)  # phase_plus
+            F_matrix[-1, 0] = np.abs(F_matrix[-1,0])
 
-        delta_store[:, 0] = F_matrix[:, idx_F_i]  # F_ii
+        delta_store[:, 0] = np.copy(F_matrix[:, idx_F_i]) # F_ii
         #delta_diff = abs((delta_store[:, 0] - delta_store[:, 1]) / delta_store[:, 1])
         delta_diff_tmp = (delta_store[:, 0] - delta_store[:, 1])
         delta_diff_tmp /= delta_store[:, 1]
         delta_diff = np.abs(delta_diff_tmp)
-        delta_store[:, 1] = F_matrix[:, idx_F_i]  # F_ii
+        delta_store[:, 1] = np.copy(F_matrix[:, idx_F_i])  # F_ii
         tmp_num_iter += 1
 
         num_delta_over_tol = len(np.where(delta_diff > tol)[0])

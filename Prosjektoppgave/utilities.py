@@ -8,38 +8,33 @@ This script contains all extra function solve_hamiltonian_t.py needs
 #   Define index for the pairing amplitude functions: d: down, u: up
 #   Expecting x_pluss to be equal to x_minus, so I am only considering x_pluss
 #   Expecting ud_x to be equal to du_x, so I am only considering ud_x. Similar for y.
-"""
 idx_F_i = 0
+
 idx_F_ud_x_pluss = 1
-idx_F_dd_x_pluss = 2
-idx_F_uu_x_pluss = 3
-idx_F_up_y_pluss = 4
-idx_F_dd_y_pluss = 5
-idx_F_uu_y_pluss = 6
+idx_F_du_x_pluss = 2
+idx_F_dd_x_pluss = 3
+idx_F_uu_x_pluss = 4
+
+idx_F_uu_y_pluss = 5
+idx_F_dd_y_pluss = 6
+
 idx_F_ud_y_minus = 7
-idx_F_du_y_minus = 8
-idx_F_dd_y_minus = 9
-idx_F_uu_y_minus = 10
-idx_F_ij_s = 11
+idx_F_ud_y_pluss = 8
 
-num_idx_F_i = 12
-"""
-idx_F_i = 0
-idx_F_ij_x_pluss = 1
-idx_F_ij_x_minus = 2
-idx_F_ij_y_pluss = 3
-idx_F_ij_y_minus = 4
-idx_F_ij_s = 5
+num_idx_F_i = 9
 
-num_idx_F_i = 6
 
 #   Label name for each component in F-matrix
 label_F_matrix = [
     r'$F_{ii}$',
-    r'$F_{i}^{x+}$',
-    r'$F_{i}^{x-}$',
-    r'$F_{i}^{y+}$',
-    r'$F_{i}^{y-}$',
+    r'$F_{ud}^{x+}$',
+    r'$F_{du}^{x+}$',
+    r'$F_{dd}^{x+}$',
+    r'$F_{uu}^{x+}$',
+    r'$F_{uu}^{y+}$',
+    r'$F_{dd}^{y+}$',
+    r'$F_{ud}^{y+}$',
+    r'$F_{ud}^{y-}$',
     r'$F_{s_i}$'
 ]
 

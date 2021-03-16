@@ -5,7 +5,8 @@ from scipy.special import expit
 import decimal
 import bigfloat
 
-from utilities_t import idx_F_i, idx_F_ij_x_pluss, idx_F_ij_x_minus, idx_F_ij_y_pluss, idx_F_ij_y_minus, idx_F_ij_s, num_idx_F_i
+from utilities_t import idx_F_i, idx_F_ud_x_pluss,idx_F_du_x_pluss,idx_F_dd_x_pluss,idx_F_uu_x_pluss,idx_F_uu_y_pluss,idx_F_dd_y_pluss,idx_F_ud_y_minus,idx_F_ud_y_pluss,num_idx_F_i
+#from utilities_t import idx_F_i, idx_F_ij_x_pluss, idx_F_ij_x_minus, idx_F_ij_y_pluss, idx_F_ij_y_minus, idx_F_ij_s, num_idx_F_i
 from numpy import conj, tanh, exp, sqrt, cos, sin, log#, sqrt #as conj, tanh, exp, cos, sin, sqrt
 
 """
@@ -404,6 +405,7 @@ class System:
                 self.hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4] = self.set_h(self.hamiltonian[4 * i:4 * i + 4, 4 * j:4 * j + 4], i, j)
         return self
 
+    """
     def calculate_F_matrix(self):
         #   Initialize the old F_matrix to 0+0j, so that we can start to add new values
         #for a in range(num_idx_F_i):
@@ -478,7 +480,7 @@ class System:
 
 
 
-            """
+
             # F ij X+ S, i_x, j_x
             self.F_matrix[i, idx_F_ij_x_pluss] += np.sum(step_func[:, 0] * 1 / (self.L_y) * tanh(self.beta*self.eigenvalues[:, 0])*(self.eigenvectors[4*i, :, 0] * conj(self.eigenvectors[(4*(i+1)) + 3, :, 0])))#  -  s_k * self.eigenvectors[(4*(i+1)) + 1, :, 0] * conj(self.eigenvectors[(4*i) + 2, :, 0])))
             self.F_matrix[i, idx_F_ij_x_pluss] += np.sum(step_func[:, -1] * 1 / (self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * i, :, -1] * conj(self.eigenvectors[(4*(i+1)) + 3, :, -1])))# - s_k * self.eigenvectors[(4*(i+1)) + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1])))
@@ -533,7 +535,7 @@ class System:
 
             elif (self.orbital_indicator == 'py'):
                 self.F_matrix[i, idx_F_ij_s] += 1 / 4 * (self.F_matrix[i, idx_F_ij_y_pluss] - conj(self.F_matrix[i, idx_F_ij_y_pluss]) - self.F_matrix[i, idx_F_ij_y_minus] + conj(self.F_matrix[i, idx_F_ij_y_minus]))
-            """
+
         #Fix this part
         #   At the endpoint we can not calculate the correlation in x-direction - k = 0
         idx_endpoint = self.F_matrix.shape[0] - 1
@@ -562,7 +564,7 @@ class System:
 
 
 
-        """
+
         # F ij Y+ S, i_y, j_y = i_y,i_y
         self.F_matrix[idx_endpoint, idx_F_ij_y_pluss] += np.sum(step_func[:, 0] * 1 / (self.L_y) * tanh(self.beta * self.eigenvalues[:, 0]) * (self.eigenvectors[4 * idx_endpoint, :, 0] * conj(self.eigenvectors[4 * idx_endpoint + 3, :, 0]) * np.exp(-1.0j * self.k_array[0])))# - s_k * self.eigenvectors[4 * i + 1, :, 0] * conj(self.eigenvectors[(4 * i) + 2, :, 0]) * np.exp(1.0j * self.k_array[0])))
         self.F_matrix[idx_endpoint, idx_F_ij_y_pluss] += np.sum(step_func[:, -1] * 1 / (self.L_y) * tanh(self.beta * self.eigenvalues[:, -1]) * (self.eigenvectors[4 * idx_endpoint, :, -1] * conj(self.eigenvectors[4 * idx_endpoint + 3, :, -1]) * np.exp(-1.0j * self.k_array[-1])))# - s_k * self.eigenvectors[4 * i + 1, :, -1] * conj(self.eigenvectors[(4 * i) + 2, :, -1]) * np.exp(1.0j * self.k_array[-1])))
@@ -595,8 +597,9 @@ class System:
 
         elif (self.orbital_indicator == 'py'):
             self.F_matrix[idx_endpoint, idx_F_ij_s] += 1 / 4 * (self.F_matrix[idx_endpoint, idx_F_ij_y_pluss] - conj(self.F_matrix[idx_endpoint, idx_F_ij_y_pluss]) - self.F_matrix[idx_endpoint, idx_F_ij_y_minus] + conj(self.F_matrix[idx_endpoint, idx_F_ij_y_minus]))
-        """
+
         return self
+    """
 
     def short_calculate_F_matrix(self):
 

@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from utilities import label_F_matrix
+from utilities_t import label_F_matrix
 
 """
 This script contains ass plotting functions
@@ -31,7 +31,7 @@ def plot_pairing_amplitude(system, F_matrix):
         ax[i].legend()
         ax[i].set_title(label_F_matrix[i])
         ax[i].set_xlabel("Lattice i")
-    fig.suptitle("Correlation function: NC - SOC -  SC")
+    fig.suptitle("Correlation function: SC - SOC -  SC")
     fig.subplots_adjust(wspace=0.0)
     plt.show()
     #fig.savefig('correlation function, mu_s=0.9, mu_soc=0.85, u=-4.2.png', bbox_inches='tight')
